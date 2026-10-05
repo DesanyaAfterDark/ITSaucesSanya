@@ -109,7 +109,7 @@
       label: 'Portfolio / Sherman’s',
       keywords: ['portfolio', 'work', 'example', 'sherman', 'shih', 'puppy', 'puppies', 'case'],
       answer:
-        'A live example (more on the <a href="work.html">Work page</a>): <a href="https://shermansshihtzupuppies.com" target="_blank" rel="noopener noreferrer">Sherman’s Shih Tzu Puppies</a> — family AKC/CKC Shih Tzu site with local SEO, Zoom viewing, deposits, and click-to-call. Still running for years; footer credits Desanya’s Web Designs.'
+        'A live example (more on the <a href="work.html">Work page</a>): <a href="https://shermansshihtzupuppies.com" target="_blank" rel="noopener noreferrer">Sherman’s Shih Tzu Puppies</a> — Desanya Studio’s first build. Desanya fully manages the website and the Google Business Profile. Puppies went from $400–$500 at the flea market to $1,500–$2,500 online. Google rating: 4.8★ from 23 reviews.'
     },
     {
       id: 'contact',

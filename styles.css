@@ -1775,6 +1775,13 @@ a:hover {
   color: var(--text);
   min-width: 4.2rem;
   line-height: 1.1;
+  flex: 0 0 auto;
+}
+
+.proof-stats dt.proof-stat-range {
+  font-size: 1.15rem;
+  min-width: 8.2rem;
+  letter-spacing: -0.03em;
 }
 
 .proof-stats dd {
@@ -2076,11 +2083,38 @@ a:hover {
 }
 
 .case-subhead {
-  margin: 0.4rem 0 0;
+  margin: 0;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--text);
+}
+
+.case-story {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 0.35rem;
+}
+
+.case-story section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.case-story p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.case-price {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   color: var(--text);
 }
 
