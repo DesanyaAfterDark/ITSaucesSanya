@@ -85,12 +85,49 @@ var DESANYA_LINKS = {
     var nav = document.getElementById('siteNav');
     if (!toggle || !nav) return;
 
+    var scrollY = 0;
+    var scrollCaptured = false;
+    var mobileQuery = window.matchMedia('(max-width: 820px)');
+
+    function currentScroll() {
+      return window.scrollY || window.pageYOffset || 0;
+    }
+
+    // Capture before focus. html scroll-padding plus a sticky header makes Safari
+    // nudge the page when the toggle receives focus, which would lock the wrong offset.
+    toggle.addEventListener('pointerdown', function () {
+      if (!document.body.classList.contains('nav-open')) {
+        scrollY = currentScroll();
+        scrollCaptured = true;
+      }
+    });
+
     function setOpen(open) {
+      var mobile = mobileQuery.matches;
+      if (open && !mobile) open = false;
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       nav.classList.toggle('is-open', open);
-      document.body.classList.toggle('nav-open', open);
+      if (mobile && !open) nav.setAttribute('aria-hidden', 'true');
+      else nav.removeAttribute('aria-hidden');
+      if (open) {
+        if (!scrollCaptured) scrollY = currentScroll();
+        scrollCaptured = false;
+        document.body.style.top = '-' + scrollY + 'px';
+        document.body.classList.add('nav-open');
+      } else if (document.body.classList.contains('nav-open')) {
+        document.body.classList.remove('nav-open');
+        document.body.style.top = '';
+        // html uses scroll-behavior: smooth; an animated restore flashes the top of the page.
+        var root = document.documentElement;
+        var previous = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollY);
+        root.style.scrollBehavior = previous;
+      }
     }
+
+    if (mobileQuery.matches) nav.setAttribute('aria-hidden', 'true');
 
     toggle.addEventListener('click', function () {
       setOpen(toggle.getAttribute('aria-expanded') !== 'true');
@@ -101,11 +138,11 @@ var DESANYA_LINKS = {
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && nav.classList.contains('is-open')) {
         setOpen(false);
-        toggle.focus();
+        toggle.focus({ preventScroll: true });
       }
     });
-    window.matchMedia('(min-width: 821px)').addEventListener('change', function (mq) {
-      if (mq.matches) setOpen(false);
+    mobileQuery.addEventListener('change', function () {
+      setOpen(false);
     });
   }
 
