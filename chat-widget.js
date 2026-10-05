@@ -63,6 +63,41 @@
         'AI setup and management is for <strong>your</strong> business tools — not the chat on this site, which is still a canned FAQ. Setup is <strong>$750</strong> (chatbot or FAQ assistant, workflow automation, and staff training notes). Managing is <strong>$550/mo</strong> for ongoing tweaks. You approve before anything goes live. Details on the <a href="services.html#ai">Services page</a>.'
     },
     {
+      id: 'brand-kit',
+      label: 'Brand starter kit',
+      keywords: ['brand starter', 'brand kit', 'logo refresh', 'color palette', 'social templates'],
+      answer:
+        'The brand starter kit is <strong>$450</strong> — a logo refresh, a color palette, and social templates. Details on the <a href="services.html#build">Services page</a>.'
+    },
+    {
+      id: 'landing-page',
+      label: 'Ad landing page',
+      keywords: ['ad landing', 'landing page', 'campaign page', 'one page offer'],
+      answer:
+        'An ad landing page is <strong>$600</strong> — one focused page for a campaign or offer. You approve it before it goes live. Details on the <a href="services.html#build">Services page</a>.'
+    },
+    {
+      id: 'photo-polish',
+      label: 'Photo & gallery polish',
+      keywords: ['photo polish', 'gallery polish', 'photo cleanup', 'photo & gallery', 'breeder gallery'],
+      answer:
+        'Photo &amp; gallery polish is <strong>$300</strong> — photo cleanup and a gallery layout for a local shop or breeder site. Details on the <a href="services.html#care">Services page</a>.'
+    },
+    {
+      id: 'review-kit',
+      label: 'Review generation kit',
+      keywords: ['review kit', 'review generation', 'google review qr', 'printable card', 'ask templates'],
+      answer:
+        'The review generation kit is <strong>$200</strong> — a Google review QR code, a printable card, and email or text ask templates that use your review link. It does not invent ratings. See the <a href="services.html#grow">Services page</a> and the <a href="index.html#reviews">reviews section</a> (those cards are samples).'
+    },
+    {
+      id: 'site-training',
+      label: 'Site update training',
+      keywords: ['site update training', 'update training', 'teach me to update', 'training session', '1-hour', 'one hour'],
+      answer:
+        'Site update training is <strong>$125</strong> — a one-hour remote session teaching you to update your own site, with notes afterward. Details on the <a href="services.html#care">Services page</a>.'
+    },
+    {
       id: 'monthly-care',
       label: 'Monthly care',
       keywords: ['monthly', 'care', 'maintenance', 'updates', 'fixes', '99', 'hosting'],
@@ -88,7 +123,7 @@
       label: 'All pricing',
       keywords: ['price', 'pricing', 'cost', 'how much', 'rates', 'packages', 'services'],
       answer:
-        'Clear packages: Website <strong>$1600</strong> · Content <strong>$400</strong> · Blog writing <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) · Social setup <strong>$550</strong> · Social managing <strong>$850/mo</strong> · SEO &amp; Google setup <strong>$550</strong> · SEO &amp; Google managing <strong>$450/mo</strong> · AI setup <strong>$750</strong> · AI managing <strong>$550/mo</strong> · Monthly care <strong>$99/mo</strong>. Custom quotes when scope is bigger. Details on the <a href="services.html">Services page</a>.'
+        'Clear packages: Website <strong>$1600</strong> · Content <strong>$400</strong> · Blog writing <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) · Social setup <strong>$550</strong> · Social managing <strong>$850/mo</strong> · SEO &amp; Google setup <strong>$550</strong> · SEO &amp; Google managing <strong>$450/mo</strong> · AI setup <strong>$750</strong> · AI managing <strong>$550/mo</strong> · Brand starter kit <strong>$450</strong> · Ad landing page <strong>$600</strong> · Photo &amp; gallery polish <strong>$300</strong> · Review generation kit <strong>$200</strong> · Site update training <strong>$125</strong> · Monthly care <strong>$99/mo</strong>. Custom quotes when scope is bigger. Details on the <a href="services.html">Services page</a>.'
     }
   ];
 
