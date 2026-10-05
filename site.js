@@ -314,27 +314,36 @@ var DESANYA_LINKS = {
     var next = dialog.querySelector('[data-lb-next]');
     var index = 0;
     var opener = null;
+    var active = links;
 
     function show(i) {
-      index = (i + links.length) % links.length;
-      var a = links[index];
+      index = (i + active.length) % active.length;
+      var a = active[index];
       var thumb = a.querySelector('img');
       img.src = a.getAttribute('href');
       img.alt = thumb ? thumb.alt : '';
       cap.textContent = a.getAttribute('data-caption') || '';
     }
 
-    var single = links.length < 2;
-    prev.hidden = single;
-    next.hidden = single;
+    function openSet(a) {
+      var set = a.getAttribute('data-lb-set');
+      active = set
+        ? links.filter(function (el) { return el.getAttribute('data-lb-set') === set; })
+        : links.filter(function (el) { return !el.getAttribute('data-lb-set'); });
+      if (active.indexOf(a) === -1) active = [a];
+      var single = active.length < 2;
+      prev.hidden = single;
+      next.hidden = single;
+      opener = a;
+      show(active.indexOf(a));
+      dialog.showModal();
+      document.body.classList.add('lightbox-open');
+    }
 
-    links.forEach(function (a, i) {
+    links.forEach(function (a) {
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        opener = a;
-        show(i);
-        dialog.showModal();
-        document.body.classList.add('lightbox-open');
+        openSet(a);
       });
     });
 
@@ -345,7 +354,7 @@ var DESANYA_LINKS = {
       if (e.target === dialog || e.target.classList.contains('lightbox-inner')) dialog.close();
     });
     dialog.addEventListener('keydown', function (e) {
-      if (single) return;
+      if (active.length < 2) return;
       if (e.key === 'ArrowLeft') show(index - 1);
       if (e.key === 'ArrowRight') show(index + 1);
     });
