@@ -17,11 +17,15 @@
   <meta name="theme-color" content="#0b0b0d">
   <meta property="og:site_name" content="Desanya Studio">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://desanya.tech/assets/logo-pink.png">
+  <meta property="og:image" content="https://desanya.tech/assets/desanya-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Desanya Studio neon wordmark">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://desanya.tech/assets/logo-pink.png">
+  <meta name="twitter:image" content="https://desanya.tech/assets/desanya-og.jpg">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +38,8 @@
     "@type": "ProfessionalService",
     "name": "Desanya Studio",
     "url": "https://desanya.tech/",
-    "logo": "https://desanya.tech/assets/logo-pink.png",
-    "image": "https://desanya.tech/assets/logo-pink.png",
+    "logo": "https://desanya.tech/assets/favicon-512.png",
+    "image": "https://desanya.tech/assets/desanya-og.jpg",
     "description": "Desanya Studio builds clean websites, SEO & Google visibility, and content that converts — for tech talent and small businesses who want clarity over theater.",
     "areaServed": "Worldwide",
     "priceRange": "$$",
@@ -57,11 +61,10 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="index.html" data-nav="home" aria-current="page" aria-label="Desanya Studio — Home">
-        <img src="assets/logo-pink.png" alt="" width="160" height="123" class="brand-logo">
-        <span class="brand-text">
-          <span class="brand-name">Desanya Studio</span>
-          <span class="brand-domain">desanya.tech</span>
-        </span>
+        <picture>
+          <source srcset="assets/desanya-wordmark.webp" type="image/webp">
+          <img src="assets/desanya-wordmark.jpg" alt="" width="944" height="464" class="brand-logo">
+        </picture>
       </a>
 
       <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
@@ -121,7 +124,10 @@
     <section class="band band--about" aria-labelledby="about-heading">
       <div class="container about-grid">
         <div class="about-mark">
-          <img src="assets/logo-pink.png" alt="Desanya Studio logo" width="160" height="123" loading="lazy">
+          <picture>
+            <source srcset="assets/desanya-wordmark.webp" type="image/webp">
+            <img src="assets/desanya-wordmark.jpg" alt="Desanya Studio logo" width="944" height="464" loading="lazy">
+          </picture>
         </div>
         <div class="about-copy">
           <p class="eyebrow">Who we are</p>
@@ -362,7 +368,10 @@
     <div class="container footer-grid">
       <div class="footer-brand-col">
         <a class="footer-brand" href="index.html" aria-label="Desanya Studio — Home">
-          <img src="assets/logo-bw.png" alt="" width="72" height="56" class="footer-logo">
+          <picture>
+            <source srcset="assets/desanya-wordmark.webp" type="image/webp">
+            <img src="assets/desanya-wordmark.jpg" alt="" width="944" height="464" class="footer-logo">
+          </picture>
           <span>
             <span class="footer-name">Desanya Studio</span>
             <span class="footer-domain">desanya.tech</span>

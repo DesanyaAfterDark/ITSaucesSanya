@@ -172,11 +172,11 @@ a:hover {
 }
 
 .brand-logo {
-  width: 40px;
-  height: auto;
-  border-radius: 8px;
-  background: #fff;
+  height: 50px;
+  width: auto;
+  border-radius: 10px;
   flex-shrink: 0;
+  display: block;
 }
 
 .brand-text {
@@ -871,11 +871,11 @@ a:hover {
 }
 
 .footer-logo {
-  width: 44px;
-  height: auto;
-  border-radius: 6px;
-  background: #fff;
-  opacity: 0.9;
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: block;
 }
 
 .footer-name {
@@ -1428,6 +1428,8 @@ a:hover {
     background: var(--bg);
   }
 
+  .brand-logo { height: 40px; border-radius: 8px; }
+
   .nav-toggle {
     display: inline-flex;
     position: relative;
@@ -1696,10 +1698,9 @@ a:hover {
 }
 
 .about-mark img {
-  width: 62%;
-  border-radius: 14px;
-  background: #fff;
-  padding: 0.5rem;
+  width: 88%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .about-copy h2 {
