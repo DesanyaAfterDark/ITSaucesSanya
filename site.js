@@ -72,7 +72,7 @@
         'Email: ' + val('email') + '\n' +
         'What you need: ' + val('need') + '\n' +
         'Budget: ' + (val('budget') || 'Not specified') + '\n' +
-        'How did you find me: ' + (val('source') || 'Not specified') + '\n\n' +
+        'How did you find Desanya: ' + (val('source') || 'Not specified') + '\n\n' +
         'Message:\n' + val('message') + '\n'
       );
       window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;

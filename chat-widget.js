@@ -1,5 +1,5 @@
 /**
- * Desanya Studio — FAQ chat widget (preview stub)
+ * Desanya Studio — FAQ chat widget (stub)
  * Canned answers + lead capture via mailto / local UI note. Not live AI.
  */
 (function () {
@@ -11,7 +11,7 @@
       label: 'Website build',
       keywords: ['website', 'site', 'web', 'build', 'page', 'landing', '1600'],
       answer:
-        'Website package starts at <strong>$1600</strong> — a clean one-pager or multi-section site that looks sharp, loads fast, and is built to convert visitors into leads.'
+        'Website package is <strong>$1600</strong> — a clean one-pager or multi-section site that looks sharp, loads fast, and converts visitors into leads.'
     },
     {
       id: 'content',
@@ -25,7 +25,7 @@
       label: 'Blog writing',
       keywords: ['blog', 'blog writing', 'blog post', 'posts', 'article', 'seo-friendly', 'seo friendly', '200', '700/mo', '4 posts'],
       answer:
-        'Blog writing is <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) — I draft SEO-friendly posts for your site/business; you approve before publish.'
+        'Blog writing is <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) — SEO-friendly posts drafted for your site or business; you approve before publish.'
     },
     {
       id: 'social-setup',
@@ -173,7 +173,7 @@
         window.setTimeout(function () {
           (closeBtn || input).focus();
         }, 50);
-        announce('Chat panel opened. Preview FAQ stub.');
+        announce('Chat panel opened. FAQ stub.');
       } else {
         document.body.classList.remove('chat-open');
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
@@ -214,7 +214,7 @@
       leadWrap.hidden = false;
       botSay(
         reason ||
-          'Looks like you might be ready — drop your details and I’ll open a draft email to <strong>hello@desanya.tech</strong>. (Preview stub — nothing is stored on a server.)'
+          'Ready to talk? Share a few details and we’ll open a draft email to <strong>hello@desanya.tech</strong>. (FAQ stub — nothing stored on a server.)'
       );
       window.setTimeout(function () {
         var nameField = leadWrap.querySelector('#chatLeadName');
@@ -243,7 +243,7 @@
         }
       } else {
         botSay(
-          'I’m a preview FAQ stub (not live AI yet). Try a topic chip below, or ask about websites, content, blog writing, social, SEO, monthly care, Sherman’s portfolio, or pricing. Or tap <strong>Get a quote</strong>.'
+          'This is an FAQ stub (not live AI). Try a topic below, or ask about websites, content, blog writing, social, SEO, monthly care, Sherman’s portfolio, or pricing. Or tap <strong>Get a quote</strong>.'
         );
       }
     }
@@ -273,7 +273,7 @@
     });
 
     quoteBtn.addEventListener('click', function () {
-      showLeadForm('Great — fill this mini form and we’ll draft an email to hello@desanya.tech.');
+      showLeadForm('Fill in the form below and we’ll draft an email to hello@desanya.tech.');
     });
 
     form.addEventListener('submit', function (e) {
@@ -293,18 +293,18 @@
         'Name: ' + name + '\n' +
         'Email: ' + email + '\n' +
         'What they need: ' + need + '\n' +
-        'Source: FAQ chat widget (preview stub)\n'
+        'Source: FAQ chat widget (stub)\n'
       );
 
       leadNote.hidden = false;
       leadNote.innerHTML =
-        '<strong>Draft saved in this panel (not on a server):</strong> ' +
+        '<strong>Draft noted in this panel (not stored on a server):</strong> ' +
         name + ' · ' + email + ' · ' + need +
         '. Opening your email client… If it doesn’t open, email <a href="mailto:hello@desanya.tech">hello@desanya.tech</a> directly.';
 
       botSay(
         'Thanks, <strong>' + name.replace(/</g, '&lt;') + '</strong>! Opening a mailto draft for <strong>' +
-        need.replace(/</g, '&lt;') + '</strong>. This is a preview stub — no backend storage yet.'
+        need.replace(/</g, '&lt;') + '</strong>. FAQ stub — no backend storage yet.'
       );
 
       window.location.href = 'mailto:hello@desanya.tech?subject=' + subject + '&body=' + body;
@@ -319,7 +319,7 @@
 
     // Welcome message
     botSay(
-      'Hi — I’m the <strong>Desanya FAQ preview</strong> (canned answers, not live AI yet). Ask about services, pricing, or portfolio work, or tap a topic below.'
+      'Hi — this is the <strong>Desanya FAQ</strong> (canned answers, not live AI). Ask about services, pricing, or portfolio work, or tap a topic below.'
     );
   }
 
