@@ -8,16 +8,20 @@
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
+ *   Instagram is https://www.instagram.com/desanyaafterdark/ (@desanyaafterdark).
+ *   TikTok, Facebook, YouTube, X, and Threads stay hidden until a URL is pasted here.
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
   googleReviewUrl: '',
   social: {
-    instagram: '',
+    instagram: 'https://www.instagram.com/desanyaafterdark/',
     facebook: '',
-    linkedin: '',
+    tiktok: '',
     x: '',
-    youtube: ''
+    threads: '',
+    youtube: '',
+    linkedin: ''
   }
 };
 
@@ -33,8 +37,18 @@ var DESANYA_LINKS = {
   var SOCIAL_ICONS = [
     {
       key: 'instagram',
-      label: 'Instagram',
+      label: 'Instagram, @desanyaafterdark',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor"/></svg>'
+    },
+    {
+      key: 'tiktok',
+      label: 'TikTok',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.2 3h2.2a5.2 5.2 0 0 0 3.4 3.2v2.3a7.4 7.4 0 0 1-3.4-1v6.7a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.5a3.2 3.2 0 1 0 2.2 3.1V3z"/></svg>'
+    },
+    {
+      key: 'threads',
+      label: 'Threads',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.2 3.8c2.8 0 4.7 1.6 5 4l-1.9.3c-.2-1.4-1.4-2.2-3.1-2.2-2 0-3.3 1.3-3.3 3.2 0 .4.1.8.2 1.2-1.3.3-2.1 1.3-2.1 2.6 0 1.6 1.3 2.8 3.2 2.8 1.3 0 2.2-.5 2.7-1.5.3.1.6.1.9.1 1 0 1.8-.6 2-1.6h1.8c-.3 1.9-1.8 3.1-3.8 3.1-.5 0-.9-.1-1.3-.2-.7 1.2-2 1.9-3.6 1.9-2.5 0-4.3-1.7-4.3-4 0-1.7 1-3 2.6-3.5-.1-.4-.2-.8-.2-1.3 0-3 2.3-5.2 5.4-5.2zm.2 9c0 .8-.6 1.3-1.5 1.3s-1.5-.5-1.5-1.3.6-1.3 1.5-1.3 1.5.5 1.5 1.3z"/></svg>'
     },
     {
       key: 'facebook',
