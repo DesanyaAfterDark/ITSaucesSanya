@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Desanya Studio — Websites, SEO &amp; Content | desanya.tech</title>
-  <meta name="description" content="Desanya Studio builds clean websites, SEO &amp; Google visibility, and content that converts — for tech talent and small businesses. Published prices. Your approval first.">
+  <title>Desanya Studio — Websites, SEO &amp; Content in East Tennessee</title>
+  <meta name="description" content="Websites, SEO, and the words that make them work — for small businesses in Knoxville, Chattanooga, and across East Tennessee. Published prices.">
   <link rel="canonical" href="https://desanya.tech/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://desanya.tech/">
-  <meta property="og:title" content="Desanya Studio — Tech that ships. Content that converts.">
-  <meta property="og:description" content="Websites, SEO &amp; Google, and content that converts — for tech talent and small businesses. By Desanya Studio.">
-  <meta name="twitter:title" content="Desanya Studio — Tech that ships. Content that converts.">
-  <meta name="twitter:description" content="Websites, SEO &amp; Google, and content that converts — for tech talent and small businesses.">
+  <meta property="og:title" content="Desanya Studio — Websites, SEO &amp; Content in East Tennessee">
+  <meta property="og:description" content="Websites, SEO, and the words that make them work — for small businesses in Knoxville, Chattanooga, and across East Tennessee. Published prices.">
+  <meta name="twitter:title" content="Desanya Studio — Websites, SEO &amp; Content in East Tennessee">
+  <meta name="twitter:description" content="Websites, SEO, and the words that make them work — for small businesses in Knoxville, Chattanooga, and across East Tennessee. Published prices.">
   <!-- @partial:head-common -->
   <meta name="author" content="Desanya Studio">
   <meta name="theme-color" content="#0b0b0d">
@@ -20,7 +20,7 @@
   <meta property="og:image" content="https://desanya.tech/assets/desanya-og.jpg?v=3">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Desanya's Studio">
+  <meta property="og:image:alt" content="Desanya Studio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://desanya.tech/assets/desanya-og.jpg?v=3">
   <link rel="icon" href="assets/favicon.ico?v=3" sizes="any">
@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
   <!-- /@partial:head-common -->
   <script type="application/ld+json">
   {
@@ -43,7 +43,12 @@
     "logo": "https://desanya.tech/assets/favicon-512.png?v=3",
     "image": "https://desanya.tech/assets/desanya-og.jpg?v=3",
     "description": "Desanya Studio builds clean websites, SEO & Google visibility, and content that converts — for tech talent and small businesses who want clarity over theater.",
-    "areaServed": "Worldwide",
+    "areaServed": [
+      {"@type": "AdministrativeArea", "name": "East Tennessee"},
+      {"@type": "City", "name": "Knoxville, TN"},
+      {"@type": "City", "name": "Chattanooga, TN"}
+    ],
+    "address": {"@type": "PostalAddress", "addressRegion": "TN", "addressCountry": "US"},
     "priceRange": "$$",
     "email": "hello@desanya.tech"
   }
@@ -65,7 +70,7 @@
       <a class="brand" href="index.html" data-nav="home" aria-current="page" aria-label="Desanya Studio — Home">
         <picture>
           <source srcset="assets/desanya-wordmark.webp?v=3" type="image/webp">
-          <img src="assets/desanya-wordmark.jpg?v=3" alt="Desanya's Studio" width="964" height="490" class="brand-logo">
+          <img src="assets/desanya-wordmark.jpg?v=3" alt="Desanya Studio" width="964" height="490" class="brand-logo">
         </picture>
       </a>
 
@@ -85,7 +90,7 @@
       <li><a href="process.html" data-nav="process">Process</a></li>
       <li><a href="services.html" data-nav="services">Services</a></li>
       <li><a href="work.html" data-nav="work">Work</a></li>
-      <li class="nav-cta-item"><a href="contact.html#book" class="nav-cta">Book an intro</a></li>
+      <li class="nav-cta-item"><a href="contact.html#book" class="nav-cta">Book intro</a></li>
     </ul>
     <div class="nav-social social-block" data-social-block hidden>
       <ul class="social-links" data-social-links aria-label="Social"></ul>
@@ -102,7 +107,7 @@
           <p class="hero-sub">Websites, SEO, and content built to convert — for tech talent and small businesses who want clarity, not theater.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="services.html">View services &amp; pricing</a>
-            <a class="btn btn-secondary" href="contact.html#book">Book an intro</a>
+            <a class="btn btn-secondary" href="contact.html#book">Book intro</a>
           </div>
           <ul class="trust-list" aria-label="Why clients trust Desanya Studio">
             <li><span class="trust-check" aria-hidden="true">✓</span> Published prices — no guesswork</li>
@@ -141,6 +146,13 @@
       </div>
     </section>
 
+    <section class="band band--service-area" aria-labelledby="service-area-heading">
+      <div class="container service-area">
+        <p class="eyebrow">Serving East Tennessee</p>
+        <p id="service-area-heading"><strong>Based in East Tennessee.</strong> Desanya Studio works with small businesses from Knoxville to Chattanooga and the towns in between — and with tech talent anywhere. Intro calls are remote or local, whichever is easier for you.</p>
+      </div>
+    </section>
+
     <section class="band band--proof" aria-labelledby="proof-heading">
       <div class="container">
         <article class="proof-card">
@@ -159,7 +171,7 @@
           <dl class="proof-stats">
             <div><dt>4.8★</dt><dd>23 Google reviews</dd></div>
             <div><dt class="proof-stat-range">$1,500–$2,500</dt><dd>a puppy, up from $400–$500</dd></div>
-            <div><dt>2,186</dt><dd>Google profile interactions in six months</dd></div>
+            <div><dt>2,186</dt><dd>Google Business Profile interactions (calls, messages, directions and website clicks) from May through October 2026</dd></div>
           </dl>
         </article>
       </div>
@@ -250,53 +262,7 @@
         <header class="section-header section-header--center">
           <p class="eyebrow">Client notes</p>
           <h2 id="reviews-heading">What clients can say here</h2>
-          <p class="section-lede">The cards below are labeled samples so the layout is ready. They are not Google reviews and not a Desanya Studio rating. The 4.8★ from 23 reviews belongs to Sherman’s Shih Tzu Puppies on Google, not to this studio.</p>
         </header>
-
-        <ul class="review-grid">
-          <li class="review-card">
-            <p class="review-sample">Sample</p>
-            <p class="review-stars" aria-label="Sample layout, 5 stars"><span aria-hidden="true">★★★★★</span></p>
-            <blockquote>
-              <p>Clear scope, drafts I could actually review, and nothing went live until I said yes.</p>
-            </blockquote>
-            <div class="review-byline">
-              <span class="review-avatar" aria-hidden="true">A</span>
-              <span>
-                <span class="review-name">A.M.</span>
-                <span class="review-role">Sample placeholder</span>
-              </span>
-            </div>
-          </li>
-          <li class="review-card">
-            <p class="review-sample">Sample</p>
-            <p class="review-stars" aria-label="Sample layout, 5 stars"><span aria-hidden="true">★★★★★</span></p>
-            <blockquote>
-              <p>The writing and the website felt like one piece of work — not a template with my name dropped in.</p>
-            </blockquote>
-            <div class="review-byline">
-              <span class="review-avatar" aria-hidden="true">J</span>
-              <span>
-                <span class="review-name">J.P.</span>
-                <span class="review-role">Sample placeholder</span>
-              </span>
-            </div>
-          </li>
-          <li class="review-card">
-            <p class="review-sample">Sample</p>
-            <p class="review-stars" aria-label="Sample layout, 5 stars"><span aria-hidden="true">★★★★★</span></p>
-            <blockquote>
-              <p>Straight answers on price, a calm process, and a page I can send to customers without explaining it first.</p>
-            </blockquote>
-            <div class="review-byline">
-              <span class="review-avatar" aria-hidden="true">S</span>
-              <span>
-                <span class="review-name">S.R.</span>
-                <span class="review-role">Sample placeholder</span>
-              </span>
-            </div>
-          </li>
-        </ul>
 
         <div class="review-leave" id="share-experience">
           <div class="review-leave-copy">
@@ -390,6 +356,7 @@
         <p class="footer-heading">Pages</p>
         <ul class="footer-links">
           <li><a href="index.html" data-nav="home" aria-current="page">Home</a></li>
+          <li><a href="blog/" data-nav="blog">Blog</a></li>
           <li><a href="contact.html" data-nav="contact">Contact</a></li>
           <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
           <li><a href="process.html" data-nav="process">Process</a></li>
@@ -402,7 +369,7 @@
         <p class="footer-heading">Get in touch</p>
         <ul class="footer-links">
           <li><a href="mailto:hello@desanya.tech">hello@desanya.tech</a></li>
-          <li><a href="contact.html#book">Book an intro chat</a></li>
+          <li><a href="contact.html#book">Book intro</a></li>
           <li><a href="index.html#share-experience">Leave a review</a></li>
         </ul>
       </div>
@@ -520,7 +487,7 @@
     </div>
   </div>
 
-  <script src="chat-widget.js" defer></script>
+  <script src="chat-widget.js?v=4" defer></script>
   <script src="site.js" defer></script>
   <!-- /@partial:chat -->
 </body>

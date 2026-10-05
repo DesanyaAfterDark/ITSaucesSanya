@@ -13,34 +13,48 @@ import pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PARTIALS = ROOT / "partials"
+# page path → (nav key, absolutize partial URLs for nested or unknown depths)
 PAGES = {
-    "index.html": "home",
-    "work.html": "work",
-    "gallery.html": "gallery",
-    "services.html": "services",
-    "process.html": "process",
-    "contact.html": "contact",
+    "index.html": ("home", False),
+    "work.html": ("work", False),
+    "gallery.html": ("gallery", False),
+    "services.html": ("services", False),
+    "process.html": ("process", False),
+    "contact.html": ("contact", False),
+    "blog/index.html": ("blog", True),
+    "404.html": ("", True),
 }
 MARK = re.compile(r"(<!-- @partial:(?P<name>[\w-]+) -->)(.*?)(<!-- /@partial:(?P=name) -->)", re.S)
+ATTR = re.compile(r'(\s(?:href|src|srcset)=)(["\'])([^"\']*)\2')
 
-def render(name, page_key):
+def absolutize(html):
+    def repl(match):
+        prefix, quote, url = match.group(1), match.group(2), match.group(3)
+        if not url or url.startswith(("/", "#", "mailto:", "tel:", "http://", "https://", "data:")):
+            return match.group(0)
+        return f"{prefix}{quote}/{url}{quote}"
+    return ATTR.sub(repl, html)
+
+def render(name, page_key, absolute):
     html = (PARTIALS / f"{name}.html").read_text()
-    # active nav state (static, so it works without JS)
-    html = re.sub(
-        rf'(<a [^>]*data-nav="{page_key}")',
-        r'\1 aria-current="page"',
-        html,
-    )
+    if page_key:
+        html = re.sub(
+            rf'(<a [^>]*data-nav="{page_key}")',
+            r'\1 aria-current="page"',
+            html,
+        )
+    if absolute:
+        html = absolutize(html)
     return html
 
 changed = 0
-for page, key in PAGES.items():
+for page, (key, absolute) in PAGES.items():
     path = ROOT / page
     if not path.exists():
         print(f"skip (missing): {page}")
         continue
     src = path.read_text()
-    out = MARK.sub(lambda m: m.group(1) + "\n" + render(m.group("name"), key).rstrip() + "\n  " + m.group(4), src)
+    out = MARK.sub(lambda m, key=key, absolute=absolute: m.group(1) + "\n" + render(m.group("name"), key, absolute).rstrip() + "\n  " + m.group(4), src)
     if out != src:
         path.write_text(out)
         changed += 1
