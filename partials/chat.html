@@ -1,0 +1,99 @@
+  <!-- FAQ chat widget (preview stub — not live AI) -->
+  <div id="desanya-chat" class="desanya-chat" data-chat-root>
+    <p class="visually-hidden" data-chat-live aria-live="polite" aria-atomic="true"></p>
+
+    <button
+      type="button"
+      class="chat-launcher"
+      data-chat-launcher
+      aria-expanded="false"
+      aria-controls="desanyaChatPanel"
+      aria-haspopup="dialog"
+    >
+      <span class="chat-launcher-icon" aria-hidden="true">💬</span>
+      <span class="chat-launcher-label">Chat with Desanya</span>
+    </button>
+
+    <div
+      id="desanyaChatPanel"
+      class="chat-panel"
+      data-chat-panel
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="desanyaChatTitle"
+      aria-describedby="desanyaChatStub"
+      aria-hidden="true"
+    >
+      <header class="chat-panel-header">
+        <div class="chat-panel-heading">
+          <h2 id="desanyaChatTitle" class="chat-panel-title">Chat with Desanya</h2>
+          <p id="desanyaChatStub" class="chat-stub-badge">
+            <span class="chat-stub-dot" aria-hidden="true"></span>
+            Preview stub · not live AI yet
+          </p>
+        </div>
+        <button type="button" class="chat-close" data-chat-close aria-label="Close chat">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+
+      <div class="chat-panel-body">
+      <div class="chat-messages" data-chat-messages tabindex="0" aria-label="Chat messages"></div>
+
+      <div class="chat-chips-wrap">
+        <p class="chat-chips-label" id="chatChipsLabel">Quick topics</p>
+        <div class="chat-chips" data-chat-chips role="group" aria-labelledby="chatChipsLabel"></div>
+      </div>
+
+      <div class="chat-lead" data-chat-lead hidden>
+        <h3 class="chat-lead-title">Get a quote</h3>
+        <p class="chat-lead-lede">Name, email, and what you need — opens mailto to hello@desanya.tech (or stays as a note here). No server storage yet.</p>
+        <form class="chat-lead-form" data-chat-lead-form>
+          <div class="chat-lead-field">
+            <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="chatLeadName" name="name" required autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="chat-lead-field">
+            <label for="chatLeadEmail">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="chatLeadEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="chat-lead-field">
+            <label for="chatLeadNeed">What you need <span class="req" aria-hidden="true">*</span></label>
+            <select id="chatLeadNeed" name="need" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Website">Website ($1600)</option>
+              <option value="Content">Content ($400)</option>
+              <option value="Blog writing">Blog writing ($200/post or $700/mo)</option>
+              <option value="Social setup">Social setup ($550)</option>
+              <option value="Social managing">Social managing ($850/mo)</option>
+              <option value="SEO & Google setup">SEO &amp; Google setup ($550)</option>
+              <option value="SEO & Google managing">SEO &amp; Google managing ($450/mo)</option>
+              <option value="Monthly care">Monthly care ($99/mo)</option>
+              <option value="Custom / other">Custom / other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send via email</button>
+        </form>
+        <p class="chat-lead-note" data-chat-lead-note hidden></p>
+      </div>
+      </div><!-- /.chat-panel-body -->
+
+      <form class="chat-input-form" data-chat-input-form>
+        <label class="visually-hidden" for="chatInput">Ask a question</label>
+        <input
+          type="text"
+          id="chatInput"
+          class="chat-input"
+          data-chat-input
+          placeholder="Ask about pricing, services, portfolio…"
+          autocomplete="off"
+          maxlength="400"
+        >
+        <button type="submit" class="chat-send" aria-label="Send message">Send</button>
+        <button type="button" class="btn btn-secondary btn-small chat-quote-btn" data-chat-quote>Get a quote</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="chat-widget.js" defer></script>
+  <script src="site.js" defer></script>
