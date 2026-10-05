@@ -1390,7 +1390,7 @@ a:hover {
   background: var(--accent);
 }
 
-.site-nav .nav-home-item {
+.nav-social {
   display: none;
 }
 
@@ -1464,17 +1464,23 @@ a:hover {
     pointer-events: auto;
   }
 
-  .site-nav ul {
+  .site-nav > ul {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
   }
 
-  .site-nav .nav-home-item {
+  .site-nav .nav-social:not([hidden]) {
     display: block;
+    margin-top: 1.35rem;
   }
 
-  .site-nav li:not(.nav-cta-item) a {
+  .nav-social .social-links a {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .site-nav > ul li:not(.nav-cta-item) a {
     display: flex;
     align-items: center;
     min-height: 52px;

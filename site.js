@@ -37,37 +37,37 @@ var DESANYA_LINKS = {
   var SOCIAL_ICONS = [
     {
       key: 'instagram',
-      label: 'Instagram, @desanya_after_dark',
+      label: 'Desanya Studio on Instagram',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor"/></svg>'
     },
     {
       key: 'tiktok',
-      label: 'TikTok',
+      label: 'Desanya Studio on TikTok',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.2 3h2.2a5.2 5.2 0 0 0 3.4 3.2v2.3a7.4 7.4 0 0 1-3.4-1v6.7a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.5a3.2 3.2 0 1 0 2.2 3.1V3z"/></svg>'
     },
     {
       key: 'threads',
-      label: 'Threads',
+      label: 'Desanya Studio on Threads',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.2 3.8c2.8 0 4.7 1.6 5 4l-1.9.3c-.2-1.4-1.4-2.2-3.1-2.2-2 0-3.3 1.3-3.3 3.2 0 .4.1.8.2 1.2-1.3.3-2.1 1.3-2.1 2.6 0 1.6 1.3 2.8 3.2 2.8 1.3 0 2.2-.5 2.7-1.5.3.1.6.1.9.1 1 0 1.8-.6 2-1.6h1.8c-.3 1.9-1.8 3.1-3.8 3.1-.5 0-.9-.1-1.3-.2-.7 1.2-2 1.9-3.6 1.9-2.5 0-4.3-1.7-4.3-4 0-1.7 1-3 2.6-3.5-.1-.4-.2-.8-.2-1.3 0-3 2.3-5.2 5.4-5.2zm.2 9c0 .8-.6 1.3-1.5 1.3s-1.5-.5-1.5-1.3.6-1.3 1.5-1.3 1.5.5 1.5 1.3z"/></svg>'
     },
     {
       key: 'facebook',
-      label: 'Facebook',
+      label: 'Desanya Studio on Facebook',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.2 8.4V6.9c0-.7.2-1.1 1.2-1.1H16.6V3.4h-1.8C12.4 3.4 11.3 4.6 11.3 6.6v1.8H9.5v2.4h1.8V20.6h2.9v-9.8h2l.3-2.4h-2.3z"/></svg>'
     },
     {
       key: 'linkedin',
-      label: 'LinkedIn',
+      label: 'Desanya Studio on LinkedIn',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.4 9.1H4v10.4h2.4V9.1zM5.2 4.2c-.9 0-1.5.6-1.5 1.4s.6 1.4 1.5 1.4 1.5-.6 1.5-1.4-.6-1.4-1.5-1.4zM20 19.5h-2.4v-5.4c0-1.4-.5-2.3-1.7-2.3-.9 0-1.5.6-1.7 1.2-.1.2-.1.5-.1.8v5.7H11.7V9.1h2.3v1.4c.4-.7 1.2-1.7 2.9-1.7 2.1 0 3.1 1.4 3.1 4.1v6.6z"/></svg>'
     },
     {
       key: 'x',
-      label: 'X',
+      label: 'Desanya Studio on X',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.6 10.4 21 3.2h-1.5l-5.6 6.2L9.4 3.2H3.8l6.7 9.7-6.7 7.9h1.5l5.9-6.9 4.7 6.9h5.6l-7-10.4zm-2.1 2.3-.7-1L6.4 4.6h2.3l4.4 6.2.7 1 5.8 8.1h-2.3l-4.8-6.2z"/></svg>'
     },
     {
       key: 'youtube',
-      label: 'YouTube',
+      label: 'Desanya Studio on YouTube',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22.5 12.2s0-3-.4-4.3c-.2-.8-.9-1.5-1.7-1.7C18.9 5.8 12 5.8 12 5.8s-6.9 0-8.4.4c-.8.2-1.5.9-1.7 1.7C1.5 9.2 1.5 12.2 1.5 12.2s0 3 .4 4.3c.2.8.9 1.5 1.7 1.7 1.5.4 8.4.4 8.4.4s6.9 0 8.4-.4c.8-.2 1.5-.9 1.7-1.7.4-1.3.4-4.3.4-4.3zM9.9 15.3V9.1l5.8 3.1-5.8 3.1z"/></svg>'
     }
   ];
