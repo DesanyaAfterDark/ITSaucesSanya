@@ -1,0 +1,43 @@
+name: Enable GitHub Pages
+
+# One-time setup: publish the static site from the default branch root.
+# Does not set a custom domain and does not change repository visibility.
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/enable-pages.yml
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Pages from the default branch root
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 -c 'open("/tmp/pages-create.json","w").write("{\"build_type\":\"legacy\",\"source\":{\"branch\":\"master\",\"path\":\"/\"}}\n")'
+          API="repos/${GITHUB_REPOSITORY}/pages"
+          set +e
+          gh api --method POST "$API" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            --input /tmp/pages-create.json > /tmp/pages-create-out.json
+          STATUS=$?
+          set -e
+          echo "create status: $STATUS"
+          cat /tmp/pages-create-out.json || true
+          gh api "$API" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" > /tmp/pages.json
+          python3 -c 'import json,sys; data=json.load(open("/tmp/pages.json")); print(json.dumps(data, indent=2)); source=data.get("source") or {}; errors=[]; errors.append("build_type") if data.get("build_type")!="legacy" else None; errors.append("branch") if source.get("branch")!="master" else None; errors.append("path") if source.get("path")!="/" else None; errors.append("cname") if data.get("cname") else None; errors.append("private") if data.get("public") is False else None; print("FAILED", errors) or sys.exit(1) if errors else print("OK", data.get("html_url"))'
+          echo "Requesting a Pages build from the latest default-branch revision..."
+          gh api --method POST "${API}/builds" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" || true
