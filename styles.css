@@ -417,6 +417,7 @@ a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 0;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -2115,6 +2116,11 @@ a:hover {
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.2;
+  color: var(--text);
+}
+
+.case-close {
+  margin: 0.4rem 0 0;
   color: var(--text);
 }
 
