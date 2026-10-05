@@ -56,6 +56,13 @@
         'SEO &amp; Google managing is <strong>$450/mo</strong> — ongoing Google and SEO tweaks: listing updates, search visibility checks, and light optimizations so you stay findable.'
     },
     {
+      id: 'ai-setup',
+      label: 'AI setup',
+      keywords: ['ai setup', 'ai managing', 'ai for business', 'artificial intelligence', 'chatbot', 'workflow automation', 'automation setup', 'staff training'],
+      answer:
+        'AI setup and management is for <strong>your</strong> business tools — not the chat on this site, which is still a canned FAQ. Setup is <strong>$750</strong> (chatbot or FAQ assistant, workflow automation, and staff training notes). Managing is <strong>$550/mo</strong> for ongoing tweaks. You approve before anything goes live. Details on the <a href="services.html#ai">Services page</a>.'
+    },
+    {
       id: 'monthly-care',
       label: 'Monthly care',
       keywords: ['monthly', 'care', 'maintenance', 'updates', 'fixes', '99', 'hosting'],
@@ -81,7 +88,7 @@
       label: 'All pricing',
       keywords: ['price', 'pricing', 'cost', 'how much', 'rates', 'packages', 'services'],
       answer:
-        'Clear packages: Website <strong>$1600</strong> · Content <strong>$400</strong> · Blog writing <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) · Social setup <strong>$550</strong> · Social managing <strong>$850/mo</strong> · SEO &amp; Google setup <strong>$550</strong> · SEO &amp; Google managing <strong>$450/mo</strong> · Monthly care <strong>$99/mo</strong>. Custom quotes when scope is bigger. Details on the <a href="services.html">Services page</a>.'
+        'Clear packages: Website <strong>$1600</strong> · Content <strong>$400</strong> · Blog writing <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) · Social setup <strong>$550</strong> · Social managing <strong>$850/mo</strong> · SEO &amp; Google setup <strong>$550</strong> · SEO &amp; Google managing <strong>$450/mo</strong> · AI setup <strong>$750</strong> · AI managing <strong>$550/mo</strong> · Monthly care <strong>$99/mo</strong>. Custom quotes when scope is bigger. Details on the <a href="services.html">Services page</a>.'
     }
   ];
 
@@ -243,7 +250,7 @@
         }
       } else {
         botSay(
-          'This is an FAQ stub (not live AI). Try a topic below, or ask about websites, content, blog writing, social, SEO, monthly care, Sherman’s portfolio, or pricing. Or tap <strong>Get a quote</strong>.'
+          'This is an FAQ stub (not live AI). Try a topic below, or ask about websites, content, blog writing, social, SEO, AI setup for your business, monthly care, Sherman’s portfolio, or pricing. Or tap <strong>Get a quote</strong>.'
         );
       }
     }

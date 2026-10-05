@@ -8,14 +8,14 @@
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
- *   Instagram is https://www.instagram.com/desanyaafterdark/ (@desanyaafterdark).
+ *   Instagram is https://www.instagram.com/desanya_after_dark/ (@desanya_after_dark).
  *   TikTok, Facebook, YouTube, X, and Threads stay hidden until a URL is pasted here.
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
   googleReviewUrl: '',
   social: {
-    instagram: 'https://www.instagram.com/desanyaafterdark/',
+    instagram: 'https://www.instagram.com/desanya_after_dark/',
     facebook: '',
     tiktok: '',
     x: '',
@@ -37,7 +37,7 @@ var DESANYA_LINKS = {
   var SOCIAL_ICONS = [
     {
       key: 'instagram',
-      label: 'Instagram, @desanyaafterdark',
+      label: 'Instagram, @desanya_after_dark',
       svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor"/></svg>'
     },
     {

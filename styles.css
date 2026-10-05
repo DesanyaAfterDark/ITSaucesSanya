@@ -1747,7 +1747,7 @@ a:hover {
 /* ---------- Paths (landing service teaser) ---------- */
 .path-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.1rem;
 }
 
@@ -2349,6 +2349,8 @@ body.lightbox-open { overflow: hidden; }
 }
 
 .price-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+.price-card--span { grid-column: 1 / -1; }
 
 .price-card {
   position: relative;
@@ -3219,6 +3221,7 @@ a[data-google-review-link][hidden],
   .steps { grid-template-columns: repeat(2, 1fr); }
   .work-grid--3 { grid-template-columns: repeat(2, 1fr); }
   .price-grid { grid-template-columns: repeat(2, 1fr); }
+  .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .price-card--featured { grid-column: 1 / -1; }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-side { position: static; }
