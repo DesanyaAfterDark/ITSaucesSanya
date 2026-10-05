@@ -1,11 +1,69 @@
 /**
+ * Desanya Studio — link config (the only place to edit these URLs)
+ *
+ * TODO: googleReviewUrl
+ *   Paste the Google Business Profile “Ask for reviews” link, for example
+ *   https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+ *   Leave '' until that link exists. The button stays in a “coming soon” state.
+ *
+ * TODO: social
+ *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
+ *   Do not paste search-result pages or placeholder profiles.
+ */
+var DESANYA_LINKS = {
+  googleReviewUrl: '',
+  social: {
+    instagram: '',
+    facebook: '',
+    linkedin: '',
+    x: '',
+    youtube: ''
+  }
+};
+
+/**
  * Desanya Studio — shared site behavior (all pages)
- * Mobile nav · footer year · contact + booking mailto · gallery lightbox
+ * Mobile nav · footer year · contact + booking mailto · reviews · social · gallery lightbox
  */
 (function () {
   'use strict';
 
   var MAILTO = 'hello@desanya.tech';
+
+  var SOCIAL_ICONS = [
+    {
+      key: 'instagram',
+      label: 'Instagram',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor"/></svg>'
+    },
+    {
+      key: 'facebook',
+      label: 'Facebook',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.2 8.4V6.9c0-.7.2-1.1 1.2-1.1H16.6V3.4h-1.8C12.4 3.4 11.3 4.6 11.3 6.6v1.8H9.5v2.4h1.8V20.6h2.9v-9.8h2l.3-2.4h-2.3z"/></svg>'
+    },
+    {
+      key: 'linkedin',
+      label: 'LinkedIn',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.4 9.1H4v10.4h2.4V9.1zM5.2 4.2c-.9 0-1.5.6-1.5 1.4s.6 1.4 1.5 1.4 1.5-.6 1.5-1.4-.6-1.4-1.5-1.4zM20 19.5h-2.4v-5.4c0-1.4-.5-2.3-1.7-2.3-.9 0-1.5.6-1.7 1.2-.1.2-.1.5-.1.8v5.7H11.7V9.1h2.3v1.4c.4-.7 1.2-1.7 2.9-1.7 2.1 0 3.1 1.4 3.1 4.1v6.6z"/></svg>'
+    },
+    {
+      key: 'x',
+      label: 'X',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.6 10.4 21 3.2h-1.5l-5.6 6.2L9.4 3.2H3.8l6.7 9.7-6.7 7.9h1.5l5.9-6.9 4.7 6.9h5.6l-7-10.4zm-2.1 2.3-.7-1L6.4 4.6h2.3l4.4 6.2.7 1 5.8 8.1h-2.3l-4.8-6.2z"/></svg>'
+    },
+    {
+      key: 'youtube',
+      label: 'YouTube',
+      svg: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22.5 12.2s0-3-.4-4.3c-.2-.8-.9-1.5-1.7-1.7C18.9 5.8 12 5.8 12 5.8s-6.9 0-8.4.4c-.8.2-1.5.9-1.7 1.7C1.5 9.2 1.5 12.2 1.5 12.2s0 3 .4 4.3c.2.8.9 1.5 1.7 1.7 1.5.4 8.4.4 8.4.4s6.9 0 8.4-.4c.8-.2 1.5-.9 1.7-1.7.4-1.3.4-4.3.4-4.3zM9.9 15.3V9.1l5.8 3.1-5.8 3.1z"/></svg>'
+    }
+  ];
+
+  function configuredUrl(value) {
+    var url = String(value || '').trim();
+    if (!url || url === '#') return '';
+    if (!/^https?:\/\//i.test(url)) return '';
+    return url;
+  }
 
   /* ---------- Mobile nav ---------- */
   function initNav() {
@@ -109,6 +167,90 @@
     });
   }
 
+  /* ---------- Google review link + on-site review mailto ---------- */
+  function initReviews() {
+    var reviewUrl = configuredUrl(DESANYA_LINKS.googleReviewUrl);
+    document.querySelectorAll('[data-google-review]').forEach(function (block) {
+      var link = block.querySelector('[data-google-review-link]');
+      var pending = block.querySelector('[data-google-review-pending]');
+      if (reviewUrl && link) {
+        link.href = reviewUrl;
+        link.hidden = false;
+        if (pending) pending.hidden = true;
+      } else if (link) {
+        link.hidden = true;
+        link.removeAttribute('href');
+        if (pending) pending.hidden = false;
+      }
+    });
+
+    document.querySelectorAll('[data-review-form]').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        var name = String(data.get('name') || '').trim();
+        var email = String(data.get('email') || '').trim();
+        var website = String(data.get('website') || '').trim();
+        var stars = String(data.get('stars') || '').trim();
+        var review = String(data.get('review') || '').trim();
+        var subject = encodeURIComponent('Desanya Studio review to approve — ' + stars + ' stars — ' + name);
+        var body = encodeURIComponent(
+          'For approval only — do not publish until Desanya Studio reviews it.\n' +
+          'This note is not posted to the public site or to Google automatically.\n\n' +
+          'Name: ' + name + '\n' +
+          'Email: ' + (email || 'Not provided') + '\n' +
+          'Website: ' + (website || 'Not provided') + '\n' +
+          'Stars: ' + stars + ' / 5\n\n' +
+          'Review:\n' + review + '\n'
+        );
+        window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
+      });
+    });
+  }
+
+  /* ---------- Social icons (only platforms with a real URL) ---------- */
+  function initSocial() {
+    var items = SOCIAL_ICONS.filter(function (item) {
+      return configuredUrl(DESANYA_LINKS.social && DESANYA_LINKS.social[item.key]);
+    });
+
+    document.querySelectorAll('[data-social-block]').forEach(function (block) {
+      var list = block.querySelector('[data-social-links]');
+      if (!list) return;
+      list.replaceChildren();
+      if (!items.length) {
+        block.hidden = true;
+        return;
+      }
+      items.forEach(function (item) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        var url = configuredUrl(DESANYA_LINKS.social[item.key]);
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.setAttribute('aria-label', item.label + ' (opens in a new tab)');
+        a.innerHTML = item.svg;
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      block.hidden = false;
+    });
+
+    var note = document.querySelector('[data-linkedin-note]');
+    var noteLink = note && note.querySelector('[data-linkedin-link]');
+    var linkedin = configuredUrl(DESANYA_LINKS.social && DESANYA_LINKS.social.linkedin);
+    if (note && noteLink) {
+      if (linkedin) {
+        noteLink.href = linkedin;
+        note.hidden = false;
+      } else {
+        note.hidden = true;
+        noteLink.removeAttribute('href');
+      }
+    }
+  }
+
   /* ---------- Gallery lightbox ---------- */
   function initLightbox() {
     var dialog = document.getElementById('lightbox');
@@ -167,6 +309,8 @@
     initYear();
     initContact();
     initBooking();
+    initReviews();
+    initSocial();
     initLightbox();
   }
 
