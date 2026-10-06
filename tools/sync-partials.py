@@ -27,6 +27,7 @@ PAGES = {
     "blog/seo-basics-east-tennessee/index.html": ("blog", True),
     "blog/writing-website-copy-that-converts/index.html": ("blog", True),
     "404.html": ("", True),
+    "thanks/index.html": ("", True),
 }
 MARK = re.compile(r"(<!-- @partial:(?P<name>[\w-]+) -->)(.*?)(<!-- /@partial:(?P=name) -->)", re.S)
 ATTR = re.compile(r'(\s(?:href|src|srcset)=)(["\'])([^"\']*)\2')

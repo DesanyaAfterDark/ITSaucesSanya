@@ -47,8 +47,14 @@
 
       <div class="chat-lead" data-chat-lead hidden>
         <h3 class="chat-lead-title">Get a quote</h3>
-        <p class="chat-lead-lede">Share your name, email, and what you need. Opens a mailto to hello@desanya.tech — nothing stored on a server yet.</p>
-        <form class="chat-lead-form" data-chat-lead-form>
+        <p class="chat-lead-lede">Share your name, email, and what you need. Desanya Studio replies by email — nothing is stored on this site.</p>
+        <form class="chat-lead-form" data-chat-lead-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New quote request — desanya.tech">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="chatLeadName" name="name" required autocomplete="name" placeholder="Your name">
@@ -79,7 +85,7 @@
               <option value="Custom / other">Custom / other</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send via email</button>
+          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send quote request</button>
         </form>
         <p class="chat-lead-note" data-chat-lead-note hidden></p>
       </div>
@@ -102,5 +108,5 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=5" defer></script>
-  <script src="site.js?v=5" defer></script>
+  <script src="chat-widget.js?v=6" defer></script>
+  <script src="site.js?v=6" defer></script>

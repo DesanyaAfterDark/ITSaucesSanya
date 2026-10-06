@@ -27,12 +27,10 @@ var DESANYA_LINKS = {
 
 /**
  * Desanya Studio — shared site behavior (all pages)
- * Mobile nav · footer year · contact + booking mailto · reviews · social · gallery lightbox
+ * Mobile nav · footer year · order prefill · reviews · social · gallery lightbox
  */
 (function () {
   'use strict';
-
-  var MAILTO = 'hello@desanya.tech';
 
   var SOCIAL_ICONS = [
     {
@@ -158,34 +156,45 @@ var DESANYA_LINKS = {
     return el ? el.value.trim() : '';
   }
 
-  /* ---------- Contact form (mailto; no fake server success) ---------- */
+  /* ---------- Contact + order forms (FormSubmit) ---------- */
   function initContact() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
+    var params = new URLSearchParams(window.location.search);
 
-    // Prefill "What you need" from services.html links: contact.html?need=Website
-    var need = new URLSearchParams(window.location.search).get('need');
-    var select = document.getElementById('need');
-    if (need && select) {
-      Array.prototype.forEach.call(select.options, function (opt) {
-        if (opt.value === need) select.value = need;
+    var form = document.getElementById('contactForm');
+    var need = params.get('need');
+    var needSelect = document.getElementById('need');
+    if (form && need && needSelect) {
+      Array.prototype.forEach.call(needSelect.options, function (opt) {
+        if (opt.value === need) needSelect.value = need;
+      });
+    }
+    if (form) {
+      form.addEventListener('submit', function () {
+        var subject = form.querySelector('[name="_subject"]');
+        var chosen = val('need');
+        if (subject && chosen) subject.value = 'New project inquiry: ' + chosen + ' — desanya.tech';
       });
     }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = val('name');
-      var subject = encodeURIComponent('Desanya Studio inquiry — ' + val('need') + ' — ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + val('email') + '\n' +
-        'What you need: ' + val('need') + '\n' +
-        'Budget: ' + (val('budget') || 'Not specified') + '\n' +
-        'How did you find Desanya: ' + (val('source') || 'Not specified') + '\n\n' +
-        'Message:\n' + val('message') + '\n'
-      );
-      window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
-    });
+    var orderForm = document.getElementById('orderForm');
+    var orderSelect = document.getElementById('orderService');
+    if (!orderForm || !orderSelect) return;
+
+    function orderSubject() {
+      var subject = orderForm.querySelector('[data-order-subject]');
+      var chosen = orderSelect.value;
+      if (subject) subject.value = 'New ORDER: ' + (chosen || 'service') + ' — desanya.tech';
+    }
+
+    var slug = params.get('service');
+    if (slug) {
+      Array.prototype.forEach.call(orderSelect.options, function (opt) {
+        if (opt.getAttribute('data-slug') === slug) orderSelect.value = opt.value;
+      });
+    }
+    orderSelect.addEventListener('change', orderSubject);
+    orderForm.addEventListener('submit', orderSubject);
+    orderSubject();
   }
 
   /* ---------- Booking ---------- */
@@ -201,24 +210,9 @@ var DESANYA_LINKS = {
       link.hidden = false;
     }
 
-    var form = card.querySelector('[data-booking-form]');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var slot = form.querySelector('input[name="slot"]:checked');
-      var name = val('bookName');
-      var subject = encodeURIComponent('Intro chat request — ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + val('bookEmail') + '\n' +
-        'Best time: ' + (slot ? slot.value : 'Not specified') + '\n' +
-        'Specific days/times: ' + (val('bookNote') || 'Flexible') + '\n'
-      );
-      window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
-    });
   }
 
-  /* ---------- Google review link + on-site review mailto ---------- */
+  /* ---------- Google review link ---------- */
   function initReviews() {
     var reviewUrl = configuredUrl(DESANYA_LINKS.googleReviewUrl);
     document.querySelectorAll('[data-google-review]').forEach(function (block) {
@@ -235,28 +229,6 @@ var DESANYA_LINKS = {
       }
     });
 
-    document.querySelectorAll('[data-review-form]').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(form);
-        var name = String(data.get('name') || '').trim();
-        var email = String(data.get('email') || '').trim();
-        var website = String(data.get('website') || '').trim();
-        var stars = String(data.get('stars') || '').trim();
-        var review = String(data.get('review') || '').trim();
-        var subject = encodeURIComponent('Desanya Studio review to approve — ' + stars + ' stars — ' + name);
-        var body = encodeURIComponent(
-          'For approval only — do not publish until Desanya Studio reviews it.\n' +
-          'This note is not posted to the public site or to Google automatically.\n\n' +
-          'Name: ' + name + '\n' +
-          'Email: ' + (email || 'Not provided') + '\n' +
-          'Website: ' + (website || 'Not provided') + '\n' +
-          'Stars: ' + stars + ' / 5\n\n' +
-          'Review:\n' + review + '\n'
-        );
-        window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
-      });
-    });
   }
 
   /* ---------- Social icons (only platforms with a real URL) ---------- */

@@ -193,7 +193,6 @@
     var input = root.querySelector('[data-chat-input]');
     var leadWrap = root.querySelector('[data-chat-lead]');
     var leadForm = root.querySelector('[data-chat-lead-form]');
-    var leadNote = root.querySelector('[data-chat-lead-note]');
     var closeBtn = root.querySelector('[data-chat-close]');
     var quoteBtn = root.querySelector('[data-chat-quote]');
     var liveRegion = root.querySelector('[data-chat-live]');
@@ -283,7 +282,7 @@
       leadWrap.hidden = false;
       botSay(
         reason ||
-          'Ready to talk? Share a few details and we’ll open a draft email to <strong>hello@desanya.tech</strong>. (FAQ stub — nothing stored on a server.)'
+          'Ready to talk? Share a few details and Desanya Studio will reply by email. Nothing is stored on this site.'
       );
       window.setTimeout(function () {
         var nameField = leadWrap.querySelector('#chatLeadName');
@@ -342,7 +341,7 @@
     });
 
     quoteBtn.addEventListener('click', function () {
-      showLeadForm('Fill in the form below and we’ll draft an email to hello@desanya.tech.');
+      showLeadForm('Fill in the form below and Desanya Studio will reply by email.');
     });
 
     form.addEventListener('submit', function (e) {
@@ -350,34 +349,10 @@
       handleQuestion(input.value);
     });
 
-    leadForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = leadForm.querySelector('#chatLeadName').value.trim();
-      var email = leadForm.querySelector('#chatLeadEmail').value.trim();
+    leadForm.addEventListener('submit', function () {
       var need = leadForm.querySelector('#chatLeadNeed').value;
-      if (!name || !email || !need) return;
-
-      var subject = encodeURIComponent('Desanya Studio chat quote — ' + need + ' — ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'What they need: ' + need + '\n' +
-        'Source: FAQ chat widget (stub)\n'
-      );
-
-      leadNote.hidden = false;
-      leadNote.innerHTML =
-        '<strong>Draft noted in this panel (not stored on a server):</strong> ' +
-        name + ' · ' + email + ' · ' + need +
-        '. Opening your email client… If it doesn’t open, email <a href="mailto:hello@desanya.tech">hello@desanya.tech</a> directly.';
-
-      botSay(
-        'Thanks, <strong>' + name.replace(/</g, '&lt;') + '</strong>! Opening a mailto draft for <strong>' +
-        need.replace(/</g, '&lt;') + '</strong>. FAQ stub — no backend storage yet.'
-      );
-
-      window.location.href = 'mailto:hello@desanya.tech?subject=' + subject + '&body=' + body;
-      announce('Lead draft prepared. Mailto opened.');
+      var subject = leadForm.querySelector('[name="_subject"]');
+      if (subject && need) subject.value = 'New quote: ' + need + ' — desanya.tech';
     });
 
     document.addEventListener('keydown', function (e) {

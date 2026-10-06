@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
   <!-- /@partial:head-common -->
   <script type="application/ld+json">
   {
@@ -185,28 +185,28 @@
           <h2 id="paths-heading">Start with what you need</h2>
         </header>
         <div class="path-grid">
-          <a class="path-card" href="services.html#build">
+          <a class="path-card" href="contact.html?service=website#order">
             <span class="path-kicker">Build</span>
             <span class="path-title">Website</span>
             <span class="path-price">$1600</span>
             <span class="path-desc">A clean, fast site built to turn visitors into leads.</span>
             <span class="path-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="path-card" href="services.html#grow">
+          <a class="path-card" href="contact.html?service=seo-setup#order">
             <span class="path-kicker">Grow</span>
             <span class="path-title">SEO &amp; Google</span>
             <span class="path-price">$550 <small>setup</small></span>
             <span class="path-desc">Business Profile, listings, and on-site SEO so customers find you.</span>
             <span class="path-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="path-card" href="services.html#build">
+          <a class="path-card" href="contact.html?service=blog#order">
             <span class="path-kicker">Say it well</span>
             <span class="path-title">Content &amp; blog</span>
             <span class="path-price">from $200</span>
             <span class="path-desc">Copy and SEO-friendly posts you approve before publish.</span>
             <span class="path-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="path-card" href="services.html#ai">
+          <a class="path-card" href="contact.html?service=ai-setup#order">
             <span class="path-kicker">Assist</span>
             <span class="path-title">AI for business</span>
             <span class="path-price">$750 <small>setup</small></span>
@@ -275,7 +275,13 @@
             </div>
           </div>
 
-          <form class="contact-form review-form" data-review-form aria-labelledby="share-heading">
+          <form class="contact-form review-form" data-review-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="share-heading">
+            <input type="hidden" name="_subject" value="New review — desanya.tech">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-field">
               <label for="reviewName">Name <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="reviewName" name="name" required autocomplete="name" placeholder="First name or initials">
@@ -311,7 +317,7 @@
             </div>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">Send for approval</button>
-              <p class="form-note">Opens an email to <strong>hello@desanya.tech</strong>. Desanya Studio approves it before anything is published. Nothing is stored on a server.</p>
+              <p class="form-note">Desanya Studio approves it before anything is published. Nothing is stored on this site.</p>
             </div>
           </form>
         </div>
@@ -394,7 +400,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <p class="footer-privacy">Privacy: this site doesn’t collect form data yet — messages go through your own email client. No tracking cookies are set by these static pages.</p>
+      <p class="footer-privacy">Privacy: forms are delivered by email through FormSubmit and nothing is stored on this site. No tracking cookies are set by these static pages.</p>
       <p class="footer-copy">&copy; <span data-year>2026</span> Desanya Studio</p>
     </div>
   </footer>
@@ -450,8 +456,14 @@
 
       <div class="chat-lead" data-chat-lead hidden>
         <h3 class="chat-lead-title">Get a quote</h3>
-        <p class="chat-lead-lede">Share your name, email, and what you need. Opens a mailto to hello@desanya.tech — nothing stored on a server yet.</p>
-        <form class="chat-lead-form" data-chat-lead-form>
+        <p class="chat-lead-lede">Share your name, email, and what you need. Desanya Studio replies by email — nothing is stored on this site.</p>
+        <form class="chat-lead-form" data-chat-lead-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New quote request — desanya.tech">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="chatLeadName" name="name" required autocomplete="name" placeholder="Your name">
@@ -482,7 +494,7 @@
               <option value="Custom / other">Custom / other</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send via email</button>
+          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send quote request</button>
         </form>
         <p class="chat-lead-note" data-chat-lead-note hidden></p>
       </div>
@@ -505,8 +517,8 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=5" defer></script>
-  <script src="site.js?v=5" defer></script>
+  <script src="chat-widget.js?v=6" defer></script>
+  <script src="site.js?v=6" defer></script>
   <!-- /@partial:chat -->
 </body>
 </html>

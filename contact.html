@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
   <!-- /@partial:head-common -->
 </head>
 <body class="page-contact">
@@ -92,8 +92,97 @@
     <section class="page-section page-section--flush-top" aria-label="Contact options">
       <div class="container contact-layout">
         <div class="contact-main">
+          <div class="order-block" id="order">
+            <h2 class="contact-col-title" id="order-heading">Order a service</h2>
+            <form class="contact-form" id="orderForm" action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="order-heading">
+              <input type="hidden" name="_subject" value="New ORDER — desanya.tech" data-order-subject>
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+              <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+              <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="orderName">Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="orderName" name="name" required autocomplete="name" placeholder="Your name">
+                </div>
+                <div class="form-field">
+                  <label for="orderEmail">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="orderEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="orderPhone">Phone</label>
+                  <input type="tel" id="orderPhone" name="Phone" autocomplete="tel" placeholder="Optional">
+                </div>
+                <div class="form-field">
+                  <label for="orderBusiness">Business name</label>
+                  <input type="text" id="orderBusiness" name="Business name" autocomplete="organization" placeholder="Optional">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="orderService">Service <span class="req" aria-hidden="true">*</span></label>
+                  <select id="orderService" name="Service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Website $1600" data-slug="website">Website $1600</option>
+                    <option value="Content $400" data-slug="content">Content $400</option>
+                    <option value="Blog $200/post or $700/mo" data-slug="blog">Blog $200/post or $700/mo</option>
+                    <option value="Social setup $550" data-slug="social-setup">Social setup $550</option>
+                    <option value="Social managing $850/mo" data-slug="social-managing">Social managing $850/mo</option>
+                    <option value="SEO &amp; Google setup $550" data-slug="seo-setup">SEO &amp; Google setup $550</option>
+                    <option value="SEO &amp; Google managing $450/mo" data-slug="seo-managing">SEO &amp; Google managing $450/mo</option>
+                    <option value="Monthly care $99/mo" data-slug="monthly-care">Monthly care $99/mo</option>
+                    <option value="AI setup $750" data-slug="ai-setup">AI setup $750</option>
+                    <option value="AI managing $550/mo" data-slug="ai-managing">AI managing $550/mo</option>
+                    <option value="Brand starter kit $450" data-slug="brand-starter-kit">Brand starter kit $450</option>
+                    <option value="Ad landing page $600" data-slug="ad-landing-page">Ad landing page $600</option>
+                    <option value="Review generation kit $200" data-slug="review-generation-kit">Review generation kit $200</option>
+                    <option value="Photo &amp; gallery polish $300" data-slug="photo-gallery-polish">Photo &amp; gallery polish $300</option>
+                    <option value="Site update training $125" data-slug="site-update-training">Site update training $125</option>
+                    <option value="Not sure yet" data-slug="not-sure">Not sure yet</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="orderContact">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
+                  <select id="orderContact" name="Preferred contact" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Either">Either</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="orderDetails">Project details <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="orderDetails" name="Project details" rows="5" required placeholder="What do you need, and when?"></textarea>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" name="Consent" value="Yes — Desanya Studio may email me about this request" required>
+                <span>Desanya Studio may email me about this request.</span>
+              </label>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send order</button>
+                <p class="form-note">No payment now. Desanya Studio confirms scope and sends an invoice before any work starts.</p>
+              </div>
+            </form>
+          </div>
+
           <h2 class="contact-col-title" id="form-heading">Project details</h2>
-          <form class="contact-form" id="contactForm" action="mailto:hello@desanya.tech" method="post" enctype="text/plain" aria-labelledby="form-heading">
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="form-heading">
+            <input type="hidden" name="_subject" value="New project inquiry — desanya.tech">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
               <div class="form-field">
                 <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
@@ -101,7 +190,7 @@
               </div>
               <div class="form-field">
                 <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="Email" required autocomplete="email" placeholder="you@example.com">
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
               </div>
             </div>
 
@@ -159,8 +248,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Open email draft</button>
-              <p class="form-note">Opens a <code>mailto:</code> draft to <strong>hello@desanya.tech</strong>. Nothing is stored on a server yet. If your email client doesn’t open, email that address directly.</p>
+              <button type="submit" class="btn btn-primary">Send project details</button>
+              <p class="form-note">Desanya Studio replies by email. Nothing is stored on this site.</p>
             </div>
           </form>
         </div>
@@ -174,14 +263,20 @@
             <!-- Shown only when data-booking-url is set (e.g. a Google Calendar appointment page) -->
             <a class="btn btn-primary booking-scheduler" data-booking-link href="#" hidden target="_blank" rel="noopener noreferrer">Pick a time on the calendar <span aria-hidden="true">↗</span></a>
 
-            <form class="booking-form" id="bookingForm" data-booking-form>
+            <form class="booking-form" id="bookingForm" data-booking-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New intro request — desanya.tech">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+              <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+              <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="form-field">
                 <label for="bookName">Name <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="bookName" required autocomplete="name" placeholder="Your name">
+                <input type="text" id="bookName" name="Name" required autocomplete="name" placeholder="Your name">
               </div>
               <div class="form-field">
                 <label for="bookEmail">Email <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="bookEmail" required autocomplete="email" placeholder="you@example.com">
+                <input type="email" id="bookEmail" name="email" required autocomplete="email" placeholder="you@example.com">
               </div>
               <fieldset class="slot-picker">
                 <legend>Best time to talk <span class="req" aria-hidden="true">*</span></legend>
@@ -194,10 +289,10 @@
               </fieldset>
               <div class="form-field">
                 <label for="bookNote">Specific days or times</label>
-                <input type="text" id="bookNote" autocomplete="off" placeholder="e.g. Tue or Thu after 2pm ET">
+                <input type="text" id="bookNote" name="Specific days or times" autocomplete="off" placeholder="e.g. Tue or Thu after 2pm ET">
               </div>
               <button type="submit" class="btn btn-primary">Request this time</button>
-              <p class="form-note">Opens an email to <strong>hello@desanya.tech</strong> with your preferred window. Desanya Studio replies to confirm.</p>
+              <p class="form-note">Desanya Studio replies to confirm a time. Nothing is stored on this site.</p>
             </form>
           </section>
 
@@ -281,7 +376,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <p class="footer-privacy">Privacy: this site doesn’t collect form data yet — messages go through your own email client. No tracking cookies are set by these static pages.</p>
+      <p class="footer-privacy">Privacy: forms are delivered by email through FormSubmit and nothing is stored on this site. No tracking cookies are set by these static pages.</p>
       <p class="footer-copy">&copy; <span data-year>2026</span> Desanya Studio</p>
     </div>
   </footer>
@@ -337,8 +432,14 @@
 
       <div class="chat-lead" data-chat-lead hidden>
         <h3 class="chat-lead-title">Get a quote</h3>
-        <p class="chat-lead-lede">Share your name, email, and what you need. Opens a mailto to hello@desanya.tech — nothing stored on a server yet.</p>
-        <form class="chat-lead-form" data-chat-lead-form>
+        <p class="chat-lead-lede">Share your name, email, and what you need. Desanya Studio replies by email — nothing is stored on this site.</p>
+        <form class="chat-lead-form" data-chat-lead-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New quote request — desanya.tech">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="chatLeadName" name="name" required autocomplete="name" placeholder="Your name">
@@ -369,7 +470,7 @@
               <option value="Custom / other">Custom / other</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send via email</button>
+          <button type="submit" class="btn btn-primary btn-small chat-lead-submit">Send quote request</button>
         </form>
         <p class="chat-lead-note" data-chat-lead-note hidden></p>
       </div>
@@ -392,8 +493,8 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=5" defer></script>
-  <script src="site.js?v=5" defer></script>
+  <script src="chat-widget.js?v=6" defer></script>
+  <script src="site.js?v=6" defer></script>
   <!-- /@partial:chat -->
 </body>
 </html>
