@@ -771,11 +771,15 @@ a:hover { color: #f7c1ea; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Six tracks so the wide mascot can sit beside one portrait (4+2)
+     and the two portraits below can share the row (3+3) with no empty cell. */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: clamp(1rem, 2.2vw, 1.5rem);
   align-items: start;
 }
-.art-card--wide { grid-column: span 2; }
+.art-grid > .art-card { grid-column: span 2; }
+.art-grid > .art-card--wide { grid-column: span 4; }
+.art-grid > .art-card:nth-child(n + 3) { grid-column: span 3; }
 
 .art-link {
   display: flex;
@@ -846,11 +850,20 @@ a:hover { color: #f7c1ea; }
 .art-link:focus-visible .art-title { color: var(--gold-soft); }
 
 @media (max-width: 760px) {
-  .art-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .art-card--wide { grid-column: 1 / -1; }
+  /* Three portraits share one row under the full-width mascot, so none sits alone. */
+  .art-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+  .art-grid > .art-card,
+  .art-grid > .art-card:nth-child(n + 3) { grid-column: auto; }
+  .art-grid > .art-card--wide { grid-column: 1 / -1; }
   .art-card--wide .art-frame { aspect-ratio: 16 / 8; }
   .art-card--square .art-frame { aspect-ratio: 4 / 5; }
-  .art-title { font-size: 0.85rem; }
+  .art-link { gap: 0.45rem; }
+  .art-frame img {
+    inset: 0.45rem;
+    max-width: calc(100% - 0.9rem);
+    max-height: calc(100% - 0.9rem);
+  }
+  .art-title { font-size: 0.75rem; line-height: 1.25; overflow-wrap: break-word; }
 }
 
 /* ---------- Motion safety ---------- */
