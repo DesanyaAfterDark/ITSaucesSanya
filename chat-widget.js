@@ -200,6 +200,31 @@
 
     var leadShown = false;
     var lastFocus = null;
+    var scrollLockY = 0;
+    var scrollLocked = false;
+    var mobileChatQuery = window.matchMedia('(max-width: 480px)');
+
+    function lockPageScroll(on) {
+      if (on) {
+        if (scrollLocked || !mobileChatQuery.matches) return;
+        scrollLockY = window.scrollY || window.pageYOffset || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        scrollLocked = true;
+        return;
+      }
+      if (!scrollLocked) return;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      scrollLocked = false;
+      window.scrollTo(0, scrollLockY);
+    }
 
     function announce(text) {
       if (liveRegion) liveRegion.textContent = text;
@@ -212,11 +237,13 @@
       if (open) {
         lastFocus = document.activeElement;
         document.body.classList.add('chat-open');
+        lockPageScroll(true);
         window.setTimeout(function () {
           (closeBtn || input).focus();
         }, 50);
         announce('Chat panel opened. FAQ stub.');
       } else {
+        lockPageScroll(false);
         document.body.classList.remove('chat-open');
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         else launcher.focus();

@@ -1037,10 +1037,17 @@ a:hover {
   overflow: hidden;
 }
 
+.chat-panel-header,
+.chat-input-form,
+.chat-chips-wrap,
+.chat-lead {
+  flex-shrink: 0;
+}
+
 .chat-panel-body {
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -1108,11 +1115,15 @@ a:hover {
 }
 
 .chat-messages {
+  flex: 1 1 auto;
+  min-height: 0;
   padding: 0.95rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  min-height: 120px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
 }
 
@@ -1212,6 +1223,13 @@ a:hover {
 
 .chat-lead[hidden] {
   display: none !important;
+}
+
+.chat-lead:not([hidden]) {
+  flex: 0 1 auto;
+  max-height: 46%;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .chat-lead-title {
@@ -1337,8 +1355,12 @@ a:hover {
   .desanya-chat {
     right: 0.85rem;
     bottom: 0.85rem;
-    left: 0.85rem;
-    align-items: stretch;
+    left: auto;
+    align-items: flex-end;
+  }
+
+  .desanya-chat.is-open {
+    z-index: 500;
   }
 
   .chat-launcher {
@@ -1363,13 +1385,72 @@ a:hover {
     border: 0;
   }
 
-  .chat-panel {
-    width: 100%;
-    max-height: min(78vh, 620px);
+  .desanya-chat.is-open .chat-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .desanya-chat.is-open .chat-panel-header,
+  .desanya-chat.is-open .chat-input-form,
+  .desanya-chat.is-open .chat-chips-wrap {
+    flex: 0 0 auto;
+  }
+
+  .desanya-chat.is-open .chat-panel-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .desanya-chat.is-open .chat-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .desanya-chat.is-open .chat-chips-wrap {
+    min-width: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 0.55rem;
+  }
+
+  .desanya-chat.is-open .chat-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.15rem;
+  }
+
+  .desanya-chat.is-open .chat-chip {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .desanya-chat.is-open .chat-lead:not([hidden]) {
+    flex: 0 1 auto;
+    max-height: 42%;
+    overflow-y: auto;
+    min-height: 0;
   }
 
   body.chat-open {
     overflow: hidden;
+    overscroll-behavior: none;
   }
 }
 
