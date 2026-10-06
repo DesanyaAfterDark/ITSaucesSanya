@@ -2,39 +2,39 @@
    Premium studio: calm whitespace, restrained type, refined magenta */
 
 :root {
-  /* Surfaces — quiet charcoal, not neon void */
-  --bg: #0b0b0d;
-  --bg-elevated: #121214;
-  --bg-card: #151518;
-  --bg-soft: #1a1a1e;
-  --bg-header: rgba(11, 11, 13, 0.78);
+  /* Surfaces — same navy as theme.css, so the first stylesheet matches the theme */
+  --bg: #0d0a1d;
+  --bg-elevated: #130f27;
+  --bg-card: #17122f;
+  --bg-soft: #1e1839;
+  --bg-header: rgba(13, 10, 29, 0.74);
 
   /* Text — high contrast, clear hierarchy */
-  --text: #f5f5f6;
-  --text-muted: #a8a8b0;
-  --text-dim: #7a7a84;
+  --text: #f7f4fc;
+  --text-muted: #bdb5d3;
+  --text-dim: #a69ec0;
 
   /* Borders & lines — whisper, not glow */
-  --border: #26262c;
-  --border-strong: #34343c;
+  --border: #2a2347;
+  --border-strong: #3d3463;
 
   /* Brand magenta — refined, not gaming neon */
   --accent: #d96bc0;
-  --accent-strong: #e892d4;
+  --accent-strong: #ee9cdb;
   --accent-deep: #b854a0;
-  --accent-soft: rgba(217, 107, 192, 0.10);
+  --accent-soft: rgba(217, 107, 192, 0.12);
   --accent-ink: #1a0f18;
 
-  --warm: #d4a574;
-  --focus: #f0c8e6;
+  --warm: #f5c04a;
+  --focus: #f3d38a;
   --success-note: #8fc9a8;
 
-  --radius: 12px;
-  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-sm: 10px;
   --radius-pill: 999px;
 
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 12px 32px rgba(0, 0, 0, 0.28);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow: 0 1px 2px rgba(4, 2, 12, 0.4), 0 18px 44px -12px rgba(4, 2, 12, 0.75);
+  --shadow-sm: 0 1px 2px rgba(4, 2, 12, 0.35);
 
   --font: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
   --font-display: "Fraunces", "DM Sans", Georgia, "Times New Roman", serif;
@@ -1812,6 +1812,47 @@ a:hover {
 
 .hero-proof-text strong { color: var(--text); font-weight: 600; }
 
+.hero-proof-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hero-proof-row div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.85rem 1.05rem;
+  background: var(--bg-card);
+}
+
+.hero-proof-row dt {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--warm);
+  letter-spacing: -0.03em;
+}
+
+.hero-proof-row dt.proof-stat-range {
+  font-size: 1.05rem;
+}
+
+.hero-proof-row dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
 /* ---------- About ---------- */
 .about-grid {
   display: grid;
@@ -2646,6 +2687,10 @@ a:hover {
 
 .work-grid--3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.work-grid--3 .work-card-media img {
+  object-position: center center;
 }
 
 .linkedin-note {
@@ -3836,6 +3881,7 @@ a[data-google-review-link][hidden],
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { width: min(100%, 300px); margin-top: 1rem; }
   .hero-proof-chip { left: -1rem; }
+  .hero-proof-row { grid-template-columns: 1fr; }
   .proof-card { grid-template-columns: 1fr; }
   .case-card { grid-template-columns: 1fr; }
   .case-card-media { border-right: 0; border-bottom: 1px solid var(--border); }
@@ -3871,6 +3917,7 @@ a[data-google-review-link][hidden],
   .price-table th, .price-table td { padding: 0.65rem 0.3rem; }
   .cta-band-actions .btn { flex: 1 1 auto; }
   .trust-list { flex-direction: column; }
+  .hero-proof-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 

@@ -32,8 +32,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
-  <link rel="stylesheet" href="theme.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="theme.css?v=2">
   <!-- /@partial:head-common -->
   <script type="application/ld+json">
   {
@@ -102,7 +102,8 @@
 
   <main id="main">
     <section class="hero hero--home" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
+      <div class="container">
+      <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Desanya Studio</p>
           <h1 id="hero-heading">Tech that ships. <span class="accent-text">Content that converts.</span></h1>
@@ -122,11 +123,22 @@
           <figure class="hero-art">
             <img src="assets/shermans-proof.jpg" alt="Two black Shih Tzu puppies resting together on a fluffy pink bed — photo from client site Sherman’s Shih Tzu Puppies" width="960" height="1200" fetchpriority="high">
           </figure>
-          <div class="hero-proof-chip">
-            <span class="hero-proof-stars">4.8★</span>
-            <span class="hero-proof-text"><strong>Sherman’s Shih Tzu Puppies</strong><br>23 Google reviews</span>
-          </div>
         </div>
+      </div>
+      <dl class="hero-proof-row" aria-label="Sherman’s Shih Tzu Puppies">
+        <div>
+          <dt>4.8★</dt>
+          <dd>23 Google reviews</dd>
+        </div>
+        <div>
+          <dt class="proof-stat-range">$1,500–$2,500</dt>
+          <dd>a puppy, up from $400–$500</dd>
+        </div>
+        <div>
+          <dt>2,186</dt>
+          <dd>Google Business Profile interactions, May–Oct 2026</dd>
+        </div>
+      </dl>
       </div>
     </section>
 
@@ -230,29 +242,29 @@
           <section class="skill-group" aria-labelledby="skills-lead-heading">
             <h3 id="skills-lead-heading">Client-facing expertise</h3>
             <ul class="skill-list">
-              <li><span>Technical support</span></li>
-              <li><span>Help desk</span></li>
-              <li><span>Desktop support</span></li>
-              <li><span>Troubleshooting</span></li>
               <li><span>Active Directory</span></li>
-              <li><span>SSH</span></li>
-              <li><span>Incident management</span></li>
               <li><span>Citrix</span></li>
               <li><span>Computer hardware &amp; repair</span></li>
+              <li><span>Desktop support</span></li>
+              <li><span>Help desk</span></li>
+              <li><span>Incident management</span></li>
               <li><span>Leadership</span></li>
               <li><a href="services.html#grow">SEO</a></li>
+              <li><span>SSH</span></li>
+              <li><span>Technical support</span></li>
+              <li><span>Troubleshooting</span></li>
             </ul>
           </section>
           <section class="skill-group" aria-labelledby="skills-studio-heading">
             <h3 id="skills-studio-heading">Studio services</h3>
             <ul class="skill-list">
-              <li><a href="services.html#build">Web design</a></li>
-              <li><a href="services.html#build">Content &amp; copywriting</a></li>
-              <li><a href="services.html#build">Blog writing</a></li>
-              <li><a href="services.html#grow">Social media setup &amp; management</a></li>
-              <li><a href="services.html#grow">Google Business Profile &amp; listings</a></li>
               <li><a href="services.html#ai">AI setup &amp; management</a></li>
+              <li><a href="services.html#build">Blog writing</a></li>
+              <li><a href="services.html#build">Content &amp; copywriting</a></li>
+              <li><a href="services.html#grow">Google Business Profile &amp; listings</a></li>
               <li><a href="services.html#care">Site care</a></li>
+              <li><a href="services.html#grow">Social media setup &amp; management</a></li>
+              <li><a href="services.html#build">Web design</a></li>
             </ul>
           </section>
         </div>
@@ -272,7 +284,7 @@
             <p>A Google review publishes on Google. The form here emails Desanya Studio for approval first — it does not appear on this page by itself.</p>
             <div class="review-google" data-google-review>
               <a class="btn btn-primary" data-google-review-link hidden target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
-              <p class="review-pending" data-google-review-pending>Google review link coming soon.</p>
+              <p class="review-pending" data-google-review-pending hidden>Google review link coming soon.</p>
             </div>
           </div>
 
@@ -519,7 +531,7 @@
   </div>
 
   <script src="chat-widget.js?v=6" defer></script>
-  <script src="site.js?v=7" defer></script>
+  <script src="site.js?v=8" defer></script>
   <!-- /@partial:chat -->
 </body>
 </html>

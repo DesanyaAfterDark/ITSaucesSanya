@@ -4,7 +4,8 @@
  * TODO: googleReviewUrl
  *   Paste the Google Business Profile “Ask for reviews” link, for example
  *   https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
- *   Leave '' until that link exists. The button stays in a “coming soon” state.
+ *   Leave '' until that link exists. The review button stays hidden, and the
+ *   “coming soon” line stays hidden, until a real https link is pasted here.
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
@@ -226,7 +227,7 @@ var DESANYA_LINKS = {
       } else if (link) {
         link.hidden = true;
         link.removeAttribute('href');
-        if (pending) pending.hidden = false;
+        if (pending) pending.hidden = true;
       }
     });
 
