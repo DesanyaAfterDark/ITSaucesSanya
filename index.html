@@ -271,17 +271,35 @@
       </div>
     </section>
 
-    <section class="band band--reviews" id="reviews" aria-labelledby="reviews-heading">
+    <section class="band band--follow" aria-labelledby="follow-heading">
+      <div class="container follow-band">
+        <div class="follow-copy">
+          <p class="eyebrow">Stay in touch</p>
+          <h2 id="follow-heading">Follow Desanya Studio</h2>
+          <p>Web tips, client work, and calm takes on shipping sites that convert. New posts on Instagram.</p>
+          <a class="btn btn-primary" href="https://www.instagram.com/desanya_after_dark/" target="_blank" rel="noopener noreferrer">Follow @desanya_after_dark <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+        <a class="follow-figure" href="https://www.instagram.com/desanya_after_dark/" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="assets/follow-desanya-studio.webp?v=2" type="image/webp">
+            <img src="assets/follow-desanya-studio.jpg?v=2" alt="Follow Desanya Studio on Instagram, @desanya_after_dark" width="1600" height="900" loading="lazy">
+          </picture>
+        </a>
+      </div>
+    </section>
+
+    <section class="band band--reviews" id="review" aria-labelledby="reviews-heading">
       <div class="container">
         <header class="section-header section-header--center">
           <p class="eyebrow">Client notes</p>
-          <h2 id="reviews-heading">What clients can say here</h2>
+          <h2 id="reviews-heading">Review us</h2>
+          <p class="section-lede">Worked with Desanya Studio? A few honest words help the next person. Reviews are posted here only after the studio approves them.</p>
         </header>
 
         <div class="review-leave" id="share-experience">
           <div class="review-leave-copy">
-            <h3 id="share-heading">Leave a review</h3>
-            <p>A Google review publishes on Google. The form here emails Desanya Studio for approval first — it does not appear on this page by itself.</p>
+            <h3 id="share-heading">Tell us how it went</h3>
+            <p>Name it as you’d like it to appear. Desanya Studio reads the note, then posts it on this site only with your OK.</p>
             <div class="review-google" data-google-review>
               <a class="btn btn-primary" data-google-review-link hidden target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
               <p class="review-pending" data-google-review-pending hidden>Google review link coming soon.</p>
@@ -289,7 +307,7 @@
           </div>
 
           <form class="contact-form review-form" data-review-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="share-heading">
-            <input type="hidden" name="_subject" value="New review — desanya.tech">
+            <input type="hidden" name="_subject" value="New review – desanya.tech">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
@@ -298,6 +316,10 @@
             <div class="form-field">
               <label for="reviewName">Name <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="reviewName" name="name" required autocomplete="name" placeholder="First name or initials">
+            </div>
+            <div class="form-field">
+              <label for="reviewBusiness">Business or project</label>
+              <input type="text" id="reviewBusiness" name="Business or project" autocomplete="organization" placeholder="Optional">
             </div>
             <fieldset class="star-field">
               <legend>Star rating <span class="req" aria-hidden="true">*</span></legend>
@@ -315,42 +337,19 @@
               </div>
             </fieldset>
             <div class="form-field">
-              <label for="reviewBody">Your review <span class="req" aria-hidden="true">*</span></label>
+              <label for="reviewBody">Review <span class="req" aria-hidden="true">*</span></label>
               <textarea id="reviewBody" name="review" rows="4" required placeholder="A sentence or two is plenty."></textarea>
             </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="reviewEmail">Email</label>
-                <input type="email" id="reviewEmail" name="email" autocomplete="email" placeholder="Optional">
-              </div>
-              <div class="form-field">
-                <label for="reviewWebsite">Website</label>
-                <input type="url" id="reviewWebsite" name="website" inputmode="url" placeholder="Optional">
-              </div>
-            </div>
+            <label class="consent">
+              <input type="checkbox" name="Show on desanya.tech" value="OK to show my review on desanya.tech">
+              <span>OK to show my review on desanya.tech</span>
+            </label>
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Send for approval</button>
-              <p class="form-note">Desanya Studio approves it before anything is published. Nothing is stored on this site.</p>
+              <button type="submit" class="btn btn-primary">Send review</button>
+              <p class="form-note">Reviews are posted after approval. Nothing is stored on this site.</p>
             </div>
           </form>
         </div>
-      </div>
-    </section>
-
-    <section class="band band--follow" aria-labelledby="follow-heading">
-      <div class="container follow-band">
-        <div class="follow-copy">
-          <p class="eyebrow">Stay in touch</p>
-          <h2 id="follow-heading">Follow Desanya Studio</h2>
-          <p>Web tips, client work, and calm takes on shipping sites that convert. New posts on Instagram.</p>
-          <a class="btn btn-primary" href="https://www.instagram.com/desanya_after_dark/" target="_blank" rel="noopener noreferrer">Follow @desanya_after_dark <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-        <a class="follow-figure" href="https://www.instagram.com/desanya_after_dark/" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="assets/follow-desanya-studio.webp?v=2" type="image/webp">
-            <img src="assets/follow-desanya-studio.jpg?v=2" alt="Follow Desanya Studio on Instagram, @desanya_after_dark" width="1600" height="900" loading="lazy">
-          </picture>
-        </a>
       </div>
     </section>
 
@@ -407,7 +406,7 @@
         <ul class="footer-links">
           <li><a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a></li>
           <li><a href="contact.html#book">Book intro</a></li>
-          <li><a href="index.html#share-experience">Leave a review</a></li>
+          <li><a href="index.html#review">Review us</a></li>
         </ul>
       </div>
     </div>
