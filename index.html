@@ -17,12 +17,12 @@
   <meta name="theme-color" content="#0d0a1d">
   <meta property="og:site_name" content="Desanya Studio">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://desanya.tech/assets/desanya-og.jpg?v=4">
+  <meta property="og:image" content="https://desanya.tech/assets/desanya-og.jpg?v=5">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Desanya Studio">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://desanya.tech/assets/desanya-og.jpg?v=4">
+  <meta name="twitter:image" content="https://desanya.tech/assets/desanya-og.jpg?v=5">
   <link rel="icon" href="assets/favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=4">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
@@ -32,8 +32,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
-  <link rel="stylesheet" href="theme.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="theme.css?v=2">
   <!-- /@partial:head-common -->
   <script type="application/ld+json">
   {
@@ -42,7 +42,7 @@
     "name": "Desanya Studio",
     "url": "https://desanya.tech/",
     "logo": "https://desanya.tech/assets/favicon-512.png?v=4",
-    "image": "https://desanya.tech/assets/desanya-og.jpg?v=3",
+    "image": "https://desanya.tech/assets/desanya-og.jpg?v=5",
     "description": "Desanya Studio builds clean websites, SEO & Google visibility, and content that converts — for tech talent and small businesses who want clarity over theater.",
     "areaServed": [
       {"@type": "AdministrativeArea", "name": "East Tennessee"},
@@ -102,7 +102,8 @@
 
   <main id="main">
     <section class="hero hero--home" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
+      <div class="container">
+      <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Desanya Studio</p>
           <h1 id="hero-heading">Tech that ships. <span class="accent-text">Content that converts.</span></h1>
@@ -122,11 +123,22 @@
           <figure class="hero-art">
             <img src="assets/shermans-proof.jpg" alt="Two black Shih Tzu puppies resting together on a fluffy pink bed — photo from client site Sherman’s Shih Tzu Puppies" width="960" height="1200" fetchpriority="high">
           </figure>
-          <div class="hero-proof-chip">
-            <span class="hero-proof-stars">4.8★</span>
-            <span class="hero-proof-text"><strong>Sherman’s Shih Tzu Puppies</strong><br>23 Google reviews</span>
-          </div>
         </div>
+      </div>
+      <dl class="hero-proof-row" aria-label="Sherman’s Shih Tzu Puppies">
+        <div>
+          <dt>4.8★</dt>
+          <dd>23 Google reviews</dd>
+        </div>
+        <div>
+          <dt class="proof-stat-range">$1,500–$2,500</dt>
+          <dd>a puppy, up from $400–$500</dd>
+        </div>
+        <div>
+          <dt>2,186</dt>
+          <dd>Google Business Profile interactions, May–Oct 2026</dd>
+        </div>
+      </dl>
       </div>
     </section>
 
@@ -230,97 +242,31 @@
           <section class="skill-group" aria-labelledby="skills-lead-heading">
             <h3 id="skills-lead-heading">Client-facing expertise</h3>
             <ul class="skill-list">
-              <li><span>Technical support</span></li>
-              <li><span>Help desk</span></li>
-              <li><span>Desktop support</span></li>
-              <li><span>Troubleshooting</span></li>
               <li><span>Active Directory</span></li>
-              <li><span>SSH</span></li>
-              <li><span>Incident management</span></li>
               <li><span>Citrix</span></li>
               <li><span>Computer hardware &amp; repair</span></li>
+              <li><span>Desktop support</span></li>
+              <li><span>Help desk</span></li>
+              <li><span>Incident management</span></li>
               <li><span>Leadership</span></li>
               <li><a href="services.html#grow">SEO</a></li>
+              <li><span>SSH</span></li>
+              <li><span>Technical support</span></li>
+              <li><span>Troubleshooting</span></li>
             </ul>
           </section>
           <section class="skill-group" aria-labelledby="skills-studio-heading">
             <h3 id="skills-studio-heading">Studio services</h3>
             <ul class="skill-list">
-              <li><a href="services.html#build">Web design</a></li>
-              <li><a href="services.html#build">Content &amp; copywriting</a></li>
-              <li><a href="services.html#build">Blog writing</a></li>
-              <li><a href="services.html#grow">Social media setup &amp; management</a></li>
-              <li><a href="services.html#grow">Google Business Profile &amp; listings</a></li>
               <li><a href="services.html#ai">AI setup &amp; management</a></li>
+              <li><a href="services.html#build">Blog writing</a></li>
+              <li><a href="services.html#build">Content &amp; copywriting</a></li>
+              <li><a href="services.html#grow">Google Business Profile &amp; listings</a></li>
               <li><a href="services.html#care">Site care</a></li>
+              <li><a href="services.html#grow">Social media setup &amp; management</a></li>
+              <li><a href="services.html#build">Web design</a></li>
             </ul>
           </section>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--reviews" id="reviews" aria-labelledby="reviews-heading">
-      <div class="container">
-        <header class="section-header section-header--center">
-          <p class="eyebrow">Client notes</p>
-          <h2 id="reviews-heading">What clients can say here</h2>
-        </header>
-
-        <div class="review-leave" id="share-experience">
-          <div class="review-leave-copy">
-            <h3 id="share-heading">Leave a review</h3>
-            <p>A Google review publishes on Google. The form here emails Desanya Studio for approval first — it does not appear on this page by itself.</p>
-            <div class="review-google" data-google-review>
-              <a class="btn btn-primary" data-google-review-link hidden target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
-              <p class="review-pending" data-google-review-pending>Google review link coming soon.</p>
-            </div>
-          </div>
-
-          <form class="contact-form review-form" data-review-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="share-heading">
-            <input type="hidden" name="_subject" value="New review — desanya.tech">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
-            <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
-            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="form-field">
-              <label for="reviewName">Name <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="reviewName" name="name" required autocomplete="name" placeholder="First name or initials">
-            </div>
-            <fieldset class="star-field">
-              <legend>Star rating <span class="req" aria-hidden="true">*</span></legend>
-              <div class="stars">
-                <input type="radio" name="stars" id="review-star-5" value="5" required>
-                <label for="review-star-5"><span class="visually-hidden">5 stars</span><span aria-hidden="true">★</span></label>
-                <input type="radio" name="stars" id="review-star-4" value="4">
-                <label for="review-star-4"><span class="visually-hidden">4 stars</span><span aria-hidden="true">★</span></label>
-                <input type="radio" name="stars" id="review-star-3" value="3">
-                <label for="review-star-3"><span class="visually-hidden">3 stars</span><span aria-hidden="true">★</span></label>
-                <input type="radio" name="stars" id="review-star-2" value="2">
-                <label for="review-star-2"><span class="visually-hidden">2 stars</span><span aria-hidden="true">★</span></label>
-                <input type="radio" name="stars" id="review-star-1" value="1">
-                <label for="review-star-1"><span class="visually-hidden">1 star</span><span aria-hidden="true">★</span></label>
-              </div>
-            </fieldset>
-            <div class="form-field">
-              <label for="reviewBody">Your review <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="reviewBody" name="review" rows="4" required placeholder="A sentence or two is plenty."></textarea>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="reviewEmail">Email</label>
-                <input type="email" id="reviewEmail" name="email" autocomplete="email" placeholder="Optional">
-              </div>
-              <div class="form-field">
-                <label for="reviewWebsite">Website</label>
-                <input type="url" id="reviewWebsite" name="website" inputmode="url" placeholder="Optional">
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Send for approval</button>
-              <p class="form-note">Desanya Studio approves it before anything is published. Nothing is stored on this site.</p>
-            </div>
-          </form>
         </div>
       </div>
     </section>
@@ -339,6 +285,71 @@
             <img src="assets/follow-desanya-studio.jpg?v=2" alt="Follow Desanya Studio on Instagram, @desanya_after_dark" width="1600" height="900" loading="lazy">
           </picture>
         </a>
+      </div>
+    </section>
+
+    <section class="band band--reviews" id="review" aria-labelledby="reviews-heading">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <p class="eyebrow">Client notes</p>
+          <h2 id="reviews-heading">Review us</h2>
+          <p class="section-lede">Worked with Desanya Studio? A few honest words help the next person. Reviews are posted here only after the studio approves them.</p>
+        </header>
+
+        <div class="review-leave" id="share-experience">
+          <div class="review-leave-copy">
+            <h3 id="share-heading">Tell us how it went</h3>
+            <p>Name it as you’d like it to appear. Desanya Studio reads the note, then posts it on this site only with your OK.</p>
+            <div class="review-google" data-google-review>
+              <a class="btn btn-primary" data-google-review-link hidden target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+              <p class="review-pending" data-google-review-pending hidden>Google review link coming soon.</p>
+            </div>
+          </div>
+
+          <form class="contact-form review-form" data-review-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="share-heading">
+            <input type="hidden" name="_subject" value="New review – desanya.tech">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-field">
+              <label for="reviewName">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="reviewName" name="name" required autocomplete="name" placeholder="First name or initials">
+            </div>
+            <div class="form-field">
+              <label for="reviewBusiness">Business or project</label>
+              <input type="text" id="reviewBusiness" name="Business or project" autocomplete="organization" placeholder="Optional">
+            </div>
+            <fieldset class="star-field">
+              <legend>Star rating <span class="req" aria-hidden="true">*</span></legend>
+              <div class="stars">
+                <input type="radio" name="stars" id="review-star-5" value="5" required>
+                <label for="review-star-5"><span class="visually-hidden">5 stars</span><span aria-hidden="true">★</span></label>
+                <input type="radio" name="stars" id="review-star-4" value="4">
+                <label for="review-star-4"><span class="visually-hidden">4 stars</span><span aria-hidden="true">★</span></label>
+                <input type="radio" name="stars" id="review-star-3" value="3">
+                <label for="review-star-3"><span class="visually-hidden">3 stars</span><span aria-hidden="true">★</span></label>
+                <input type="radio" name="stars" id="review-star-2" value="2">
+                <label for="review-star-2"><span class="visually-hidden">2 stars</span><span aria-hidden="true">★</span></label>
+                <input type="radio" name="stars" id="review-star-1" value="1">
+                <label for="review-star-1"><span class="visually-hidden">1 star</span><span aria-hidden="true">★</span></label>
+              </div>
+            </fieldset>
+            <div class="form-field">
+              <label for="reviewBody">Review <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="reviewBody" name="review" rows="4" required placeholder="A sentence or two is plenty."></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="Show on desanya.tech" value="OK to show my review on desanya.tech">
+              <span>OK to show my review on desanya.tech</span>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send review</button>
+              <p class="form-note">Reviews are posted after approval. Nothing is stored on this site.</p>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -395,7 +406,7 @@
         <ul class="footer-links">
           <li><a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a></li>
           <li><a href="contact.html#book">Book intro</a></li>
-          <li><a href="index.html#share-experience">Leave a review</a></li>
+          <li><a href="index.html#review">Review us</a></li>
         </ul>
       </div>
     </div>
@@ -519,7 +530,7 @@
   </div>
 
   <script src="chat-widget.js?v=6" defer></script>
-  <script src="site.js?v=7" defer></script>
+  <script src="site.js?v=8" defer></script>
   <!-- /@partial:chat -->
 </body>
 </html>
