@@ -116,7 +116,7 @@
       label: 'Book a chat',
       keywords: ['contact', 'book', 'chat', 'email', 'hello', 'schedule', 'call', 'talk'],
       answer:
-        'Ready to talk? Use <strong>Get a quote</strong> below, jump to the <a href="/contact.html">contact form</a>, or email <a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a>.'
+        'Ready to talk? Use <strong>Get a quote</strong> below, jump to the <a href="/contact.html#order">order form</a>, or email <a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a>.'
     },
     {
       id: 'pricing',

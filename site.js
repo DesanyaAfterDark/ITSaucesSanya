@@ -156,44 +156,20 @@ var DESANYA_LINKS = {
     });
   }
 
-  function val(id) {
-    var el = document.getElementById(id);
-    return el ? el.value.trim() : '';
-  }
-
   /* ---------- Contact + order forms (FormSubmit) ---------- */
   function initUtm() {
     var params = new URLSearchParams(window.location.search);
-    var forms = document.querySelectorAll('#orderForm, #contactForm');
-    if (!forms.length) return;
+    var form = document.getElementById('orderForm');
+    if (!form) return;
     ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
       var value = String(params.get(key) || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, 200);
-      forms.forEach(function (form) {
-        var input = form.querySelector('input[name="' + key + '"]');
-        if (input) input.value = value;
-      });
+      var input = form.querySelector('input[name="' + key + '"]');
+      if (input) input.value = value;
     });
   }
 
   function initContact() {
     var params = new URLSearchParams(window.location.search);
-
-    var form = document.getElementById('contactForm');
-    var need = params.get('need');
-    var needSelect = document.getElementById('need');
-    if (form && need && needSelect) {
-      Array.prototype.forEach.call(needSelect.options, function (opt) {
-        if (opt.value === need) needSelect.value = need;
-      });
-    }
-    if (form) {
-      form.addEventListener('submit', function () {
-        var subject = form.querySelector('[name="_subject"]');
-        var chosen = val('need');
-        if (subject && chosen) subject.value = 'New project inquiry: ' + chosen + ' — desanya.tech';
-      });
-    }
-
     var orderForm = document.getElementById('orderForm');
     var orderSelect = document.getElementById('orderService');
     if (!orderForm || !orderSelect) return;
