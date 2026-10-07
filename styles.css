@@ -2751,6 +2751,14 @@ a:hover {
 .gallery-item--wide { grid-column: span 2; }
 .gallery-item--banner { grid-column: 1 / -1; grid-row: span 2; }
 
+/* The Local SEO tile is tall. On a 3-column grid the closing commission
+   tile spans the two cells beside it so the last rows stay full. */
+@media (min-width: 821px) {
+  .gallery-grid:has(.gallery-item--seo) .gallery-item--cta {
+    grid-column: span 2;
+  }
+}
+
 .gallery-link {
   display: block;
   height: 100%;
