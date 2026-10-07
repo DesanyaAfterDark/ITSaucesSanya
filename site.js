@@ -12,7 +12,8 @@
  *   Instagram is https://www.instagram.com/desanya_after_dark/ (@desanya_after_dark).
  *   Facebook is https://www.facebook.com/profile.php?id=61594838174588.
  *   TikTok, X, Threads, and LinkedIn stay hidden until a URL is pasted here.
- *   YouTube uses the channel ID until https://www.youtube.com/@DesanyaStudio resolves.
+ *   YouTube is https://www.youtube.com/@DesanyaStudio.
+ *   Permanent channel ID, if the handle ever breaks: UCwcgZihQYLXfixWSYFdqEmw.
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
@@ -24,8 +25,8 @@ var DESANYA_LINKS = {
     threads: '',
     tiktok: '',
     x: '',
-    // Switch to https://www.youtube.com/@DesanyaStudio once that rename resolves.
-    youtube: 'https://www.youtube.com/channel/UCwcgZihQYLXfixWSYFdqEmw'
+    // Permanent channel ID, if this handle ever breaks: UCwcgZihQYLXfixWSYFdqEmw
+    youtube: 'https://www.youtube.com/@DesanyaStudio'
   }
 };
 
