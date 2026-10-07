@@ -11,7 +11,8 @@
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
  *   Instagram is https://www.instagram.com/desanya_after_dark/ (@desanya_after_dark).
  *   Facebook is https://www.facebook.com/profile.php?id=61594838174588.
- *   TikTok, YouTube, X, Threads, and LinkedIn stay hidden until a URL is pasted here.
+ *   TikTok, X, Threads, and LinkedIn stay hidden until a URL is pasted here.
+ *   YouTube uses the channel ID until https://www.youtube.com/@DesanyaStudio resolves.
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
@@ -23,7 +24,8 @@ var DESANYA_LINKS = {
     threads: '',
     tiktok: '',
     x: '',
-    youtube: ''
+    // Switch to https://www.youtube.com/@DesanyaStudio once that rename resolves.
+    youtube: 'https://www.youtube.com/channel/UCwcgZihQYLXfixWSYFdqEmw'
   }
 };
 
@@ -159,6 +161,19 @@ var DESANYA_LINKS = {
   }
 
   /* ---------- Contact + order forms (FormSubmit) ---------- */
+  function initUtm() {
+    var params = new URLSearchParams(window.location.search);
+    var forms = document.querySelectorAll('#orderForm, #contactForm');
+    if (!forms.length) return;
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
+      var value = String(params.get(key) || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, 200);
+      forms.forEach(function (form) {
+        var input = form.querySelector('input[name="' + key + '"]');
+        if (input) input.value = value;
+      });
+    });
+  }
+
   function initContact() {
     var params = new URLSearchParams(window.location.search);
 
@@ -342,6 +357,7 @@ var DESANYA_LINKS = {
     initNav();
     initYear();
     initContact();
+    initUtm();
     initBooking();
     initReviews();
     initSocial();

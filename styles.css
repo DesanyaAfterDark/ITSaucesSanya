@@ -2742,6 +2742,7 @@ a:hover {
 
 .gallery-item--tall { grid-row: span 2; }
 .gallery-item--wide { grid-column: span 2; }
+.gallery-item--banner { grid-column: 1 / -1; grid-row: span 2; }
 
 .gallery-link {
   display: block;
@@ -2764,6 +2765,7 @@ a:hover {
 }
 
 .gallery-link img.frame-top { object-position: center 12%; }
+.gallery-link img.frame-mid { object-position: center center; }
 
 .gallery-link:hover img { transform: scale(1.04); }
 
@@ -3908,6 +3910,7 @@ a[data-google-review-link][hidden],
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
   .gallery-item--wide { grid-column: auto; }
   .gallery-item--tall { grid-row: span 2; }
+  .gallery-item--banner { grid-row: auto; }
   .lightbox-inner { grid-template-columns: 1fr; padding: 3.75rem 0.75rem 1rem; }
   .lightbox-figure { grid-column: 1; grid-row: 1; }
   .lightbox-prev, .lightbox-next { position: absolute; bottom: 1rem; }
