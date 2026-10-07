@@ -109,7 +109,7 @@
       label: 'Portfolio / Sherman’s',
       keywords: ['portfolio', 'work', 'example', 'sherman', 'shih', 'puppy', 'puppies', 'case'],
       answer:
-        'An example (more on the <a href="/work.html">Work page</a>): <a href="https://shermansshihtzupuppies.com" target="_blank" rel="noopener noreferrer">Sherman’s Shih Tzu Puppies</a> — Desanya Studio’s first build, for a family who raises AKC and CKC Shih Tzus in Niota. Desanya fully manages the website and the verified Google Business Profile, including regular updates about dogs who are ready for their families. Placement fees are up about 200%, from about $500 to about $1,500. Google rating: 4.8★ from 23 reviews, and 2,186 Google Business Profile interactions (calls, messages, directions and website clicks) from May through October 2026.'
+        'An example (more on the <a href="/work.html">Work page</a>): <a href="https://shermansshihtzupuppies.com" target="_blank" rel="noopener noreferrer">Sherman’s Shih Tzu Puppies</a> — Desanya Studio’s first build, for a family who raises AKC and CKC Shih Tzus in Niota. Desanya fully manages the website and the verified Google Business Profile, including regular updates about dogs who are ready for their families. That’s a 200% profit increase, from about $500 to about $1,500. Google rating: 4.8★ from 23 reviews, and 2,186 Google Business Profile interactions (calls, messages, directions and website clicks) from May through October 2026.'
     },
     {
       id: 'contact',
