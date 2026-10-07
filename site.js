@@ -11,7 +11,9 @@
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
  *   Instagram is https://www.instagram.com/desanya_after_dark/ (@desanya_after_dark).
  *   Facebook is https://www.facebook.com/profile.php?id=61594838174588.
- *   TikTok, YouTube, X, Threads, and LinkedIn stay hidden until a URL is pasted here.
+ *   TikTok, X, Threads, and LinkedIn stay hidden until a URL is pasted here.
+ *   YouTube is https://www.youtube.com/@DesanyaStudio.
+ *   Permanent channel ID, if the handle ever breaks: UCwcgZihQYLXfixWSYFdqEmw.
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
@@ -23,7 +25,8 @@ var DESANYA_LINKS = {
     threads: '',
     tiktok: '',
     x: '',
-    youtube: ''
+    // Permanent channel ID, if this handle ever breaks: UCwcgZihQYLXfixWSYFdqEmw
+    youtube: 'https://www.youtube.com/@DesanyaStudio'
   }
 };
 
@@ -153,31 +156,20 @@ var DESANYA_LINKS = {
     });
   }
 
-  function val(id) {
-    var el = document.getElementById(id);
-    return el ? el.value.trim() : '';
+  /* ---------- Contact + order forms (FormSubmit) ---------- */
+  function initUtm() {
+    var params = new URLSearchParams(window.location.search);
+    var form = document.getElementById('orderForm');
+    if (!form) return;
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
+      var value = String(params.get(key) || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, 200);
+      var input = form.querySelector('input[name="' + key + '"]');
+      if (input) input.value = value;
+    });
   }
 
-  /* ---------- Contact + order forms (FormSubmit) ---------- */
   function initContact() {
     var params = new URLSearchParams(window.location.search);
-
-    var form = document.getElementById('contactForm');
-    var need = params.get('need');
-    var needSelect = document.getElementById('need');
-    if (form && need && needSelect) {
-      Array.prototype.forEach.call(needSelect.options, function (opt) {
-        if (opt.value === need) needSelect.value = need;
-      });
-    }
-    if (form) {
-      form.addEventListener('submit', function () {
-        var subject = form.querySelector('[name="_subject"]');
-        var chosen = val('need');
-        if (subject && chosen) subject.value = 'New project inquiry: ' + chosen + ' — desanya.tech';
-      });
-    }
-
     var orderForm = document.getElementById('orderForm');
     var orderSelect = document.getElementById('orderService');
     if (!orderForm || !orderSelect) return;
@@ -342,6 +334,7 @@ var DESANYA_LINKS = {
     initNav();
     initYear();
     initContact();
+    initUtm();
     initBooking();
     initReviews();
     initSocial();

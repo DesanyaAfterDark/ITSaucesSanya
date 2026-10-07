@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Desanya Studio — Book Intro | Knoxville &amp; Chattanooga, TN</title>
-  <meta name="description" content="Tell Desanya Studio what you’re building, or book a short intro. Websites, SEO &amp; Google, content, and social for East Tennessee businesses.">
+  <meta name="description" content="Order a service, or book a short intro. You’ll hear back from Desanya Studio directly.">
   <link rel="canonical" href="https://desanya.tech/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://desanya.tech/contact.html">
   <meta property="og:title" content="Contact Desanya Studio — Book Intro | Knoxville &amp; Chattanooga, TN">
-  <meta property="og:description" content="Tell Desanya Studio what you’re building, or book a short intro. Websites, SEO &amp; Google, content, and social for East Tennessee businesses.">
+  <meta property="og:description" content="Order a service, or book a short intro. You’ll hear back from Desanya Studio directly.">
   <meta name="twitter:title" content="Contact Desanya Studio — Book Intro | Knoxville &amp; Chattanooga, TN">
-  <meta name="twitter:description" content="Tell Desanya Studio what you’re building, or book a short intro. Websites, SEO &amp; Google, content, and social for East Tennessee businesses.">
+  <meta name="twitter:description" content="Order a service, or book a short intro. You’ll hear back from Desanya Studio directly.">
   <!-- @partial:head-common -->
   <meta name="author" content="Desanya Studio">
   <meta name="theme-color" content="#0d0a1d">
@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=13">
   <link rel="stylesheet" href="theme.css?v=2">
   <!-- /@partial:head-common -->
 </head>
@@ -79,7 +79,7 @@
       <div class="container">
         <p class="eyebrow">Let’s talk</p>
         <h1 id="page-heading">Start a conversation</h1>
-        <p class="page-lede">Send project details, or book a short intro. You’ll hear back from Desanya Studio directly.</p>
+        <p class="page-lede">Order a service, or book a short intro. You’ll hear back from Desanya Studio directly.</p>
       </div>
     </section>
 
@@ -93,166 +93,94 @@
     <section class="page-section page-section--flush-top" aria-label="Contact options">
       <div class="container contact-layout">
         <div class="contact-main">
-          <div class="order-block" id="order">
-            <h2 class="contact-col-title" id="order-heading">Order a service</h2>
-            <form class="contact-form" id="orderForm" action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="order-heading">
+          <section class="booking-card" id="order" aria-labelledby="order-heading">
+            <p class="eyebrow">Order</p>
+            <h2 id="order-heading">Order a service</h2>
+            <p class="booking-lede">Pick a package and say what you need. Desanya Studio confirms scope before any work starts.</p>
+            <form class="booking-form" id="orderForm" action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="order-heading">
               <input type="hidden" name="_subject" value="New ORDER — desanya.tech" data-order-subject>
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="true">
               <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
               <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
               <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="orderName">Name <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="orderName" name="name" required autocomplete="name" placeholder="Your name">
-                </div>
-                <div class="form-field">
-                  <label for="orderEmail">Email <span class="req" aria-hidden="true">*</span></label>
-                  <input type="email" id="orderEmail" name="email" required autocomplete="email" placeholder="you@example.com">
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="orderPhone">Phone</label>
-                  <input type="tel" id="orderPhone" name="Phone" autocomplete="tel" placeholder="Optional">
-                </div>
-                <div class="form-field">
-                  <label for="orderBusiness">Business name</label>
-                  <input type="text" id="orderBusiness" name="Business name" autocomplete="organization" placeholder="Optional">
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="orderService">Service <span class="req" aria-hidden="true">*</span></label>
-                  <select id="orderService" name="Service" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option value="Ad landing page $600" data-slug="ad-landing-page">Ad landing page $600</option>
-                    <option value="AI managing $550/mo" data-slug="ai-managing">AI managing $550/mo</option>
-                    <option value="AI setup $750" data-slug="ai-setup">AI setup $750</option>
-                    <option value="Blog $200/post or $700/mo" data-slug="blog">Blog $200/post or $700/mo</option>
-                    <option value="Brand starter kit $450" data-slug="brand-starter-kit">Brand starter kit $450</option>
-                    <option value="Content $400" data-slug="content">Content $400</option>
-                    <option value="Monthly care $99/mo" data-slug="monthly-care">Monthly care $99/mo</option>
-                    <option value="Photo &amp; gallery polish $300" data-slug="photo-gallery-polish">Photo &amp; gallery polish $300</option>
-                    <option value="Review generation kit $200" data-slug="review-generation-kit">Review generation kit $200</option>
-                    <option value="SEO &amp; Google managing $450/mo" data-slug="seo-managing">SEO &amp; Google managing $450/mo</option>
-                    <option value="SEO &amp; Google setup $550" data-slug="seo-setup">SEO &amp; Google setup $550</option>
-                    <option value="Site update training $125" data-slug="site-update-training">Site update training $125</option>
-                    <option value="Social managing $850/mo" data-slug="social-managing">Social managing $850/mo</option>
-                    <option value="Social setup $550" data-slug="social-setup">Social setup $550</option>
-                    <option value="Website $1600" data-slug="website">Website $1600</option>
-                    <option value="Not sure yet" data-slug="not-sure">Not sure yet</option>
-                  </select>
-                </div>
-                <div class="form-field">
-                  <label for="orderContact">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
-                  <select id="orderContact" name="Preferred contact" required>
-                    <option value="" disabled selected>Select one</option>
-                    <option value="Either">Either</option>
-                    <option value="Email">Email</option>
-                    <option value="Phone">Phone</option>
-                  </select>
-                </div>
-              </div>
+              <input type="hidden" name="utm_source" value="">
+              <input type="hidden" name="utm_medium" value="">
+              <input type="hidden" name="utm_campaign" value="">
 
               <div class="form-field">
-                <label for="orderDetails">Project details <span class="req" aria-hidden="true">*</span></label>
+                <label for="orderName">Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="orderName" name="name" required autocomplete="name" placeholder="Your name">
+              </div>
+              <div class="form-field">
+                <label for="orderEmail">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="orderEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="form-field">
+                <label for="orderPhone">Phone</label>
+                <input type="tel" id="orderPhone" name="Phone" autocomplete="tel" placeholder="Optional">
+              </div>
+              <div class="form-field">
+                <label for="orderBusiness">Business name</label>
+                <input type="text" id="orderBusiness" name="Business name" autocomplete="organization" placeholder="Optional">
+              </div>
+              <div class="form-field">
+                <label for="orderService">Service <span class="req" aria-hidden="true">*</span></label>
+                <select id="orderService" name="Service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Ad landing page $600" data-slug="ad-landing-page">Ad landing page $600</option>
+                  <option value="AI managing $550/mo" data-slug="ai-managing">AI managing $550/mo</option>
+                  <option value="AI setup $750" data-slug="ai-setup">AI setup $750</option>
+                  <option value="Blog $200/post or $700/mo" data-slug="blog">Blog $200/post or $700/mo</option>
+                  <option value="Brand starter kit $450" data-slug="brand-starter-kit">Brand starter kit $450</option>
+                  <option value="Content $400" data-slug="content">Content $400</option>
+                  <option value="Monthly care $99/mo" data-slug="monthly-care">Monthly care $99/mo</option>
+                  <option value="Photo &amp; gallery polish $300" data-slug="photo-gallery-polish">Photo &amp; gallery polish $300</option>
+                  <option value="Review generation kit $200" data-slug="review-generation-kit">Review generation kit $200</option>
+                  <option value="SEO &amp; Google managing $450/mo" data-slug="seo-managing">SEO &amp; Google managing $450/mo</option>
+                  <option value="SEO &amp; Google setup $550" data-slug="seo-setup">SEO &amp; Google setup $550</option>
+                  <option value="Site update training $125" data-slug="site-update-training">Site update training $125</option>
+                  <option value="Social managing $850/mo" data-slug="social-managing">Social managing $850/mo</option>
+                  <option value="Social setup $550" data-slug="social-setup">Social setup $550</option>
+                  <option value="Website $1600" data-slug="website">Website $1600</option>
+                  <option value="Not sure yet" data-slug="not-sure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="orderContact">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
+                <select id="orderContact" name="Preferred contact" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option value="Either">Either</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="orderSource">How did you find Desanya?</label>
+                <select id="orderSource" name="How did you find Desanya">
+                  <option value="" disabled selected>Optional</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Search">Search</option>
+                  <option value="Social media">Social media</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="orderDetails">What you need <span class="req" aria-hidden="true">*</span></label>
                 <textarea id="orderDetails" name="Project details" rows="5" required placeholder="What do you need, and when?"></textarea>
               </div>
-
               <label class="consent">
                 <input type="checkbox" name="Consent" value="Yes — Desanya Studio may email me about this request" required>
                 <span>Desanya Studio may email me about this request.</span>
               </label>
-
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Send order</button>
                 <p class="form-note">No payment now. Desanya Studio confirms scope and sends an invoice before any work starts.</p>
               </div>
             </form>
-          </div>
-
-          <h2 class="contact-col-title" id="form-heading">Project details</h2>
-          <form class="contact-form" id="contactForm" action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST" aria-labelledby="form-heading">
-            <input type="hidden" name="_subject" value="New project inquiry — desanya.tech">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
-            <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
-            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="form-row">
-              <div class="form-field">
-                <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="name" name="Name" required autocomplete="name" placeholder="Your name">
-              </div>
-              <div class="form-field">
-                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="need">What you need <span class="req" aria-hidden="true">*</span></label>
-                <select id="need" name="What you need" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="Ad landing page">Ad landing page ($600)</option>
-                  <option value="AI managing">AI managing ($550/mo)</option>
-                  <option value="AI setup">AI setup ($750)</option>
-                  <option value="Blog writing">Blog writing ($200/post or $700/mo)</option>
-                  <option value="Brand starter kit">Brand starter kit ($450)</option>
-                  <option value="Content">Content ($400)</option>
-                  <option value="Monthly care">Monthly care ($99/mo)</option>
-                  <option value="Photo & gallery polish">Photo &amp; gallery polish ($300)</option>
-                  <option value="Review generation kit">Review generation kit ($200)</option>
-                  <option value="SEO & Google managing">SEO &amp; Google managing ($450/mo)</option>
-                  <option value="SEO & Google setup">SEO &amp; Google setup ($550)</option>
-                  <option value="Site update training">Site update training ($125)</option>
-                  <option value="Social managing">Social managing ($850/mo)</option>
-                  <option value="Social setup">Social setup ($550)</option>
-                  <option value="Website">Website ($1600)</option>
-                  <option value="Custom / other">Custom / other</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="budget">Budget</label>
-                <select id="budget" name="Budget">
-                  <option value="" disabled selected>Select a range</option>
-                  <option value="Under $500">Under $500</option>
-                  <option value="$500–$1,000">$500–$1,000</option>
-                  <option value="$1,000–$2,000">$1,000–$2,000</option>
-                  <option value="$2,000+">$2,000+</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-field">
-              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="message" name="Message" rows="5" required placeholder="What are you building? Any deadlines or must-haves?"></textarea>
-            </div>
-
-            <div class="form-field">
-              <label for="source">How did you find Desanya?</label>
-              <select id="source" name="How did you find Desanya">
-                <option value="" disabled selected>Optional</option>
-                <option value="LinkedIn">LinkedIn</option>
-                <option value="Referral">Referral</option>
-                <option value="Search">Search</option>
-                <option value="Social media">Social media</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Send project details</button>
-              <p class="form-note">Desanya Studio replies by email. Nothing is stored on this site.</p>
-            </div>
-          </form>
+          </section>
         </div>
 
         <aside class="contact-side">
@@ -494,8 +422,8 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=6" defer></script>
-  <script src="site.js?v=8" defer></script>
+  <script src="chat-widget.js?v=10" defer></script>
+  <script src="site.js?v=10" defer></script>
   <!-- /@partial:chat -->
 </body>
 </html>
