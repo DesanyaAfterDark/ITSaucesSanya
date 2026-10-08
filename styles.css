@@ -1812,11 +1812,15 @@ a:hover {
 
 .hero-proof-text strong { color: var(--text); font-weight: 600; }
 
+.hero-proof-label {
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0.6rem;
+}
+
 .hero-proof-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  margin: 0;
   background: var(--border);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -2746,6 +2750,14 @@ a:hover {
 .gallery-item--tall { grid-row: span 2; }
 .gallery-item--wide { grid-column: span 2; }
 .gallery-item--banner { grid-column: 1 / -1; grid-row: span 2; }
+
+/* The Local SEO tile is tall. On a 3-column grid the closing commission
+   tile spans the two cells beside it so the last rows stay full. */
+@media (min-width: 821px) {
+  .gallery-grid:has(.gallery-item--seo) .gallery-item--cta {
+    grid-column: span 2;
+  }
+}
 
 .gallery-link {
   display: block;
