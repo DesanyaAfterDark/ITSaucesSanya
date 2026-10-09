@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Checkout — Desanya Studio · East TN</title>
-  <meta name="description" content="Review your order and check out securely with PayPal. Desanya Studio — websites, SEO, and content.">
+  <title>Checkout â Desanya Studio Â· East TN</title>
+  <meta name="description" content="Review your order and check out securely with PayPal. Desanya Studio â websites, SEO, and content.">
   <link rel="canonical" href="https://desanya.tech/checkout.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://desanya.tech/checkout.html">
-  <meta property="og:title" content="Checkout — Desanya Studio">
+  <meta property="og:title" content="Checkout â Desanya Studio">
   <meta property="og:description" content="Review your order and check out securely with PayPal.">
-  <meta name="twitter:title" content="Checkout — Desanya Studio">
+  <meta name="twitter:title" content="Checkout â Desanya Studio">
   <meta name="twitter:description" content="Review your order and check out securely with PayPal.">
   <!-- @partial:head-common -->
   <link rel="stylesheet" href="assets/cart.css?v=1">
@@ -26,7 +26,7 @@
 
       <div id="checkout-empty" class="checkout-empty" hidden>
         <h2>Your cart is empty</h2>
-        <p>Pick a service to get started — every price is published up front.</p>
+        <p>Pick a service to get started â every price is published up front.</p>
         <a class="btn btn-primary" href="services.html">Browse services</a>
       </div>
 
@@ -39,7 +39,7 @@
             <strong id="checkout-total">$0</strong>
           </div>
           <p class="ds-cart-note" id="checkout-recurring-note" hidden>
-            Monthly services are billed separately after checkout — you only pay one-time items today, and we arrange the recurring billing with you directly.
+            Monthly services are billed separately after checkout â you only pay one-time items today, and we arrange the recurring billing with you directly.
           </p>
         </section>
 
@@ -55,7 +55,7 @@
           </div>
           <p class="checkout-error" id="checkout-error" role="alert" hidden></p>
           <div id="paypal-buttons"></div>
-          <p class="ds-cart-note">Secure checkout via PayPal — cards, Venmo, and Pay Later accepted. Nothing is charged until you confirm in PayPal.</p>
+          <p class="ds-cart-note">Secure checkout via PayPal â cards, Venmo, and Pay Later accepted. Nothing is charged until you confirm in PayPal.</p>
         </section>
       </div>
     </div>
@@ -67,13 +67,13 @@
 
   <script>
     /* ============================================================
-       PayPal mode — flip to 'live' when the business account is
+       PayPal mode â flip to 'live' when the business account is
        ready for real payments. Sandbox uses PayPal's test env.
        ============================================================ */
-    var PAYPAL_MODE = 'sandbox'; // 'sandbox' | 'live'
+    var PAYPAL_MODE = 'live'; // 'sandbox' | 'live'
     var PAYPAL_CLIENT_IDS = {
-      sandbox: 'sb',                       // PayPal sandbox placeholder — replace with sandbox client ID
-      live: 'YOUR_LIVE_CLIENT_ID'          // <-- paste the live REST client ID here when ready
+      sandbox: 'sb',                       // PayPal sandbox placeholder â replace with sandbox client ID
+      live: 'AS5MKJS88Z-6tfrb3gvFL2vkKhnjmJYiJTWIZxGWAHuOYVw5AN1_07x82XNkaoIE1MNF4WxcYF0BoG-9'
     };
   </script>
   <script>
@@ -104,7 +104,7 @@
         if (!items.length) {
           emptyEl.hidden = false;
           mainEl.hidden = true;
-          document.title = 'Checkout — Desanya Studio';
+          document.title = 'Checkout â Desanya Studio';
           return;
         }
         emptyEl.hidden = true;
@@ -114,7 +114,7 @@
           return '<div class="checkout-line">' +
             '<div>' +
               '<span class="checkout-line-name">' + esc(it.name) +
-                (it.recurring ? ' <small>billed monthly — arranged after checkout</small>' : '') +
+                (it.recurring ? ' <small>billed monthly â arranged after checkout</small>' : '') +
               '</span>' +
               '<div class="checkout-line-qty">' +
                 '<button type="button" data-co-dec="' + esc(it.slug) + '" aria-label="Decrease quantity">&minus;</button>' +
@@ -179,7 +179,7 @@
             var total = items.reduce(function (s, it) { return s + it.price * it.qty; }, 0);
             var customer = validCustomer();
             var purchaseUnits = [{
-              description: 'Desanya Studio — ' + (customer ? customer.name : 'order'),
+              description: 'Desanya Studio â ' + (customer ? customer.name : 'order'),
               amount: {
                 currency_code: 'USD',
                 value: total.toFixed(2),
@@ -199,9 +199,9 @@
             if (!items.length) {
               var all = cart.getItems();
               purchaseUnits = [{
-                description: 'Desanya Studio — ' + (customer ? customer.name : 'order') + ' (monthly services arranged after checkout)',
+                description: 'Desanya Studio â ' + (customer ? customer.name : 'order') + ' (monthly services arranged after checkout)',
                 amount: { currency_code: 'USD', value: '1.00' },
-                items: [{ name: 'Deposit — ' + all.map(function (i) { return i.name; }).join(', ').slice(0, 100),
+                items: [{ name: 'Deposit â ' + all.map(function (i) { return i.name; }).join(', ').slice(0, 100),
                           unit_amount: { currency_code: 'USD', value: '1.00' }, quantity: '1' }]
               }];
             }
