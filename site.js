@@ -163,8 +163,7 @@ var DESANYA_LINKS = {
     var form = document.getElementById('orderForm');
     if (!form) return;
     ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
-      var value = String(params.get(key) || '').replace(/[
-	]+/g, ' ').trim().slice(0, 200);
+      var value = String(params.get(key) || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, 200);
       var input = form.querySelector('input[name="' + key + '"]');
       if (input) input.value = value;
     });

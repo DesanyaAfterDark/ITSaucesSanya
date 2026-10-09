@@ -50,7 +50,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  z-index: 90;
+  z-index: 560;
 }
 #ds-cart-root.open .ds-cart-scrim {
   opacity: 1;
@@ -65,7 +65,7 @@
   background: var(--bg-elevated);
   border-left: 1px solid var(--border);
   box-shadow: var(--shadow);
-  z-index: 95;
+  z-index: 570;
   display: flex;
   flex-direction: column;
   transform: translateX(105%);

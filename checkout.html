@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>[hidden]{display:none!important}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Checkout — Desanya Studio Â· East TN</title>
+  <title>Checkout — Desanya Studio · East TN</title>
   <meta name="description" content="Review your order and check out securely with PayPal. Desanya Studio — websites, SEO, and content.">
+  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://desanya.tech/checkout.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://desanya.tech/checkout.html">
@@ -40,13 +40,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="stylesheet" href="theme.css?v=3">
-
-  <link rel="stylesheet" href="assets/cart.css?v=1">
+  <link rel="stylesheet" href="assets/cart.css?v=2">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+  <!-- @partial:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -87,7 +87,7 @@
       <ul class="social-links" data-social-links aria-label="Social"></ul>
     </div>
   </nav>
-
+  <!-- /@partial:header -->
 
   <main id="main">
     <div class="container">
@@ -132,7 +132,8 @@
     </div>
   </main>
 
-    <footer class="site-footer">
+  <!-- @partial:footer -->
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand-col">
         <a class="footer-brand" href="index.html" aria-label="Desanya Studio — Home">
@@ -179,12 +180,12 @@
       <p class="footer-privacy">Privacy: forms are delivered by email through FormSubmit and nothing is stored on this site. No tracking cookies are set by these static pages.</p>
       <p class="footer-copy">&copy; <span data-year>2026</span> Desanya Studio</p>
     </div>
-    <link rel="stylesheet" href="assets/cart.css?v=1">
-    <script src="assets/cart.js?v=1" defer></script>
+    <script src="assets/cart.js?v=2" defer></script>
   </footer>
+  <!-- /@partial:footer -->
 
-
-    <!-- FAQ chat widget (preview stub — not live AI) -->
+  <!-- @partial:chat -->
+  <!-- FAQ chat widget (preview stub — not live AI) -->
   <div id="desanya-chat" class="desanya-chat" data-chat-root>
     <p class="visually-hidden" data-chat-live aria-live="polite" aria-atomic="true"></p>
 
@@ -295,7 +296,8 @@
   </div>
 
   <script src="chat-widget.js?v=10" defer></script>
-  <script src="site.js?v=11" defer></script>
+  <script src="site.js?v=12" defer></script>
+  <!-- /@partial:chat -->
 
 
   <script>
