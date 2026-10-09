@@ -1,11 +1,11 @@
 /**
- * Desanya Studio â link config (the only place to edit these URLs)
+ * Desanya Studio — link config (the only place to edit these URLs)
  *
  * TODO: googleReviewUrl
- *   Paste the Google Business Profile âAsk for reviewsâ link, for example
+ *   Paste the Google Business Profile “Ask for reviews” link, for example
  *   https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
  *   Leave '' until that link exists. The review button stays hidden, and the
- *   âcoming soonâ line stays hidden, until a real https link is pasted here.
+ *   “coming soon” line stays hidden, until a real https link is pasted here.
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
@@ -32,8 +32,8 @@ var DESANYA_LINKS = {
 };
 
 /**
- * Desanya Studio â shared site behavior (all pages)
- * Mobile nav Â· footer year Â· order prefill Â· reviews Â· social Â· gallery lightbox
+ * Desanya Studio — shared site behavior (all pages)
+ * Mobile nav · footer year · order prefill · reviews · social · gallery lightbox
  */
 (function () {
   'use strict';
@@ -179,7 +179,7 @@ var DESANYA_LINKS = {
     function orderSubject() {
       var subject = orderForm.querySelector('[data-order-subject]');
       var chosen = orderSelect.value;
-      if (subject) subject.value = 'New ORDER: ' + (chosen || 'service') + ' â desanya.tech';
+      if (subject) subject.value = 'New ORDER: ' + (chosen || 'service') + ' — desanya.tech';
     }
 
     var slug = params.get('service');
