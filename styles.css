@@ -1,6 +1,9 @@
 /* Desanya Studio — desanya.tech
    Premium studio: calm whitespace, restrained type, refined magenta */
 
+/* The hidden attribute must win over later display rules. */
+[hidden] { display: none !important; }
+
 :root {
   /* Surfaces — same navy as theme.css, so the first stylesheet matches the theme */
   --bg: #0d0a1d;

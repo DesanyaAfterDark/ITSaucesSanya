@@ -139,7 +139,7 @@
         '<div class="ds-cart-foot" data-cart-foot>' +
           '<div class="ds-cart-total"><span>Subtotal</span><strong data-cart-total>$0</strong></div>' +
           '<p class="ds-cart-note" data-cart-recurring-note hidden>Monthly services are billed separately after checkout — you\u2019ll only pay one-time items today.</p>' +
-          '<a class="btn btn-primary ds-cart-checkout" href="checkout.html">Checkout</a>' +
+          '<a class="btn btn-primary ds-cart-checkout" href="/checkout.html">Checkout</a>' +
           '<button type="button" class="btn btn-ghost ds-cart-continue" data-cart-close>Continue browsing</button>' +
         '</div>' +
       '</aside>';
@@ -195,7 +195,7 @@
       els.items.innerHTML =
         '<div class="ds-cart-empty">' +
           '<p>No services in your cart yet.</p>' +
-          '<a class="btn btn-secondary btn-small" href="services.html">Browse services</a>' +
+          '<a class="btn btn-secondary btn-small" href="/services.html">Browse services</a>' +
         '</div>';
       els.foot.style.display = 'none';
     } else {
@@ -238,10 +238,33 @@
   /* ------------------------------------------------------------------ */
   /* Init                                                                */
   /* ------------------------------------------------------------------ */
+  function placeCart() {
+    var btn = document.querySelector('.ds-cart-btn');
+    var nav = document.querySelector('.site-nav');
+    if (!btn || !nav) return;
+    if (window.innerWidth < 821) {
+      btn.style.position = '';
+      btn.style.top = '';
+      btn.style.right = '';
+      btn.style.left = '';
+      btn.style.zIndex = '';
+      return;
+    }
+    var nr = nav.getBoundingClientRect();
+    btn.style.position = 'fixed';
+    btn.style.zIndex = '120';
+    btn.style.top = Math.max(0, (nr.height - btn.offsetHeight) / 2) + 'px';
+    btn.style.left = 'auto';
+    btn.style.right = (window.innerWidth - nr.left + 12) + 'px';
+  }
+
   function init() {
     load();
     buildDrawer();
     render();
+    placeCart();
+    window.addEventListener('resize', placeCart);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeCart);
 
     try {
       document.dispatchEvent(new CustomEvent('desanya-cart-ready'));
