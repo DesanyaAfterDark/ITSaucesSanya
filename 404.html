@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found — Desanya Studio</title>
+  <title>Page not found â Desanya Studio</title>
   <meta name="description" content="This page wandered off. Head home, see services and pricing, or ask Desanya.">
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://desanya.tech/404.html">
@@ -45,14 +45,21 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="/index.html" data-nav="home" aria-label="Desanya Studio — Home">
+      <a class="brand" href="/index.html" data-nav="home" aria-label="Desanya Studio â Home">
         <picture>
           <source srcset="/assets/desanya-wordmark-inline.webp?v=4" type="image/webp">
           <img src="/assets/desanya-wordmark-inline.png?v=4" alt="Desanya Studio" width="692" height="150" class="brand-logo">
         </picture>
       </a>
 
-      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+            <button type="button" class="ds-cart-btn" data-cart-open aria-label="Open shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/>
+          <path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21.5 7H6"/>
+        </svg>
+        <span class="ds-cart-count" data-cart-count hidden>0</span>
+      </button>
+<button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -82,7 +89,7 @@
       <div class="container">
         <p class="eyebrow">404</p>
         <h1 id="page-heading">This page wandered off.</h1>
-        <p class="page-lede">The link may be old, or the page may have moved. Here’s where to go next.</p>
+        <p class="page-lede">The link may be old, or the page may have moved. Hereâs where to go next.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/">Back to home</a>
           <a class="btn btn-secondary" href="/services.html">See services &amp; pricing</a>
@@ -96,7 +103,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand-col">
-        <a class="footer-brand" href="/index.html" aria-label="Desanya Studio — Home">
+        <a class="footer-brand" href="/index.html" aria-label="Desanya Studio â Home">
           <picture>
             <source srcset="/assets/desanya-wordmark.webp?v=4" type="image/webp">
             <img src="/assets/desanya-wordmark.png?v=4" alt="" width="488" height="192" class="footer-logo">
@@ -144,7 +151,7 @@
   <!-- /@partial:footer -->
 
   <!-- @partial:chat -->
-  <!-- FAQ chat widget (preview stub — not live AI) -->
+  <!-- FAQ chat widget (preview stub â not live AI) -->
   <div id="desanya-chat" class="desanya-chat" data-chat-root>
     <p class="visually-hidden" data-chat-live aria-live="polite" aria-atomic="true"></p>
 
@@ -156,7 +163,7 @@
       aria-controls="desanyaChatPanel"
       aria-haspopup="dialog"
     >
-      <span class="chat-launcher-icon" aria-hidden="true">💬</span>
+      <span class="chat-launcher-icon" aria-hidden="true">ð¬</span>
       <span class="chat-launcher-label">Ask Desanya</span>
     </button>
 
@@ -175,11 +182,11 @@
           <h2 id="desanyaChatTitle" class="chat-panel-title">Ask Desanya</h2>
           <p id="desanyaChatStub" class="chat-stub-badge">
             <span class="chat-stub-dot" aria-hidden="true"></span>
-            FAQ answers · not live AI
+            FAQ answers Â· not live AI
           </p>
         </div>
         <button type="button" class="chat-close" data-chat-close aria-label="Close chat">
-          <span aria-hidden="true">×</span>
+          <span aria-hidden="true">Ã</span>
         </button>
       </header>
 
@@ -193,9 +200,9 @@
 
       <div class="chat-lead" data-chat-lead hidden>
         <h3 class="chat-lead-title">Get a quote</h3>
-        <p class="chat-lead-lede">Share your name, email, and what you need. Desanya Studio replies by email — nothing is stored on this site.</p>
+        <p class="chat-lead-lede">Share your name, email, and what you need. Desanya Studio replies by email â nothing is stored on this site.</p>
         <form class="chat-lead-form" data-chat-lead-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New quote request — desanya.tech">
+          <input type="hidden" name="_subject" value="New quote request â desanya.tech">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
@@ -244,7 +251,7 @@
           id="chatInput"
           class="chat-input"
           data-chat-input
-          placeholder="Ask about pricing, services, or portfolio…"
+          placeholder="Ask about pricing, services, or portfolioâ¦"
           autocomplete="off"
           maxlength="400"
         >
@@ -263,5 +270,7 @@
       if (launcher) launcher.click();
     });
   </script>
+    <link rel="stylesheet" href="assets/cart.css?v=1">
+    <script src="assets/cart.js?v=1" defer></script>
 </body>
 </html>
