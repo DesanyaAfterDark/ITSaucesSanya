@@ -1,11 +1,11 @@
 /**
- * Desanya Studio — link config (the only place to edit these URLs)
+ * Desanya Studio â link config (the only place to edit these URLs)
  *
  * TODO: googleReviewUrl
- *   Paste the Google Business Profile “Ask for reviews” link, for example
+ *   Paste the Google Business Profile âAsk for reviewsâ link, for example
  *   https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
  *   Leave '' until that link exists. The review button stays hidden, and the
- *   “coming soon” line stays hidden, until a real https link is pasted here.
+ *   âcoming soonâ line stays hidden, until a real https link is pasted here.
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
@@ -18,7 +18,7 @@
  *   Do not paste search-result pages or placeholder profiles.
  */
 var DESANYA_LINKS = {
-  googleReviewUrl: '',
+  googleReviewUrl: 'https://www.google.com/maps/search/?api=1&query=Desanya%27s+Web+Designs+Niota+TN&query_place_id=605467311094588',
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=61594838174588',
     instagram: 'https://www.instagram.com/desanya_after_dark/',
@@ -32,8 +32,8 @@ var DESANYA_LINKS = {
 };
 
 /**
- * Desanya Studio — shared site behavior (all pages)
- * Mobile nav · footer year · order prefill · reviews · social · gallery lightbox
+ * Desanya Studio â shared site behavior (all pages)
+ * Mobile nav Â· footer year Â· order prefill Â· reviews Â· social Â· gallery lightbox
  */
 (function () {
   'use strict';
@@ -163,7 +163,8 @@ var DESANYA_LINKS = {
     var form = document.getElementById('orderForm');
     if (!form) return;
     ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
-      var value = String(params.get(key) || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, 200);
+      var value = String(params.get(key) || '').replace(/[
+	]+/g, ' ').trim().slice(0, 200);
       var input = form.querySelector('input[name="' + key + '"]');
       if (input) input.value = value;
     });
@@ -178,7 +179,7 @@ var DESANYA_LINKS = {
     function orderSubject() {
       var subject = orderForm.querySelector('[data-order-subject]');
       var chosen = orderSelect.value;
-      if (subject) subject.value = 'New ORDER: ' + (chosen || 'service') + ' — desanya.tech';
+      if (subject) subject.value = 'New ORDER: ' + (chosen || 'service') + ' â desanya.tech';
     }
 
     var slug = params.get('service');
