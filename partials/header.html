@@ -2,13 +2,20 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="index.html" data-nav="home" aria-label="Desanya Studio — Home">
+      <a class="brand" href="index.html" data-nav="home" aria-label="Desanya Studio â Home">
         <picture>
           <source srcset="assets/desanya-wordmark-inline.webp?v=4" type="image/webp">
           <img src="assets/desanya-wordmark-inline.png?v=4" alt="Desanya Studio" width="692" height="150" class="brand-logo">
         </picture>
       </a>
 
+      <button type="button" class="ds-cart-btn" data-cart-open aria-label="Open shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/>
+          <path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21.5 7H6"/>
+        </svg>
+        <span class="ds-cart-count" data-cart-count hidden>0</span>
+      </button>
       <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>

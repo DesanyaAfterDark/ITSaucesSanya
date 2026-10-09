@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout â Desanya Studio Â· East TN</title>
+  <meta name="description" content="Review your order and check out securely with PayPal. Desanya Studio â websites, SEO, and content.">
+  <link rel="canonical" href="https://desanya.tech/checkout.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://desanya.tech/checkout.html">
+  <meta property="og:title" content="Checkout â Desanya Studio">
+  <meta property="og:description" content="Review your order and check out securely with PayPal.">
+  <meta name="twitter:title" content="Checkout â Desanya Studio">
+  <meta name="twitter:description" content="Review your order and check out securely with PayPal.">
+  <!-- @partial:head-common -->
+  <link rel="stylesheet" href="assets/cart.css?v=1">
+</head>
+<body>
+  <!-- @partial:header -->
+
+  <main id="main">
+    <div class="container">
+      <p class="eyebrow">Desanya Studio</p>
+      <h1>Checkout</h1>
+      <p class="lede">Review your order, then pay securely with PayPal.</p>
+
+      <div id="checkout-empty" class="checkout-empty" hidden>
+        <h2>Your cart is empty</h2>
+        <p>Pick a service to get started â every price is published up front.</p>
+        <a class="btn btn-primary" href="services.html">Browse services</a>
+      </div>
+
+      <div id="checkout-main" class="checkout-grid" hidden>
+        <section class="checkout-card" aria-labelledby="order-summary-h">
+          <h2 id="order-summary-h">Order summary</h2>
+          <div id="checkout-lines"></div>
+          <div class="checkout-grand">
+            <span>Total due today</span>
+            <strong id="checkout-total">$0</strong>
+          </div>
+          <p class="ds-cart-note" id="checkout-recurring-note" hidden>
+            Monthly services are billed separately after checkout â you only pay one-time items today, and we arrange the recurring billing with you directly.
+          </p>
+        </section>
+
+        <section class="checkout-card" aria-labelledby="checkout-pay-h">
+          <h2 id="checkout-pay-h">Your details &amp; payment</h2>
+          <div class="checkout-field">
+            <label for="co-name">Name</label>
+            <input type="text" id="co-name" name="name" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="checkout-field">
+            <label for="co-email">Email</label>
+            <input type="email" id="co-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <p class="checkout-error" id="checkout-error" role="alert" hidden></p>
+          <div id="paypal-buttons"></div>
+          <p class="ds-cart-note">Secure checkout via PayPal â cards, Venmo, and Pay Later accepted. Nothing is charged until you confirm in PayPal.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @partial:footer -->
+
+  <!-- @partial:chat -->
+
+  <script>
+    /* ============================================================
+       PayPal mode â flip to 'live' when the business account is
+       ready for real payments. Sandbox uses PayPal's test env.
+       ============================================================ */
+    var PAYPAL_MODE = 'live'; // 'sandbox' | 'live'
+    var PAYPAL_CLIENT_IDS = {
+      sandbox: 'sb',                       // PayPal sandbox placeholder â replace with sandbox client ID
+      live: 'AS5MKJS88Z-6tfrb3gvFL2vkKhnjmJYiJTWIZxGWAHuOYVw5AN1_07x82XNkaoIE1MNF4WxcYF0BoG-9'
+    };
+  </script>
+  <script>
+    (function () {
+      var mode = (typeof PAYPAL_MODE !== 'undefined' && PAYPAL_MODE === 'live') ? 'live' : 'sandbox';
+      var clientId = PAYPAL_CLIENT_IDS[mode] || 'sb';
+      var s = document.createElement('script');
+      s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId) +
+              '&currency=USD&intent=capture&components=buttons';
+      s.defer = true;
+      s.onload = initPayPal;
+      document.head.appendChild(s);
+
+      function esc(v) {
+        return String(v).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function money(n) { return '$' + Number(n).toLocaleString('en-US'); }
+
+      function renderSummary() {
+        var cart = window.DesanyaCart;
+        var items = cart.getItems();
+        var linesEl = document.getElementById('checkout-lines');
+        var emptyEl = document.getElementById('checkout-empty');
+        var mainEl = document.getElementById('checkout-main');
+
+        if (!items.length) {
+          emptyEl.hidden = false;
+          mainEl.hidden = true;
+          document.title = 'Checkout â Desanya Studio';
+          return;
+        }
+        emptyEl.hidden = true;
+        mainEl.hidden = false;
+
+        linesEl.innerHTML = items.map(function (it) {
+          return '<div class="checkout-line">' +
+            '<div>' +
+              '<span class="checkout-line-name">' + esc(it.name) +
+                (it.recurring ? ' <small>billed monthly â arranged after checkout</small>' : '') +
+              '</span>' +
+              '<div class="checkout-line-qty">' +
+                '<button type="button" data-co-dec="' + esc(it.slug) + '" aria-label="Decrease quantity">&minus;</button>' +
+                '<span>' + it.qty + '</span>' +
+                '<button type="button" data-co-inc="' + esc(it.slug) + '" aria-label="Increase quantity">+</button>' +
+                '<button type="button" class="btn btn-ghost btn-small" data-co-rm="' + esc(it.slug) + '">Remove</button>' +
+              '</div>' +
+            '</div>' +
+            '<span class="checkout-line-total">' + money(it.price * it.qty) + '</span>' +
+          '</div>';
+        }).join('');
+
+        document.getElementById('checkout-total').textContent = money(cart.getTotal());
+        document.getElementById('checkout-recurring-note').hidden = !cart.hasRecurring();
+
+        linesEl.onclick = function (e) {
+          var dec = e.target.closest('[data-co-dec]');
+          var inc = e.target.closest('[data-co-inc]');
+          var rm = e.target.closest('[data-co-rm]');
+          if (dec) { var s1 = dec.getAttribute('data-co-dec'); cart.setQty(s1, cartQty(s1) - 1); refresh(); }
+          else if (inc) { var s2 = inc.getAttribute('data-co-inc'); cart.setQty(s2, cartQty(s2) + 1); refresh(); }
+          else if (rm) { cart.remove(rm.getAttribute('data-co-rm')); refresh(); }
+        };
+      }
+
+      function cartQty(slug) {
+        var found = window.DesanyaCart.getItems().filter(function (i) { return i.slug === slug; })[0];
+        return found ? found.qty : 0;
+      }
+
+      function refresh() { renderSummary(); }
+
+      function validCustomer() {
+        var name = document.getElementById('co-name').value.trim();
+        var email = document.getElementById('co-email').value.trim();
+        var err = document.getElementById('checkout-error');
+        if (!name) { err.textContent = 'Please enter your name.'; err.hidden = false; return null; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          err.textContent = 'Please enter a valid email address.'; err.hidden = false; return null;
+        }
+        err.hidden = true;
+        return { name: name, email: email };
+      }
+
+      function initPayPal() {
+        renderSummary();
+        if (!window.paypal || !window.paypal.Buttons) {
+          var err = document.getElementById('checkout-error');
+          err.textContent = 'PayPal could not load. Please check your connection and refresh.';
+          err.hidden = false;
+          return;
+        }
+        window.paypal.Buttons({
+          style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'paypal' },
+          onClick: function (data, actions) {
+            return validCustomer() ? actions.resolve() : actions.reject();
+          },
+          createOrder: function (data, actions) {
+            var cart = window.DesanyaCart;
+            var items = cart.getItems().filter(function (it) { return !it.recurring; });
+            // Recurring items are excluded from the PayPal capture; arranged after checkout.
+            var total = items.reduce(function (s, it) { return s + it.price * it.qty; }, 0);
+            var customer = validCustomer();
+            var purchaseUnits = [{
+              description: 'Desanya Studio â ' + (customer ? customer.name : 'order'),
+              amount: {
+                currency_code: 'USD',
+                value: total.toFixed(2),
+                breakdown: {
+                  item_total: { currency_code: 'USD', value: total.toFixed(2) }
+                }
+              },
+              items: items.map(function (it) {
+                return {
+                  name: it.name.slice(0, 120),
+                  unit_amount: { currency_code: 'USD', value: it.price.toFixed(2) },
+                  quantity: String(it.qty)
+                };
+              })
+            }];
+            // PayPal requires at least one item; recurring-only carts fall back to a $1 deposit line.
+            if (!items.length) {
+              var all = cart.getItems();
+              purchaseUnits = [{
+                description: 'Desanya Studio â ' + (customer ? customer.name : 'order') + ' (monthly services arranged after checkout)',
+                amount: { currency_code: 'USD', value: '1.00' },
+                items: [{ name: 'Deposit â ' + all.map(function (i) { return i.name; }).join(', ').slice(0, 100),
+                          unit_amount: { currency_code: 'USD', value: '1.00' }, quantity: '1' }]
+              }];
+            }
+            return actions.order.create({ purchase_units: purchaseUnits });
+          },
+          onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+              var cart = window.DesanyaCart;
+              try {
+                if (window.gtag) {
+                  window.gtag('event', 'purchase', {
+                    transaction_id: details.id,
+                    value: cart.getTotal(),
+                    currency: 'USD'
+                  });
+                }
+              } catch (e) {}
+              var name = document.getElementById('co-name').value.trim();
+              var email = document.getElementById('co-email').value.trim();
+              try {
+                sessionStorage.setItem('desanya_last_order', JSON.stringify({
+                  id: details.id, name: name, email: email,
+                  total: cart.getTotal(), recurring: cart.hasRecurring()
+                }));
+              } catch (e) {}
+              cart.clear();
+              window.location.href = 'thanks/?paid=1';
+            });
+          },
+          onError: function () {
+            var err = document.getElementById('checkout-error');
+            err.textContent = 'Something went wrong with PayPal. Please try again.';
+            err.hidden = false;
+          }
+        }).render('#paypal-buttons');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          if (window.DesanyaCart) renderSummary();
+          else document.addEventListener('desanya-cart-ready', renderSummary);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
