@@ -2755,10 +2755,14 @@ a:hover {
 .gallery-item--banner { grid-column: 1 / -1; grid-row: span 2; }
 
 /* The Local SEO tile is tall. On a 3-column grid the closing commission
-   tile spans the two cells beside it so the last rows stay full. */
+   tile spans the two cells beside it so the last rows stay full.
+   The Reel tile is tall too, so the commission tile takes the full next row. */
 @media (min-width: 821px) {
   .gallery-grid:has(.gallery-item--seo) .gallery-item--cta {
     grid-column: span 2;
+  }
+  .gallery-grid:has(.gallery-item--reel) .gallery-item--cta {
+    grid-column: 1 / -1;
   }
 }
 
@@ -2831,7 +2835,55 @@ a:hover {
 }
 
 .gallery-link:hover .gallery-zoom,
-.gallery-link:focus-visible .gallery-zoom { opacity: 1; }
+.gallery-link:focus-visible .gallery-zoom,
+.gallery-item:hover .gallery-zoom,
+.gallery-item:focus-within .gallery-zoom { opacity: 1; }
+
+a.gallery-zoom {
+  z-index: 2;
+  text-decoration: none;
+}
+
+.gallery-item--reel .gallery-link {
+  display: flex;
+  flex-direction: column;
+  background: #120d24;
+}
+
+.gallery-item--reel .gallery-link picture {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+}
+
+.gallery-item--reel .gallery-link img {
+  object-fit: contain;
+  object-position: center center;
+  background: #120d24;
+}
+
+.gallery-item--reel .gallery-meta {
+  position: static;
+  background: none;
+  padding: 0.65rem 1.1rem 2.35rem;
+}
+
+.gallery-steps {
+  position: absolute;
+  z-index: 2;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.gallery-steps:hover,
+.gallery-steps:focus-visible { color: #fff; }
 
 .gallery-ph {
   height: 100%;

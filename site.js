@@ -288,7 +288,7 @@ var DESANYA_LINKS = {
       var a = active[index];
       var thumb = a.querySelector('img');
       img.src = a.getAttribute('href');
-      img.alt = thumb ? thumb.alt : '';
+      img.alt = (thumb && thumb.alt) || a.getAttribute('data-alt') || '';
       cap.textContent = a.getAttribute('data-caption') || '';
     }
 
