@@ -29,6 +29,10 @@ PAGES = {
     "404.html": ("", True),
     "thanks/index.html": ("", True),
     "checkout.html": ("", False),
+    "knoxville-web-design.html": ("", False),
+    "local-seo-google-business-profile.html": ("", False),
+    "social-media-management.html": ("", False),
+    "ai-for-small-business.html": ("", False),
 }
 MARK = re.compile(r"(<!-- @partial:(?P<name>[\w-]+) -->)(.*?)(<!-- /@partial:(?P=name) -->)", re.S)
 ATTR = re.compile(r'(\s(?:href|src|srcset)=)(["\'])([^"\']*)\2')
@@ -41,8 +45,14 @@ def absolutize(html):
         return f"{prefix}{quote}/{url}{quote}"
     return ATTR.sub(repl, html)
 
-def render(name, page_key, absolute):
+def render(name, page_key, absolute, _depth=0):
     html = (PARTIALS / f"{name}.html").read_text()
+    # One level of nesting, so head partials can include business-jsonld.
+    if _depth < 2:
+        def nest(m, page_key=page_key, absolute=absolute, _depth=_depth):
+            inner = render(m.group("name"), page_key, absolute, _depth + 1)
+            return m.group(1) + "\n" + inner.rstrip() + "\n  " + m.group(4)
+        html = MARK.sub(nest, html)
     if page_key:
         html = re.sub(
             rf'(<a [^>]*data-nav="{page_key}")',
