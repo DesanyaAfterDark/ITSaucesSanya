@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Got it — Desanya Studio</title>
-  <meta name="description" content="Your request is in. Desanya Studio will reply within 1 business day.">
+  <meta name="description" content="Your request is in. Desanya Studio will reply within 1 business day, Monday–Friday, 8:00 AM–5:00 PM.">
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://desanya.tech/thanks/">
   <!-- @partial:head-common -->
@@ -65,8 +65,27 @@
   },
   "areaServed": [
     {"@type": "City", "name": "Knoxville, TN"},
+    {"@type": "AdministrativeArea", "name": "Blount County, TN"},
+    {"@type": "AdministrativeArea", "name": "Knox County, TN"},
+    {"@type": "AdministrativeArea", "name": "Loudon County, TN"},
+    {"@type": "AdministrativeArea", "name": "McMinn County, TN"},
+    {"@type": "AdministrativeArea", "name": "Monroe County, TN"},
     {"@type": "AdministrativeArea", "name": "East Tennessee"},
     {"@type": "Country", "name": "United States"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
   ],
   "priceRange": "$99–$1600",
   "hasOfferCatalog": {
@@ -146,7 +165,7 @@
       <div class="container">
         <p class="eyebrow">Desanya Studio</p>
         <h1 id="page-heading">Got it — your request is in.</h1>
-        <p class="page-lede">Desanya Studio will reply within 1 business day.</p>
+        <p class="page-lede">Desanya Studio will reply within 1 business day, Monday–Friday, 8:00 AM–5:00 PM.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="/">Back to home</a>
           <a class="btn btn-secondary" href="/blog/">Read the blog</a>
@@ -275,7 +294,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
-          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day, Monday–Friday, 8:00 AM–5:00 PM.">
           <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
