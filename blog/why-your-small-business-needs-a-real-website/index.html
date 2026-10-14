@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/site.min.css?v=1">
+  <link rel="stylesheet" href="/assets/site.min.css?v=4">
 <!-- @partial:business-jsonld -->
 <script type="application/ld+json">
 {
@@ -69,13 +69,13 @@
     "addressCountry": "US"
   },
   "areaServed": [
-    {"@type": "City", "name": "Knoxville, TN"},
     {"@type": "AdministrativeArea", "name": "Blount County, TN"},
+    {"@type": "AdministrativeArea", "name": "East Tennessee"},
     {"@type": "AdministrativeArea", "name": "Knox County, TN"},
+    {"@type": "City", "name": "Knoxville, TN"},
     {"@type": "AdministrativeArea", "name": "Loudon County, TN"},
     {"@type": "AdministrativeArea", "name": "McMinn County, TN"},
     {"@type": "AdministrativeArea", "name": "Monroe County, TN"},
-    {"@type": "AdministrativeArea", "name": "East Tennessee"},
     {"@type": "Country", "name": "United States"}
   ],
   "openingHoursSpecification": [
@@ -132,6 +132,17 @@
     "mainEntityOfPage": "https://desanya.tech/blog/why-your-small-business-needs-a-real-website/"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://desanya.tech/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://desanya.tech/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Why your small business needs a real website", "item": "https://desanya.tech/blog/why-your-small-business-needs-a-real-website/"}
+    ]
+  }
+  </script>
 </head>
 <body class="page-post">
   <!-- @partial:header -->
@@ -185,6 +196,13 @@
         <img class="post-hero-img" src="/assets/blog/post-why-real-website.jpg?v=2" alt="Desanya Studio blog header: Why your small business needs a real website, with a browser window illustration" width="1600" height="900">
       </picture>
       <header class="post-intro container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li aria-current="page">Why your small business needs a real website</li>
+          </ol>
+        </nav>
         <p class="eyebrow">Web design</p>
         <h1>Why your small business needs a real website</h1>
         <p class="post-byline">October 5, 2026 · Desanya Studio</p>
@@ -212,7 +230,7 @@
       <p>Sherman&#x27;s Shih Tzu Puppies, a family breeder of AKC and CKC Shih Tzus in Niota, was Desanya Studio&#x27;s first build. The business needed a home online that families could find, trust, and contact. The studio built a real website and paired it with a verified Google Business Profile, and still manages both today.</p>
       <p>From May through October 2026, that profile recorded <strong>2,186 Google Business Profile interactions (calls, messages, directions and website clicks).</strong> Each of those was someone choosing to take a next step. The website and the profile worked together to make that step easy.</p>
       <h2>&quot;I can&#x27;t afford a website&quot; vs. &quot;I can&#x27;t afford to be invisible&quot;</h2>
-      <p>A website is an investment, and it should be priced like one: clearly, up front, with no surprise retainers. Desanya Studio&#x27;s website package is <strong>$1600</strong>, built mobile-first with clear calls to action and basic on-page SEO. If you want help keeping it current afterward, monthly care is <strong>$99/mo</strong>.</p>
+      <p>A website is an investment, and it should be priced like one: clearly, up front, with no surprise retainers. Desanya Studio&#x27;s <a href="/knoxville-web-design.html">website package is <strong>$1600</strong></a>, built mobile-first with clear calls to action and basic on-page SEO. If you want help keeping it current afterward, monthly care is <strong>$99/mo</strong>.</p>
       <p>What matters more than the price tag is what the site does once it&#x27;s live. A good website keeps working when you&#x27;re closed. It answers the same questions you&#x27;d otherwise answer on the phone, and it sends ready-to-buy customers straight to you.</p>
       <h2>Where to start</h2>
       <p>If you&#x27;re not sure what you need, start small and be honest about your goals:</p>
@@ -225,6 +243,13 @@
       <p>Then talk to someone who will give you a straight answer, even if that answer is &quot;you only need a simple one-page site.&quot;</p>
       <hr>
       <p><strong>Ready to talk it through?</strong> <a href="/contact.html#book">Book intro</a> for a short, no-pressure conversation about your business. Or tap <button type="button" class="post-ask" data-open-chat>Ask Desanya</button> on any page for quick answers on pricing and services.</p>
+      <nav class="post-related" aria-label="Related pages">
+        <p>Related pages</p>
+        <ul>
+          <li><a href="/knoxville-web-design.html">Knoxville web design</a></li>
+          <li><a href="/services.html">Services &amp; pricing</a></li>
+        </ul>
+      </nav>
       <div class="post-end-actions">
         <a class="btn btn-primary" href="/contact.html#book">Book intro</a>
         <button type="button" class="btn btn-secondary" data-open-chat>Ask Desanya</button>

@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/site.min.css?v=1">
+  <link rel="stylesheet" href="/assets/site.min.css?v=4">
 <!-- @partial:business-jsonld -->
 <script type="application/ld+json">
 {
@@ -69,13 +69,13 @@
     "addressCountry": "US"
   },
   "areaServed": [
-    {"@type": "City", "name": "Knoxville, TN"},
     {"@type": "AdministrativeArea", "name": "Blount County, TN"},
+    {"@type": "AdministrativeArea", "name": "East Tennessee"},
     {"@type": "AdministrativeArea", "name": "Knox County, TN"},
+    {"@type": "City", "name": "Knoxville, TN"},
     {"@type": "AdministrativeArea", "name": "Loudon County, TN"},
     {"@type": "AdministrativeArea", "name": "McMinn County, TN"},
     {"@type": "AdministrativeArea", "name": "Monroe County, TN"},
-    {"@type": "AdministrativeArea", "name": "East Tennessee"},
     {"@type": "Country", "name": "United States"}
   ],
   "openingHoursSpecification": [
@@ -132,6 +132,17 @@
     "mainEntityOfPage": "https://desanya.tech/blog/writing-website-copy-that-converts/"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://desanya.tech/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://desanya.tech/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Writing website copy that converts", "item": "https://desanya.tech/blog/writing-website-copy-that-converts/"}
+    ]
+  }
+  </script>
 </head>
 <body class="page-post">
   <!-- @partial:header -->
@@ -185,6 +196,13 @@
         <img class="post-hero-img" src="/assets/blog/post-copy-that-converts.jpg?v=2" alt="Desanya Studio blog header: Writing website copy that converts, with a pen nib illustration" width="1600" height="900">
       </picture>
       <header class="post-intro container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li aria-current="page">Writing website copy that converts</li>
+          </ol>
+        </nav>
         <p class="eyebrow">Content</p>
         <h1>Writing website copy that converts</h1>
         <p class="post-byline">October 5, 2026 · Desanya Studio</p>
@@ -227,9 +245,16 @@
       <h2>Read it out loud</h2>
       <p>The easiest editing trick there is: read your copy aloud. If you stumble, rewrite it. If it sounds like a brochure, make it sound like you. If you wouldn&#x27;t say it to a customer across the counter, don&#x27;t put it on your website.</p>
       <h2>When to bring in help</h2>
-      <p>Writing about your own business is hard. You&#x27;re too close to it. A fresh perspective can spot what&#x27;s missing and say it in fewer words. Desanya Studio&#x27;s <strong>content package is $400</strong>: headlines, page copy, and calls to action in your voice, tightened. <strong>Blog writing is $200/post, or $700/mo for 4 posts.</strong> Every draft comes to you for approval before anything goes live.</p>
+      <p>Writing about your own business is hard. You&#x27;re too close to it. A fresh perspective can spot what&#x27;s missing and say it in fewer words. Desanya Studio&#x27;s <a href="/services.html#build"><strong>content package is $400</strong></a>: headlines, page copy, and calls to action in your voice, tightened. <strong>Blog writing is $200/post, or $700/mo for 4 posts.</strong> Every draft comes to you for approval before anything goes live.</p>
       <hr>
       <p><strong>Want your words to work harder?</strong> <a href="/contact.html#book">Book intro</a> for a short conversation about your site. Or tap <button type="button" class="post-ask" data-open-chat>Ask Desanya</button> on any page for quick answers.</p>
+      <nav class="post-related" aria-label="Related pages">
+        <p>Related pages</p>
+        <ul>
+          <li><a href="/knoxville-web-design.html">Knoxville web design</a></li>
+          <li><a href="/services.html">Services &amp; pricing</a></li>
+        </ul>
+      </nav>
       <div class="post-end-actions">
         <a class="btn btn-primary" href="/contact.html#book">Book intro</a>
         <button type="button" class="btn btn-secondary" data-open-chat>Ask Desanya</button>
