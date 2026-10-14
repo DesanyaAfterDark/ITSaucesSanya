@@ -3103,7 +3103,7 @@ body.lightbox-open { overflow: hidden; }
 
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.1rem;
 }
 
@@ -3226,6 +3226,63 @@ body.lightbox-open { overflow: hidden; }
 
 .price-card--custom h3 { color: var(--accent-strong); }
 .price-card--custom .price-amount { font-size: 1.6rem; }
+
+.price-from {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.tier-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tier-grid--1 { grid-template-columns: minmax(0, 28rem); }
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 0.9rem 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tier-name {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.tier .price { margin: 0; }
+.tier .price-amount { font-size: 1.45rem; }
+.tier-meta {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+.tier .price-list { margin: 0.15rem 0 0; font-size: 0.88rem; }
+.tier .btn { margin-top: auto; width: 100%; }
+
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.price-table-wrap { overflow-x: auto; }
 
 .summary-card {
   padding: clamp(1.5rem, 4vw, 2.25rem);
@@ -3997,7 +4054,7 @@ a[data-google-review-link][hidden],
   .principle-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .work-grid--3 { grid-template-columns: repeat(2, 1fr); }
-  .price-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .price-card--featured { grid-column: 1 / -1; }
   .contact-layout { grid-template-columns: 1fr; }
@@ -4033,7 +4090,11 @@ a[data-google-review-link][hidden],
   .principle-grid,
   .work-grid--3,
   .price-grid,
-  .price-grid--2 { grid-template-columns: 1fr; }
+  .price-grid--2,
+  .tier-grid,
+  .tier-grid--2,
+  .tier-grid--1,
+  .addon-grid { grid-template-columns: 1fr; }
   .price-pair { grid-template-columns: 1fr; }
   .price-pair > div + div { padding-left: 0; border-left: 0; padding-top: 1rem; border-top: 1px solid var(--border); }
   .price-card--row { grid-template-columns: 1fr; gap: 0.5rem; }
