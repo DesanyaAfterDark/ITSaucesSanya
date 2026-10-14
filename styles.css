@@ -3532,10 +3532,20 @@ body.lightbox-open { overflow: hidden; }
 
 .footer-area {
   margin: 0.65rem 0 0;
+  max-width: 22rem;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  line-height: 1.45;
   color: var(--text);
+}
+
+.location-note {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 36rem;
 }
 
 .footer-heading {
@@ -3990,6 +4000,8 @@ a[data-google-review-link][hidden],
   .trust-list { flex-direction: column; }
   .hero-proof-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .footer-area,
+  .location-note { font-size: 0.8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
