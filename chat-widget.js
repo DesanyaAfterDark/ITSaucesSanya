@@ -11,21 +11,21 @@
       label: 'Website build',
       keywords: ['website', 'site', 'web', 'build', 'page', 'landing', '1600'],
       answer:
-        'Website package is <strong>$1600</strong> — a clean one-pager or multi-section site that looks sharp, loads fast, and converts visitors into leads.'
+        'Website packages are <strong>$900</strong> (1 page), <strong>$1,600</strong> (up to 5 pages), and <strong>$2,500</strong> (up to 10 pages, blog, and copy). Details on the <a href="/services.html#website">Services page</a>.'
     },
     {
       id: 'content',
       label: 'Content / copy',
       keywords: ['content', 'copy', 'writing', 'words', 'headline', '400'],
       answer:
-        'Content package is <strong>$400</strong> — headlines, page copy, and CTAs that say what you do, who it’s for, and why it matters — without the fluff.'
+        'Website copywriting is <strong>$150</strong> for one page or <strong>$400</strong> for up to 3 pages. Details on the <a href="/services.html#copy">Services page</a>.'
     },
     {
       id: 'blog-writing',
       label: 'Blog writing',
       keywords: ['blog', 'blog writing', 'blog post', 'posts', 'article', 'seo-friendly', 'seo friendly', '200', '700/mo', '4 posts'],
       answer:
-        'Blog writing is <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) — SEO-friendly posts drafted for your site or business; you approve before publish.'
+        'Blog writing is <strong>$120</strong> (about 800 words), <strong>$200</strong> (about 1,000–1,500 words), or <strong>$700/mo</strong> for 4 posts. You approve before publish. Details on the <a href="/services.html#blog">Services page</a>.'
     },
     {
       id: 'social-setup',
@@ -39,70 +39,70 @@
       label: 'Social managing',
       keywords: ['social managing', 'managing', 'posts', 'scheduling', 'engagement', '850'],
       answer:
-        'Social managing is <strong>$850/mo</strong> — ongoing posts, scheduling, and light engagement so you stay visible without living in the apps.'
+        'Social managing is <strong>$350/mo</strong> (12 posts, 1 platform), <strong>$600/mo</strong> (20 posts, 2 platforms), or <strong>$850/mo</strong> (adds Reels and light engagement). You approve posts first. Details on the <a href="/services.html#social">Services page</a>.'
     },
     {
       id: 'seo-setup',
       label: 'SEO & Google setup',
       keywords: ['seo & google setup', 'seo', 'google', 'business profile', 'gbp', 'search', 'listings', 'maps', 'local seo', '550', 'seo setup', 'google setup'],
       answer:
-        'SEO &amp; Google setup is <strong>$550</strong> — help getting found on Google: Google Business Profile, search listings, and basic SEO on the site so the right customers can find you.'
+        'On-site SEO setup is <strong>$550</strong>. A Google Business Profile tune-up starts at <strong>$150</strong>. There is no guaranteed ranking. Details on the <a href="/services.html#seo">Services page</a>.'
     },
     {
       id: 'seo-managing',
       label: 'SEO & Google managing',
       keywords: ['seo & google managing', 'seo managing', 'google managing', 'seo management', 'google management', '450', 'ongoing seo', 'search console'],
       answer:
-        'SEO &amp; Google managing is <strong>$450/mo</strong> — ongoing Google and SEO tweaks: listing updates, search visibility checks, and light optimizations so you stay findable.'
+        'SEO &amp; Google managing is <strong>$450/mo</strong> — listing updates, visibility checks, and a short monthly report. Details on the <a href="/services.html#seo">Services page</a>.'
     },
     {
       id: 'ai-setup',
       label: 'AI setup',
       keywords: ['ai setup', 'ai managing', 'ai for business', 'artificial intelligence', 'chatbot', 'workflow automation', 'automation setup', 'staff training'],
       answer:
-        'AI setup and management is for <strong>your</strong> business tools — not the chat on this site, which is still a canned FAQ. Setup is <strong>$750</strong> (chatbot or FAQ assistant, workflow automation, and staff training notes). Managing is <strong>$550/mo</strong> for ongoing tweaks. You approve before anything goes live. Details on the <a href="/services.html#ai">Services page</a>.'
+        'AI setup is <strong>$400</strong>, <strong>$750</strong>, or <strong>$1,200</strong>. Managing is <strong>$150–$250/mo</strong>. This is for your business tools, not the canned FAQ on this site. You approve before anything goes live. Details on the <a href="/services.html#ai">Services page</a>.'
     },
     {
       id: 'brand-kit',
-      label: 'Brand starter kit',
-      keywords: ['brand starter', 'brand kit', 'logo refresh', 'color palette', 'social templates'],
+      label: 'Brand refresh kit',
+      keywords: ['brand starter', 'brand kit', 'brand refresh', 'logo refresh', 'color palette', 'social templates'],
       answer:
-        'The brand starter kit is <strong>$450</strong> — a logo refresh, a color palette, and social templates. Details on the <a href="/services.html#build">Services page</a>.'
+        'The brand refresh kit is <strong>$450</strong> — a logo refresh (PNG and SVG), a color and type sheet, and 5 Canva templates. Details on the <a href="/services.html#brand">Services page</a>.'
     },
     {
       id: 'landing-page',
       label: 'Ad landing page',
       keywords: ['ad landing', 'landing page', 'campaign page', 'one page offer'],
       answer:
-        'An ad landing page is <strong>$600</strong> — one focused page for a campaign or offer. You approve it before it goes live. Details on the <a href="/services.html#build">Services page</a>.'
+        'An ad landing page is <strong>$400</strong>, <strong>$600</strong>, or <strong>$900</strong>. You approve it before it goes live. Details on the <a href="/services.html#ad-landing">Services page</a>.'
     },
     {
       id: 'photo-polish',
       label: 'Photo & gallery polish',
       keywords: ['photo polish', 'gallery polish', 'photo cleanup', 'photo & gallery', 'breeder gallery'],
       answer:
-        'Photo &amp; gallery polish is <strong>$300</strong> — photo cleanup and a gallery layout for a local shop or breeder site. Details on the <a href="/services.html#care">Services page</a>.'
+        'Photo &amp; gallery polish is <strong>$150</strong> for up to 15 photos or <strong>$300</strong> for up to 40. Details on the <a href="/services.html#photo">Services page</a>.'
     },
     {
       id: 'review-kit',
       label: 'Review generation kit',
       keywords: ['review kit', 'review generation', 'google review qr', 'printable card', 'ask templates'],
       answer:
-        'The review generation kit is <strong>$200</strong> — a Google review QR code, a printable card, and email or text ask templates that use your review link. It does not invent ratings. See the <a href="/services.html#grow">Services page</a> and the <a href="/index.html#reviews">reviews section</a>.'
+        'The review generation kit is <strong>$200</strong> — a Google review QR code, a printable card, and email or text ask templates that use your review link. It does not invent ratings. See the <a href="/services.html#review">Services page</a>.'
     },
     {
       id: 'site-training',
       label: 'Site update training',
       keywords: ['site update training', 'update training', 'teach me to update', 'training session', '1-hour', 'one hour'],
       answer:
-        'Site update training is <strong>$125</strong> — a one-hour remote session teaching you to update your own site, with notes afterward. Details on the <a href="/services.html#care">Services page</a>.'
+        'Site update training is <strong>$125</strong> for one hour or <strong>$225</strong> for two sessions, with notes afterward. Details on the <a href="/services.html#training">Services page</a>.'
     },
     {
       id: 'monthly-care',
       label: 'Monthly care',
       keywords: ['monthly', 'care', 'maintenance', 'updates', 'fixes', '99', 'hosting'],
       answer:
-        'Monthly care is <strong>$99/mo</strong> — updates, small fixes, and peace of mind for sites that need a light, reliable caretaker.'
+        'Monthly care is <strong>$99/mo</strong> (up to 1 hour, uptime check, backup) or <strong>$179/mo</strong> (up to 2 hours plus a Google Business Profile post). Details on the <a href="/services.html#care">Services page</a>.'
     },
     {
       id: 'portfolio',
@@ -123,7 +123,7 @@
       label: 'All pricing',
       keywords: ['price', 'pricing', 'cost', 'how much', 'rates', 'packages', 'services'],
       answer:
-        'Clear packages: Website <strong>$1600</strong> · Content <strong>$400</strong> · Blog writing <strong>$200/post</strong> or <strong>$700/mo</strong> (4 posts) · Social setup <strong>$550</strong> · Social managing <strong>$850/mo</strong> · SEO &amp; Google setup <strong>$550</strong> · SEO &amp; Google managing <strong>$450/mo</strong> · AI setup <strong>$750</strong> · AI managing <strong>$550/mo</strong> · Brand starter kit <strong>$450</strong> · Ad landing page <strong>$600</strong> · Photo &amp; gallery polish <strong>$300</strong> · Review generation kit <strong>$200</strong> · Site update training <strong>$125</strong> · Monthly care <strong>$99/mo</strong>. Custom quotes when scope is bigger. Details on the <a href="/services.html">Services page</a>.'
+        'Packages start at <strong>$60</strong>. Website is <strong>$900 / $1,600 / $2,500</strong>. Social managing is <strong>$350 / $600 / $850 a month</strong>. AI managing is <strong>$150–$250/mo</strong>. The full list, delivery times, and revisions are on the <a href="/services.html">Services page</a>.'
     }
   ];
 

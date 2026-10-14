@@ -24,23 +24,84 @@
   /* recurring: true  => billed monthly; arranged after checkout        */
   /* ------------------------------------------------------------------ */
   var CATALOG = {
-    'website':              { name: 'Website',                 price: 1600, recurring: false },
-    'ad-landing-page':      { name: 'Ad landing page',         price: 600,  recurring: false },
-    'ai-setup':             { name: 'AI setup',                price: 750,  recurring: false },
-    'ai-managing':          { name: 'AI managing',             price: 550,  recurring: true  },
-    'blog-post':            { name: 'Blog post',               price: 200,  recurring: false },
-    'blog-monthly':         { name: 'Blog (monthly)',          price: 700,  recurring: true  },
-    'brand-starter-kit':    { name: 'Brand starter kit',       price: 450,  recurring: false },
-    'content':              { name: 'Content',                 price: 400,  recurring: false },
-    'monthly-care':         { name: 'Monthly care',            price: 99,   recurring: true  },
-    'photo-gallery-polish': { name: 'Photo & gallery polish',  price: 300,  recurring: false },
-    'review-generation-kit':{ name: 'Review generation kit',   price: 200,  recurring: false },
-    'seo-setup':            { name: 'SEO & Google setup',      price: 550,  recurring: false },
-    'seo-managing':         { name: 'SEO & Google managing',   price: 450,  recurring: true  },
-    'site-update-training': { name: 'Site update training',    price: 125,  recurring: false },
-    'social-setup':         { name: 'Social setup',            price: 550,  recurring: false },
-    'social-managing':      { name: 'Social managing',         price: 850,  recurring: true  }
+    'ad-landing-basic':       { name: 'Ad landing page — Basic', price: 400, recurring: false },
+    'ad-landing-standard':    { name: 'Ad landing page — Standard', price: 600, recurring: false },
+    'ad-landing-premium':     { name: 'Ad landing page — Premium', price: 900, recurring: false },
+    'ai-setup-basic':         { name: 'AI setup — Basic', price: 400, recurring: false },
+    'ai-setup-standard':      { name: 'AI setup — Standard', price: 750, recurring: false },
+    'ai-setup-premium':       { name: 'AI setup — Premium', price: 1200, recurring: false },
+    'ai-managing-basic':      { name: 'AI managing — Basic', price: 150, recurring: true },
+    'ai-managing-standard':   { name: 'AI managing — Standard', price: 200, recurring: true },
+    'ai-managing-premium':    { name: 'AI managing — Premium', price: 250, recurring: true },
+    'ai-search-basic':        { name: 'AI search & site audit — Basic', price: 150, recurring: false },
+    'ai-search-standard':     { name: 'AI search & site audit — Standard', price: 300, recurring: false },
+    'ai-search-premium':      { name: 'AI search & site audit — Premium', price: 500, recurring: false },
+    'blog-basic':             { name: 'Blog writing — Basic', price: 120, recurring: false },
+    'blog-standard':          { name: 'Blog writing — Standard', price: 200, recurring: false },
+    'blog-monthly':           { name: 'Blog writing — Premium (monthly)', price: 700, recurring: true },
+    'brand-refresh':          { name: 'Brand refresh kit', price: 450, recurring: false },
+    'canva-basic':            { name: 'Canva social template pack — Basic', price: 150, recurring: false },
+    'canva-standard':         { name: 'Canva social template pack — Standard', price: 275, recurring: false },
+    'canva-premium':          { name: 'Canva social template pack — Premium', price: 400, recurring: false },
+    'email-basic':            { name: 'Email newsletter template — Basic', price: 125, recurring: false },
+    'email-standard':         { name: 'Email newsletter template — Standard', price: 350, recurring: false },
+    'email-premium':          { name: 'Email newsletter template — Premium', price: 600, recurring: false },
+    'extra-page':             { name: 'Extra page', price: 200, recurring: false },
+    'extra-revision':         { name: 'Extra revision round', price: 40, recurring: false },
+    'gbp-basic':              { name: 'Google Business Profile tune-up — Basic', price: 150, recurring: false },
+    'gbp-standard':           { name: 'Google Business Profile tune-up — Standard', price: 250, recurring: false },
+    'gbp-premium':            { name: 'Google Business Profile tune-up — Premium', price: 400, recurring: false },
+    'monthly-care':           { name: 'Monthly care — Basic', price: 99, recurring: true },
+    'monthly-care-plus':      { name: 'Monthly care — Plus', price: 179, recurring: true },
+    'photo-basic':            { name: 'Photo & gallery polish — Basic', price: 150, recurring: false },
+    'photo-standard':         { name: 'Photo & gallery polish — Standard', price: 300, recurring: false },
+    'deck-basic':             { name: 'Pitch deck — Basic', price: 150, recurring: false },
+    'deck-standard':          { name: 'Pitch deck — Standard', price: 300, recurring: false },
+    'deck-premium':           { name: 'Pitch deck — Premium', price: 500, recurring: false },
+    'descriptions-basic':     { name: 'Product & service descriptions — Basic', price: 60, recurring: false },
+    'descriptions-standard':  { name: 'Product & service descriptions — Standard', price: 150, recurring: false },
+    'descriptions-premium':   { name: 'Product & service descriptions — Premium', price: 275, recurring: false },
+    'reels-basic':            { name: 'Reels pack — Basic', price: 75, recurring: false },
+    'reels-standard':         { name: 'Reels pack — Standard', price: 300, recurring: false },
+    'reels-premium':          { name: 'Reels pack — Premium', price: 550, recurring: false },
+    'review-generation-kit':  { name: 'Review generation kit', price: 200, recurring: false },
+    'rush':                   { name: 'Rush delivery', price: 0, recurring: false, rush: true },
+    'seo-setup':              { name: 'SEO & Google setup', price: 550, recurring: false },
+    'seo-managing':           { name: 'SEO & Google managing', price: 450, recurring: true },
+    'training-basic':         { name: 'Site update training — Basic', price: 125, recurring: false },
+    'training-standard':      { name: 'Site update training — Standard', price: 225, recurring: false },
+    'ad-copy-basic':          { name: 'Social ad copy pack — Basic', price: 100, recurring: false },
+    'ad-copy-standard':       { name: 'Social ad copy pack — Standard', price: 200, recurring: false },
+    'ad-copy-premium':        { name: 'Social ad copy pack — Premium', price: 350, recurring: false },
+    'social-setup':           { name: 'Social setup', price: 550, recurring: false },
+    'social-managing-basic':  { name: 'Social managing — Basic', price: 350, recurring: true },
+    'social-managing-standard': { name: 'Social managing — Standard', price: 600, recurring: true },
+    'social-managing-premium':  { name: 'Social managing — Premium', price: 850, recurring: true },
+    'website-basic':          { name: 'Website — Basic', price: 900, recurring: false },
+    'website-standard':       { name: 'Website — Standard', price: 1600, recurring: false },
+    'website-premium':        { name: 'Website — Premium', price: 2500, recurring: false },
+    'copy-basic':             { name: 'Website copywriting — Basic', price: 150, recurring: false },
+    'copy-standard':          { name: 'Website copywriting — Standard', price: 400, recurring: false }
   };
+
+  /* Older links and saved carts map to the tier that kept the previous price. */
+  var ALIASES = {
+    'website': 'website-standard',
+    'ad-landing-page': 'ad-landing-standard',
+    'ai-setup': 'ai-setup-standard',
+    'ai-managing': 'ai-managing-standard',
+    'blog-post': 'blog-standard',
+    'blog': 'blog-standard',
+    'brand-starter-kit': 'brand-refresh',
+    'content': 'copy-standard',
+    'photo-gallery-polish': 'photo-standard',
+    'site-update-training': 'training-basic',
+    'social-managing': 'social-managing-premium'
+  };
+
+  function resolve(slug) {
+    return ALIASES[slug] || slug;
+  }
 
   /* ------------------------------------------------------------------ */
   /* State                                                               */
@@ -53,8 +114,10 @@
       if (raw) {
         var data = JSON.parse(raw);
         if (data && typeof data === 'object') {
-          Object.keys(data).forEach(function (slug) {
-            if (CATALOG[slug] && data[slug] > 0) cart[slug] = Math.min(99, Math.floor(data[slug]));
+          Object.keys(data).forEach(function (key) {
+            var slug = resolve(key);
+            var c = CATALOG[slug];
+            if (c && data[key] > 0) cart[slug] = c.rush ? 1 : Math.min(99, Math.floor(data[key]));
           });
         }
       }
@@ -67,16 +130,40 @@
   }
 
   function money(n) {
-    return '$' + Number(n).toLocaleString('en-US');
+    var v = Math.round(Number(n) * 100) / 100;
+    var cents = Math.round(v * 100) % 100 !== 0;
+    return '$' + v.toLocaleString('en-US', {
+      minimumFractionDigits: cents ? 2 : 0,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function rushAmount() {
+    var base = 0;
+    Object.keys(cart).forEach(function (slug) {
+      var c = CATALOG[slug];
+      if (!c || c.rush || c.recurring) return;
+      base += c.price * cart[slug];
+    });
+    return Math.round(base * 0.35 * 100) / 100;
+  }
+
+  function linePrice(slug) {
+    var c = CATALOG[slug];
+    return c && c.rush ? rushAmount() : c.price;
   }
 
   /* ------------------------------------------------------------------ */
   /* Public API                                                          */
   /* ------------------------------------------------------------------ */
   function add(slug, qty) {
+    slug = resolve(slug);
     if (!CATALOG[slug]) return false;
-    qty = qty == null ? 1 : Math.max(1, Math.floor(qty));
-    cart[slug] = Math.min(99, (cart[slug] || 0) + qty);
+    if (CATALOG[slug].rush) cart[slug] = 1;
+    else {
+      qty = qty == null ? 1 : Math.max(1, Math.floor(qty));
+      cart[slug] = Math.min(99, (cart[slug] || 0) + qty);
+    }
     save(); render();
     return true;
   }
@@ -87,10 +174,11 @@
   }
 
   function setQty(slug, qty) {
+    slug = resolve(slug);
     if (!CATALOG[slug]) return;
     qty = Math.floor(qty);
     if (qty <= 0) delete cart[slug];
-    else cart[slug] = Math.min(99, qty);
+    else cart[slug] = CATALOG[slug].rush ? 1 : Math.min(99, qty);
     save(); render();
   }
 
@@ -102,12 +190,20 @@
   function getItems() {
     return Object.keys(cart).map(function (slug) {
       var c = CATALOG[slug];
-      return { slug: slug, name: c.name, price: c.price, recurring: c.recurring, qty: cart[slug] };
+      return { slug: slug, name: c.name, price: linePrice(slug), recurring: !!c.recurring, rush: !!c.rush, qty: cart[slug] };
     });
+  }
+
+  function getPayableItems() {
+    return getItems().filter(function (it) { return !it.recurring && it.price > 0; });
   }
 
   function getTotal() {
     return getItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
+  }
+
+  function getPayableTotal() {
+    return getPayableItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
   }
 
   function getCount() {
@@ -206,6 +302,7 @@
             '<strong>' + esc(it.name) + '</strong>' +
             '<span class="ds-cart-item-price">' + money(it.price) + (it.recurring ? ' /mo' : '') + '</span>' +
             (it.recurring ? '<span class="ds-cart-item-tag">billed monthly</span>' : '') +
+            (it.rush ? '<span class="ds-cart-item-tag">35% of one-time items</span>' : '') +
           '</div>' +
           '<div class="ds-cart-item-qty">' +
             '<button type="button" data-cart-qty="' + esc(it.slug) + '" data-delta="-1" aria-label="Decrease quantity">&minus;</button>' +
@@ -302,6 +399,8 @@
     setQty: setQty,
     clear: clear,
     getItems: getItems,
+    getPayableItems: getPayableItems,
+    getPayableTotal: getPayableTotal,
     getTotal: getTotal,
     getCount: getCount,
     hasRecurring: hasRecurring,
