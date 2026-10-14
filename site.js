@@ -283,12 +283,23 @@ var DESANYA_LINKS = {
     var opener = null;
     var active = links;
 
+    function ensureImg() {
+      if (img) return img;
+      img = document.createElement('img');
+      img.className = 'lightbox-img';
+      img.alt = '';
+      var fig = dialog.querySelector('.lightbox-figure');
+      fig.insertBefore(img, cap);
+      return img;
+    }
+
     function show(i) {
       index = (i + active.length) % active.length;
       var a = active[index];
       var thumb = a.querySelector('img');
-      img.src = a.getAttribute('href');
-      img.alt = (thumb && thumb.alt) || a.getAttribute('data-alt') || '';
+      var el = ensureImg();
+      el.src = a.getAttribute('href');
+      el.alt = (thumb && thumb.alt) || a.getAttribute('data-alt') || '';
       cap.textContent = a.getAttribute('data-caption') || '';
     }
 

@@ -39,42 +39,86 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17">
-  <link rel="stylesheet" href="theme.css?v=3">
-  <link rel="stylesheet" href="assets/cart.css?v=2">
-  <!-- /@partial:head-common -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Desanya Studio",
-    "url": "https://desanya.tech/services.html",
-    "email": "desanyaafterdark@gmail.com",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Desanya Studio Services",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website"}, "price": "1600", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Content"}, "price": "400", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Blog writing", "description": "SEO-friendly blog posts drafted for your site or business; you approve before publish."}, "price": "200", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "USD", "unitText": "POST"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Blog writing (monthly)"}, "price": "700", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "700", "priceCurrency": "USD", "unitText": "MONTH", "referenceQuantity": {"@type": "QuantitativeValue", "value": "4", "unitText": "POST"}}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand starter kit", "description": "Logo refresh, color palette, and social templates."}, "price": "450", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ad landing page", "description": "One focused page for a campaign or offer."}, "price": "600", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social setup"}, "price": "550", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social managing"}, "price": "850", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "USD", "unitText": "MONTH"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & Google setup"}, "price": "550", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & Google managing"}, "price": "450", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "450", "priceCurrency": "USD", "unitText": "MONTH"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Review generation kit", "description": "Google review QR code, printable card, and email or text ask templates. Does not invent ratings."}, "price": "200", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI setup", "description": "Chatbot or FAQ assistant, workflow automation setup, and staff training notes for a business. Client approves before go-live."}, "price": "750", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI managing", "description": "Ongoing tweaks to business AI answers, flows, and prompts. Changes stay in draft until the client approves them."}, "price": "550", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "USD", "unitText": "MONTH"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Photo & gallery polish", "description": "Photo cleanup and gallery layout for a local shop or breeder site."}, "price": "300", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Site update training", "description": "One-hour remote session teaching the client to update their own site, with notes."}, "price": "125", "priceCurrency": "USD"},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monthly care"}, "price": "99", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitText": "MONTH"}}
-      ]
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/site.min.css?v=3">
+<!-- @partial:business-jsonld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@id": "https://desanya.tech/#business",
+  "name": "Desanya Studio",
+  "url": "https://desanya.tech/",
+  "email": "desanyaafterdark@gmail.com",
+  "telephone": "+1-423-252-7674",
+  "logo": "https://desanya.tech/assets/favicon-512.png?v=4",
+  "image": "https://desanya.tech/assets/desanya-og.jpg?v=5",
+  "description": "Desanya Studio builds clean websites, SEO & Google visibility, and content that converts — for tech talent and small businesses who want clarity over theater.",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61594838174588",
+    "https://www.instagram.com/desanya_after_dark/",
+    "https://www.tiktok.com/@desanyastudio",
+    "https://www.youtube.com/@DesanyaStudio"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Niota",
+    "addressRegion": "TN",
+    "postalCode": "37826",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Knoxville, TN"},
+    {"@type": "AdministrativeArea", "name": "Blount County, TN"},
+    {"@type": "AdministrativeArea", "name": "Knox County, TN"},
+    {"@type": "AdministrativeArea", "name": "Loudon County, TN"},
+    {"@type": "AdministrativeArea", "name": "McMinn County, TN"},
+    {"@type": "AdministrativeArea", "name": "Monroe County, TN"},
+    {"@type": "AdministrativeArea", "name": "East Tennessee"},
+    {"@type": "Country", "name": "United States"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
     }
+  ],
+  "priceRange": "$99–$1600",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Desanya Studio Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website"}, "price": "1600", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Content"}, "price": "400", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Blog writing", "description": "SEO-friendly blog posts drafted for your site or business; you approve before publish."}, "price": "200", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "USD", "unitText": "POST"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Blog writing (monthly)"}, "price": "700", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "700", "priceCurrency": "USD", "unitText": "MONTH", "referenceQuantity": {"@type": "QuantitativeValue", "value": "4", "unitText": "POST"}}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand starter kit", "description": "Logo refresh, color palette, and social templates."}, "price": "450", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ad landing page", "description": "One focused page for a campaign or offer."}, "price": "600", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social setup"}, "price": "550", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social managing"}, "price": "850", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "USD", "unitText": "MONTH"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & Google setup"}, "price": "550", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO & Google managing"}, "price": "450", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "450", "priceCurrency": "USD", "unitText": "MONTH"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Review generation kit", "description": "Google review QR code, printable card, and email or text ask templates. Does not invent ratings."}, "price": "200", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI setup", "description": "Chatbot or FAQ assistant, workflow automation setup, and staff training notes for a business. Client approves before go-live."}, "price": "750", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI managing", "description": "Ongoing tweaks to business AI answers, flows, and prompts. Changes stay in draft until the client approves them."}, "price": "550", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "USD", "unitText": "MONTH"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Photo & gallery polish", "description": "Photo cleanup and gallery layout for a local shop or breeder site."}, "price": "300", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Site update training", "description": "One-hour remote session teaching the client to update their own site, with notes."}, "price": "125", "priceCurrency": "USD"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monthly care"}, "price": "99", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitText": "MONTH"}}
+    ]
   }
-  </script>
+}
+</script>
+  <!-- /@partial:business-jsonld -->
+  <!-- /@partial:head-common -->
 </head>
 <body class="page-services">
   <!-- @partial:header -->
@@ -154,8 +198,11 @@
               <li>Clear calls to action (call, book, buy)</li>
               <li>Basic on-page SEO + page titles</li>
             </ul>
-            <a class="btn btn-primary btn-small" href="contact.html?service=website#order">Get started</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="website">Add to cart</button>
+            <p class="price-outcome">Outcome: a site that turns visitors into leads.</p>
+            <p class="price-more"><a class="text-link" href="knoxville-web-design.html">Knoxville web design <span aria-hidden="true">→</span></a></p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="website">Add to cart</button>
+            </div>
           </article>
 
           <article class="price-card">
@@ -167,8 +214,10 @@
               <li>Calls to action that convert</li>
               <li>Your voice, tightened</li>
             </ul>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=content#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="content">Add to cart</button>
+            <p class="price-outcome">Outcome: copy that says what you do, who it’s for, and why it matters.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="content">Add to cart</button>
+            </div>
           </article>
 
           <article class="price-card">
@@ -179,9 +228,11 @@
               <span class="price-line"><span class="price-amount">$700</span><span class="price-unit">/mo</span> <span class="price-note">(4 posts)</span></span>
             </p>
             <p class="price-card-desc">SEO-friendly posts drafted for your site or business; you approve before anything publishes.</p>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=blog#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="blog-post">Add post ($200)</button>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="blog-monthly">Add monthly ($700/mo)</button>
+            <p class="price-outcome">Outcome: SEO-friendly posts you approve before they publish.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="blog-post">Add post to cart</button>
+              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="blog-monthly">Add monthly to cart</button>
+            </div>
           </article>
 
           <article class="price-card">
@@ -193,8 +244,10 @@
               <li>Color palette</li>
               <li>Social templates</li>
             </ul>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=brand-starter-kit#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="brand-starter-kit">Add to cart</button>
+            <p class="price-outcome">Outcome: a tighter look you can reuse — logo, colors, and templates.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="brand-starter-kit">Add to cart</button>
+            </div>
           </article>
 
           <article class="price-card">
@@ -206,8 +259,10 @@
               <li>Headline, proof, and a clear call to action</li>
               <li>You approve before it goes live</li>
             </ul>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=ad-landing-page#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="ad-landing-page">Add to cart</button>
+            <p class="price-outcome">Outcome: one page that sends visitors toward a single next step.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="ad-landing-page">Add to cart</button>
+            </div>
           </article>
         </div>
       </div>
@@ -234,11 +289,11 @@
                 <p class="price-card-desc">Ongoing posts, scheduling, and light engagement — stay visible without living in the apps.</p>
               </div>
             </div>
+            <p class="price-outcome">Outcome: social that matches the brand and stays visible.</p>
+            <p class="price-more"><a class="text-link" href="social-media-management.html">Social media management <span aria-hidden="true">→</span></a></p>
             <div class="price-actions">
-              <a class="btn btn-secondary btn-small" href="contact.html?service=social-setup#order">Order setup</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="social-setup">Add setup</button>
-              <a class="btn btn-secondary btn-small" href="contact.html?service=social-managing#order">Order managing</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="social-managing">Add monthly</button>
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="social-setup">Add setup to cart</button>
+              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="social-managing">Add monthly to cart</button>
             </div>
           </article>
 
@@ -256,11 +311,11 @@
                 <p class="price-card-desc">Listing updates, visibility checks, and light optimizations so you stay findable.</p>
               </div>
             </div>
+            <p class="price-outcome">Outcome: the right customers can find you, and you stay findable.</p>
+            <p class="price-more"><a class="text-link" href="local-seo-google-business-profile.html">Local SEO &amp; Google Business Profile <span aria-hidden="true">→</span></a></p>
             <div class="price-actions">
-              <a class="btn btn-secondary btn-small" href="contact.html?service=seo-setup#order">Order setup</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="seo-setup">Add setup</button>
-              <a class="btn btn-secondary btn-small" href="contact.html?service=seo-managing#order">Order managing</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="seo-managing">Add monthly</button>
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="seo-setup">Add setup to cart</button>
+              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="seo-managing">Add monthly to cart</button>
             </div>
           </article>
 
@@ -276,8 +331,10 @@
                 <li>Printable card</li>
                 <li>Email and text ask templates</li>
               </ul>
-              <a class="btn btn-secondary btn-small" href="contact.html?service=review-generation-kit#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="review-generation-kit">Add to cart</button>
+              <p class="price-outcome">Outcome: a simple way for customers to leave a Google review.</p>
+              <div class="price-actions">
+                <button type="button" class="btn btn-primary btn-small" data-add-to-cart="review-generation-kit">Add to cart</button>
+              </div>
               <p class="form-note">Pairs with <a href="index.html#review">Review us</a> on the home page. Nothing is published until Desanya Studio approves it.</p>
             </div>
           </article>
@@ -312,11 +369,11 @@
               <li>Staff training notes</li>
               <li>You approve before go-live, and before later changes</li>
             </ul>
+            <p class="price-outcome">Outcome: a chatbot or workflow, ready for your review.</p>
+            <p class="price-more"><a class="text-link" href="ai-for-small-business.html">AI for small business <span aria-hidden="true">→</span></a></p>
             <div class="price-actions">
-              <a class="btn btn-secondary btn-small" href="contact.html?service=ai-setup#order">Order setup</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="ai-setup">Add setup</button>
-              <a class="btn btn-secondary btn-small" href="contact.html?service=ai-managing#order">Order managing</a>
-              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="ai-managing">Add monthly</button>
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="ai-setup">Add setup to cart</button>
+              <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="ai-managing">Add monthly to cart</button>
             </div>
           </article>
         </div>
@@ -340,8 +397,10 @@
               <li>Gallery layout</li>
               <li>Suited to local shops and breeders</li>
             </ul>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=photo-gallery-polish#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="photo-gallery-polish">Add to cart</button>
+            <p class="price-outcome">Outcome: the photos you already have, easy to browse.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="photo-gallery-polish">Add to cart</button>
+            </div>
           </article>
 
           <article class="price-card">
@@ -353,8 +412,10 @@
               <li>Hands-on updates on your site</li>
               <li>Written notes afterward</li>
             </ul>
-            <a class="btn btn-secondary btn-small" href="contact.html?service=site-update-training#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="site-update-training">Add to cart</button>
+            <p class="price-outcome">Outcome: you can update your own site, with notes to keep.</p>
+            <div class="price-actions">
+              <button type="button" class="btn btn-primary btn-small" data-add-to-cart="site-update-training">Add to cart</button>
+            </div>
           </article>
 
           <article class="price-card price-card--row">
@@ -364,8 +425,10 @@
             </div>
             <div>
               <p class="price-card-desc">Updates, small fixes, and peace of mind — a light, reliable caretaker for your site.</p>
-              <a class="btn btn-secondary btn-small" href="contact.html?service=monthly-care#order">Order</a>
-            <button type="button" class="btn btn-secondary btn-small" data-add-to-cart="monthly-care">Add to cart</button>
+              <p class="price-outcome">Outcome: updates, small fixes, and peace of mind.</p>
+              <div class="price-actions">
+                <button type="button" class="btn btn-primary btn-small" data-add-to-cart="monthly-care">Add to cart</button>
+              </div>
             </div>
           </article>
 
@@ -373,7 +436,10 @@
             <h3>Custom quote</h3>
             <p class="price"><span class="price-amount">Let’s talk</span></p>
             <p class="price-card-desc">Larger builds, branding, illustration, or a scope that doesn’t fit a package — tell the studio what you need.</p>
-            <a class="btn btn-primary btn-small" href="contact.html?service=not-sure#order">Get started</a>
+            <p class="price-outcome">Outcome: a clear quote when the work doesn’t fit a package.</p>
+            <div class="price-actions">
+              <a class="btn btn-primary btn-small" href="contact.html#book">Book a free intro</a>
+            </div>
           </article>
         </div>
       </div>
@@ -430,6 +496,7 @@
         <div>
           <h2 id="cta-heading">Not sure which package fits?</h2>
           <p>Book a short intro and get a straight recommendation.</p>
+          <p class="cta-trust">Sherman’s Shih Tzu Puppies went from about $500 to about $1,500 — a 200% profit increase — with 4.8★ from 23 Google reviews and 2,186 Google Business Profile interactions, May–Oct 2026.</p>
         </div>
         <div class="cta-band-actions">
           <a class="btn btn-primary" href="contact.html#book">Book intro</a>
@@ -443,10 +510,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand-col">
-        <a class="footer-brand" href="index.html" aria-label="Desanya Studio — Home">
+        <a class="footer-brand" href="index.html">
           <picture>
             <source srcset="assets/desanya-wordmark.webp?v=4" type="image/webp">
-            <img src="assets/desanya-wordmark.png?v=4" alt="" width="488" height="192" class="footer-logo">
+            <img src="assets/desanya-wordmark.png?v=4" alt="" width="488" height="192" class="footer-logo" loading="lazy" decoding="async">
           </picture>
           <span>
             <span class="footer-name">Desanya Studio</span>
@@ -454,6 +521,7 @@
           </span>
         </a>
         <p class="footer-tagline">Tech that ships. Content that converts. Websites, SEO, and the words that make them work.</p>
+        <p class="footer-area">Based in Niota, TN · Serving Knoxville, all of East Tennessee &amp; remote clients anywhere.</p>
         <div class="social-block" data-social-block hidden>
           <p class="footer-heading">Social</p>
           <ul class="social-links" data-social-links></ul>
@@ -473,10 +541,21 @@
         </ul>
       </nav>
 
+      <nav class="footer-col" aria-label="Service pages">
+        <p class="footer-heading">Services</p>
+        <ul class="footer-links">
+          <li><a href="ai-for-small-business.html">AI for small business</a></li>
+          <li><a href="knoxville-web-design.html">Knoxville web design</a></li>
+          <li><a href="local-seo-google-business-profile.html">Local SEO &amp; Google Business Profile</a></li>
+          <li><a href="social-media-management.html">Social media management</a></li>
+        </ul>
+      </nav>
+
       <div class="footer-col">
         <p class="footer-heading">Get in touch</p>
         <ul class="footer-links">
           <li><a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a></li>
+          <li><a href="tel:+14232527674">(423) 252-7674</a></li>
           <li><a href="contact.html#book">Book intro</a></li>
           <li><a href="index.html#review">Review us</a></li>
         </ul>
@@ -487,7 +566,7 @@
       <p class="footer-privacy">Privacy: forms are delivered by email through FormSubmit and nothing is stored on this site. We use Google Analytics to see how visitors use the site. No ads, and we never sell your info.</p>
       <p class="footer-copy">&copy; <span data-year>2026</span> Desanya Studio</p>
     </div>
-    <script src="assets/cart.js?v=2" defer></script>
+    <script src="assets/cart.js?v=3" defer></script>
   </footer>
   <!-- /@partial:footer -->
 
@@ -547,7 +626,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
-          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day, Monday–Friday, 8:00 AM–5:00 PM.">
           <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
@@ -602,8 +681,15 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=10" defer></script>
-  <script src="site.js?v=12" defer></script>
+  <script src="site.js?v=13" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = '/chat-widget.js?v=11';
+      s.defer = true;
+      document.body.appendChild(s);
+    });
+  </script>
   <!-- /@partial:chat -->
 </body>
 </html>

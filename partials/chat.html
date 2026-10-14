@@ -53,7 +53,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://desanya.tech/thanks/">
-          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day.">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Desanya Studio! Your request is in, and you'll hear back within 1 business day, Monday–Friday, 8:00 AM–5:00 PM.">
           <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="chat-lead-field">
             <label for="chatLeadName">Name <span class="req" aria-hidden="true">*</span></label>
@@ -108,5 +108,12 @@
     </div>
   </div>
 
-  <script src="chat-widget.js?v=10" defer></script>
-  <script src="site.js?v=12" defer></script>
+  <script src="site.js?v=13" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = '/chat-widget.js?v=11';
+      s.defer = true;
+      document.body.appendChild(s);
+    });
+  </script>

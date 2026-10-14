@@ -130,7 +130,7 @@
     root.id = 'ds-cart-root';
     root.innerHTML =
       '<div class="ds-cart-scrim" data-cart-close aria-hidden="true"></div>' +
-      '<aside class="ds-cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">' +
+      '<aside class="ds-cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true" inert>' +
         '<div class="ds-cart-head">' +
           '<h2>Your cart</h2>' +
           '<button type="button" class="ds-cart-close" data-cart-close aria-label="Close cart">&times;</button>' +
@@ -225,6 +225,7 @@
     render();
     els.root.classList.add('open');
     els.drawer.setAttribute('aria-hidden', 'false');
+    els.drawer.removeAttribute('inert');
     document.body.classList.add('ds-cart-lock');
   }
 
@@ -232,6 +233,7 @@
     if (!els.root) return;
     els.root.classList.remove('open');
     els.drawer.setAttribute('aria-hidden', 'true');
+    els.drawer.setAttribute('inert', '');
     document.body.classList.remove('ds-cart-lock');
   }
 
