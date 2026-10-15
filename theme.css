@@ -534,9 +534,7 @@ a:hover { color: #f7c1ea; }
 
 /* ---------- Gallery tiles (existing grid) ---------- */
 .gallery-item { border-radius: var(--radius); }
-.gallery-meta {   /* darker scrim than before so captions pass AA over light photos */
-  background: linear-gradient(rgba(10, 6, 24, 0), rgba(10, 6, 24, 0.78) 45%, rgba(10, 6, 24, 0.94));
-}
+.gallery-meta { background: none; }
 .gallery-ph--a,
 .gallery-ph--b,
 .gallery-ph--c { background-color: #15112b; }
