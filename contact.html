@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"></noscript>
-  <link rel="stylesheet" href="assets/site.min.css?v=8">
+  <link rel="stylesheet" href="assets/site.min.css?v=9">
 <!-- @partial:business-jsonld -->
 <script type="application/ld+json">
 {
@@ -769,11 +769,11 @@
         <div class="contact-main">
           <section class="booking-card" id="book" aria-labelledby="book-heading" data-booking-url="">
             <p class="eyebrow">Booking</p>
-            <h2 id="book-heading">Book intro</h2>
-            <p class="booking-lede">A short call to talk through your project and the right package.</p>
+            <h2 id="book-heading">Book a short intro</h2>
+            <p class="booking-lede">A short, no-pressure call. Next you get a package price or a written quote. No payment now.</p>
 
-            <!-- Shown only when data-booking-url is set (e.g. a Google Calendar appointment page) -->
-            <a class="btn btn-primary booking-scheduler" data-booking-link href="#" hidden target="_blank" rel="noopener noreferrer">Pick a time on the calendar <span aria-hidden="true">↗</span></a>
+            <!-- No href until data-booking-url is a real scheduler. The booking tool is Cassandra's decision. -->
+            <a class="btn btn-primary booking-scheduler" data-booking-link hidden target="_blank" rel="noopener noreferrer">Pick a time on the calendar <span aria-hidden="true">↗</span></a>
 
             <form class="booking-form" id="bookingForm" data-booking-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="New intro request — desanya.tech">
@@ -1198,7 +1198,7 @@
     </div>
   </div>
 
-  <script src="site.js?v=13" defer></script>
+  <script src="site.js?v=14" defer></script>
   <script>
     window.addEventListener('load', function () {
       var s = document.createElement('script');
