@@ -459,6 +459,65 @@
       "lbSet": "local-seo"
     },
     {
+      "title": "Local SEO, plain English, Episode 02: 7 Google Business Profile fields",
+      "group": "social",
+      "tag": "Instagram",
+      "series": "Local SEO, plain English",
+      "episode": 2,
+      "href": "assets/local-seo-ep02-cover.jpg",
+      "image": "assets/local-seo-ep02-cover.jpg",
+      "webp": "assets/local-seo-ep02-cover.webp",
+      "webp720": "assets/local-seo-ep02-cover-720.webp",
+      "webpWidth": 1080,
+      "width": 1080,
+      "height": 1350,
+      "alt": "Desanya Studio slide for the Local SEO, plain English series, Episode 02, Google Business Profile. Large text reads \"7 Google Business Profile fields worth filling in.\" Below: \"A half-finished profile looks like a half-open business. Here's what to complete, in plain English.\" Swipe for all 7 fields.",
+      "caption": "Local SEO, plain English, Episode 02: 7 Google Business Profile fields",
+      "lbSet": "local-seo-ep02",
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/61594838174588/posts/122111366505494605"
+        },
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/p/DehXP1ul70V/"
+        }
+      ],
+      "frames": [
+        {
+          "href": "assets/local-seo-ep02-what-it-is.jpg",
+          "alt": "Slide titled \"What a Google Business Profile is: The box Google often shows first.\" Text explains that when you search for a business nearby, you often see a box before any website, with name, map pin, hours, photos and a call button, in Google Search and Maps, and that it's free. A checklist of what customers can do from that box: call you with one tap, check if you're open now, click through to your website, get directions to your door, read reviews, see photos of your work.",
+          "caption": "What a Google Business Profile is: the box Google often shows first, with name, map pin, hours, photos and a call button."
+        },
+        {
+          "href": "assets/local-seo-ep02-fields-1.jpg",
+          "alt": "Slide titled \"The 7 fields, part 1 of 2: Who you are and where you work,\" with four cards. Address or service area: your address if customers come to you, a service area like Knoxville or Maryville if you go to them. Business name: your real name, exactly as it's on your sign, no extra keywords, because that can get a profile suspended. Category: pick the main category that best describes what you do, then add secondary ones. Description: a plain-language summary of what you do, who you serve and where.",
+          "caption": "The 7 fields, part 1: address or service area, business name, category, and description."
+        },
+        {
+          "href": "assets/local-seo-ep02-fields-2.jpg",
+          "alt": "Slide titled \"The 7 fields, part 2 of 2: When to call and what you offer,\" with three cards. Hours: your regular hours, plus holiday hours when they change. Phone and website: use the same phone number that's on your website, and add your website link. Products or services: list each one with a short description. A tip card from episode 01: your name, address and phone should match everywhere you're listed.",
+          "caption": "The 7 fields, part 2: hours, phone and website, and products or services."
+        },
+        {
+          "href": "assets/local-seo-ep02-photos.jpg",
+          "alt": "Slide titled \"Bonus, photos: Real photos, not stock.\" Photos give people a reason to trust you before they ever meet you. List: examples of finished work, storefront or workspace, your products, your team. Add new ones as your business changes.",
+          "caption": "Bonus: real photos, not stock. Work, storefront or workspace, products, and team."
+        },
+        {
+          "href": "assets/local-seo-ep02-this-weeks-fix.jpg",
+          "alt": "Slide titled \"This week's fix: Finish your profile in four steps.\" 1, search your business name on Google, and claim and verify the profile if it isn't yours yet. 2, fill in all 7 fields, with the same name and phone number that's on your website. 3, add at least 3 real photos. 4, set your regular hours now and add holiday hours later, before they change.",
+          "caption": "This week's fix: claim the profile, fill in all 7 fields, add at least 3 real photos, and set regular hours."
+        },
+        {
+          "href": "assets/local-seo-ep02-cta.jpg",
+          "alt": "Slide titled \"Want it done for you? We'll set up your profile with you.\" Card: SEO & Google setup, $550, covering your Business Profile, search listings and basic on-site SEO, with every change drafted for your approval first. SEO & Google managing, $450 a month, for updates, visibility checks and light optimizations. Pink \"Book an intro\" button. Full guide: \"Google Business Profile: the free tool most businesses ignore,\" on the desanya.tech blog.",
+          "caption": "Want it done for you? SEO & Google setup is $550. Managing is $450 a month."
+        }
+      ]
+    },
+    {
       "title": "Social graphics",
       "group": "social",
       "tag": "Instagram intro",

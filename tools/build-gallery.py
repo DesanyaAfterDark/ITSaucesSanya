@@ -78,6 +78,18 @@ def picture(item, lazy):
     )
 
 
+def outbound_links(item):
+    parts = []
+    for link in item.get("links") or []:
+        parts.append(
+            f'            <a class="gallery-steps" href="{esc(link["href"])}" '
+            f'target="_blank" rel="noopener">{esc(link["label"])}</a>'
+        )
+    if not parts:
+        return ""
+    return "\n" + "\n".join(parts)
+
+
 def hidden_frame(frame, lb_set):
     return (
         f'<a class="visually-hidden" href="{esc(frame["href"])}" data-lightbox '
@@ -146,7 +158,7 @@ def card(item, lazy):
     )
     if frames:
         frames = "\n" + frames
-    return f'          <li class="gallery-card">\n{body}{frames}\n          </li>'
+    return f'          <li class="gallery-card">\n{body}{frames}{outbound_links(item)}\n          </li>'
 
 
 def group_html(group, items, lazy_state):
@@ -247,6 +259,12 @@ def load():
                 require_file(item["webp720"], title)
         for frame in item.get("frames") or []:
             require_file(frame["href"], title + " frame")
+        for link in item.get("links") or []:
+            href = link.get("href") or ""
+            if not href.startswith("https://"):
+                raise SystemExit(f"outbound link must be https: {title}")
+            if not link.get("label"):
+                raise SystemExit(f"outbound link needs a label: {title}")
     groups.sort(key=lambda group: group["name"].casefold())
     return data, groups, by_id
 
