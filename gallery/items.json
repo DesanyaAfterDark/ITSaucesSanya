@@ -249,6 +249,21 @@
       "lbSet": "brand-art"
     },
     {
+      "title": "Desanya defender of the veil",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/desanya-defender-of-the-veil.jpg",
+      "image": "assets/brand-art/desanya-defender-of-the-veil-display.jpg",
+      "webp": "assets/brand-art/desanya-defender-of-the-veil-display.webp",
+      "webp720": "assets/brand-art/desanya-defender-of-the-veil-display-720.webp",
+      "webpWidth": 970,
+      "width": 970,
+      "height": 1000,
+      "alt": "Desanya defender of the veil: dragon head illustration with curling green horns and purple, pink and green scales",
+      "caption": "Desanya defender of the veil: commissioned art.",
+      "lbSet": "brand-art"
+    },
+    {
       "title": "Desanya’s e-sports banner",
       "group": "brand-art",
       "tag": "Brand art",
@@ -261,21 +276,6 @@
       "height": 732,
       "alt": "Desanya’s e-sports banner: a magenta wolf head above the word DESANYA in bright green on a purple banner",
       "caption": "Desanya’s e-sports banner: commissioned for the Desanya brand.",
-      "lbSet": "brand-art"
-    },
-    {
-      "title": "Dragon head",
-      "group": "brand-art",
-      "tag": "Brand art",
-      "href": "assets/brand-art/dragon-head.jpg",
-      "image": "assets/brand-art/dragon-head-display.jpg",
-      "webp": "assets/brand-art/dragon-head-display.webp",
-      "webp720": "assets/brand-art/dragon-head-display-720.webp",
-      "webpWidth": 970,
-      "width": 970,
-      "height": 1000,
-      "alt": "Dragon head illustration with curling green horns and purple, pink and green scales",
-      "caption": "Dragon head: commissioned for the Desanya brand.",
       "lbSet": "brand-art"
     },
     {
