@@ -772,8 +772,8 @@
             <h2 id="book-heading">Book a short intro</h2>
             <p class="booking-lede">A short, no-pressure call. Next you get a package price or a written quote. No payment now.</p>
 
-            <!-- Shown only when data-booking-url is set (e.g. a Google Calendar appointment page) -->
-            <a class="btn btn-primary booking-scheduler" data-booking-link href="#" hidden target="_blank" rel="noopener noreferrer">Pick a time on the calendar <span aria-hidden="true">↗</span></a>
+            <!-- No href until data-booking-url is a real scheduler. The booking tool is Cassandra's decision. -->
+            <a class="btn btn-primary booking-scheduler" data-booking-link hidden target="_blank" rel="noopener noreferrer">Pick a time on the calendar <span aria-hidden="true">↗</span></a>
 
             <form class="booking-form" id="bookingForm" data-booking-form action="https://formsubmit.co/desanyaafterdark@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="New intro request — desanya.tech">
@@ -1198,7 +1198,7 @@
     </div>
   </div>
 
-  <script src="site.js?v=13" defer></script>
+  <script src="site.js?v=14" defer></script>
   <script>
     window.addEventListener('load', function () {
       var s = document.createElement('script');

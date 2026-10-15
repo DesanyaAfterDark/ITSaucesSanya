@@ -197,12 +197,16 @@ var DESANYA_LINKS = {
     var card = document.querySelector('[data-booking-url]');
     if (!card) return;
 
-    // If a scheduler URL is configured, surface it as the primary option.
+    // A real scheduler URL turns the placeholder into a link. Anything else stays hidden, with no href.
     var url = (card.getAttribute('data-booking-url') || '').trim();
     var link = card.querySelector('[data-booking-link]');
-    if (url && link) {
+    if (!link) return;
+    if (/^https?:\/\//i.test(url)) {
       link.href = url;
       link.hidden = false;
+    } else {
+      link.removeAttribute('href');
+      link.hidden = true;
     }
 
   }
