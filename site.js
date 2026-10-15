@@ -9,7 +9,7 @@
  *
  * TODO: social
  *   Paste full https profile URLs for Desanya Studio. Leave '' to hide that icon.
- *   Instagram is https://www.instagram.com/desanya_after_dark/ (@desanya_after_dark).
+ *   Instagram is https://www.instagram.com/desanyastudio/ (@desanyastudio).
  *   Facebook is https://www.facebook.com/profile.php?id=61594838174588.
  *   TikTok is https://www.tiktok.com/@desanyastudio (@desanyastudio).
  *   X, Threads, and LinkedIn stay hidden until a URL is pasted here.
@@ -21,7 +21,7 @@ var DESANYA_LINKS = {
   googleReviewUrl: 'https://www.google.com/maps/search/?api=1&query=Desanya%27s+Web+Designs+Niota+TN&query_place_id=605467311094588',
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=61594838174588',
-    instagram: 'https://www.instagram.com/desanya_after_dark/',
+    instagram: 'https://www.instagram.com/desanyastudio/',
     linkedin: '',
     threads: '',
     tiktok: 'https://www.tiktok.com/@desanyastudio',
