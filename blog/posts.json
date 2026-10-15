@@ -1,0 +1,76 @@
+{
+  "topics": [
+    {
+      "id": "ai",
+      "name": "AI",
+      "serviceHref": "/ai-for-small-business.html",
+      "serviceLabel": "AI for small business"
+    },
+    {
+      "id": "google-business-profile",
+      "name": "Google Business Profile",
+      "serviceHref": "/local-seo-google-business-profile.html",
+      "serviceLabel": "Local SEO & Google Business Profile"
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "serviceHref": "/local-seo-google-business-profile.html",
+      "serviceLabel": "Local SEO & Google Business Profile"
+    },
+    {
+      "id": "social-media",
+      "name": "Social Media",
+      "serviceHref": "/social-media-management.html",
+      "serviceLabel": "Social media management"
+    },
+    {
+      "id": "websites",
+      "name": "Websites",
+      "serviceHref": "/knoxville-web-design.html",
+      "serviceLabel": "Knoxville web design"
+    }
+  ],
+  "posts": [
+    {
+      "title": "Google Business Profile: the free tool most businesses ignore",
+      "slug": "google-business-profile-free-tool",
+      "topic": "google-business-profile",
+      "date": "2026-10-05",
+      "excerpt": "Your Google Business Profile is free, and it's often the first thing local customers see. How to claim it, complete it, and keep it working in East Tennessee.",
+      "image": "/assets/blog/post-google-business-profile.jpg?v=2",
+      "imageWebp": "/assets/blog/post-google-business-profile.webp?v=2",
+      "imageAlt": "Desanya Studio blog header: Google Business Profile, the free tool most businesses ignore, with a map pin illustration"
+    },
+    {
+      "title": "SEO basics for East Tennessee businesses",
+      "slug": "seo-basics-east-tennessee",
+      "topic": "seo",
+      "date": "2026-10-05",
+      "excerpt": "Plain-English local SEO for East Tennessee small businesses: page titles, location pages, Google Business Profile, and consistency, from Knoxville to Chattanooga.",
+      "image": "/assets/blog/post-seo-basics-east-tennessee.jpg?v=2",
+      "imageWebp": "/assets/blog/post-seo-basics-east-tennessee.webp?v=2",
+      "imageAlt": "Desanya Studio blog header: SEO basics for East Tennessee businesses, with a magnifying glass illustration"
+    },
+    {
+      "title": "Why your small business needs a real website",
+      "slug": "why-your-small-business-needs-a-real-website",
+      "topic": "websites",
+      "date": "2026-10-05",
+      "excerpt": "Social pages and listings help, but a real website is the one place you own. Here's what it does for an East Tennessee small business, and what it needs.",
+      "image": "/assets/blog/post-why-real-website.jpg?v=2",
+      "imageWebp": "/assets/blog/post-why-real-website.webp?v=2",
+      "imageAlt": "Desanya Studio blog header: Why your small business needs a real website, with a browser window illustration"
+    },
+    {
+      "title": "Writing website copy that converts",
+      "slug": "writing-website-copy-that-converts",
+      "topic": "websites",
+      "date": "2026-10-05",
+      "excerpt": "Good website copy is clear before it's clever. A practical guide to headlines, service pages, and calls to action that turn visitors into customers.",
+      "image": "/assets/blog/post-copy-that-converts.jpg?v=2",
+      "imageWebp": "/assets/blog/post-copy-that-converts.webp?v=2",
+      "imageAlt": "Desanya Studio blog header: Writing website copy that converts, with a pen nib illustration"
+    }
+  ]
+}
