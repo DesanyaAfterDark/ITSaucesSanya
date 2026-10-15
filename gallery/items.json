@@ -1,0 +1,489 @@
+{
+  "commission": {
+    "title": "Your project here",
+    "tag": "Commission artwork",
+    "href": "contact.html?service=not-sure#order"
+  },
+  "groups": [
+    {
+      "id": "assistant-icons",
+      "name": "Assistant icons",
+      "lede": "One visual system for Desanya Studio’s own team of assistants. Every icon shares the same tile, soft light, and gold, magenta, and lavender palette.",
+      "note": "Every assistant drafts and prepares. Nothing is sent, spent, or published without Desanya’s approval.",
+      "specs": ["10 icons", "One shared palette", "1024 px masters"]
+    },
+    {
+      "id": "blog-headers",
+      "name": "Blog headers",
+      "lede": "Header art for the posts on a real website, Google Business Profile, East Tennessee SEO, and copy that converts."
+    },
+    {
+      "id": "brand-art",
+      "name": "Brand art",
+      "lede": "Character and mascot art commissioned for the Desanya brand."
+    },
+    {
+      "id": "brand-identity",
+      "name": "Brand identity",
+      "lede": "The studio’s web kit, social kit, and YouTube channel banner."
+    },
+    {
+      "id": "client-logos",
+      "name": "Client logos",
+      "lede": "Logo designs for client businesses, with the brand board and an in-use frame in the viewer."
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "lede": "Instagram pieces, including Reel covers. A series stays in episode order."
+    }
+  ],
+  "items": [
+    {
+      "title": "Desanya’s Bill Watcher",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Keeps a short list of upcoming, past-due, and failed bills so nothing slips.",
+      "href": "assets/avatars/bill-watcher.png",
+      "image": "assets/avatars/bill-watcher-512.png",
+      "webp": "assets/avatars/bill-watcher-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Bill Watcher icon: a paper bill with a gold bell",
+      "caption": "Desanya’s Bill Watcher: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Business Launch",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Owns the launch plan, offer packages, and the LLC checklist and deadlines.",
+      "href": "assets/avatars/business-launch.png",
+      "image": "assets/avatars/business-launch-512.png",
+      "webp": "assets/avatars/business-launch-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Business Launch icon: a white and pink rocket lifting off",
+      "caption": "Desanya’s Business Launch: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Client Pipeline",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Finds local leads, tracks every client from first contact to finished project, and drafts follow-ups and review requests.",
+      "href": "assets/avatars/client-pipeline.png",
+      "image": "assets/avatars/client-pipeline-512.png",
+      "webp": "assets/avatars/client-pipeline-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Client Pipeline icon: a pink path linking gold nodes",
+      "caption": "Desanya’s Client Pipeline: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Content Studio",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Plans the weekly content calendar and drafts posts, scripts, and blog articles.",
+      "href": "assets/avatars/content-studio.png",
+      "image": "assets/avatars/content-studio-512.png",
+      "webp": "assets/avatars/content-studio-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Content Studio icon: a lavender play button with a gold pen nib",
+      "caption": "Desanya’s Content Studio: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Day Planner",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Builds a weekday morning plan from the calendar, with conflicts and top priorities.",
+      "href": "assets/avatars/day-planner.png",
+      "image": "assets/avatars/day-planner-512.png",
+      "webp": "assets/avatars/day-planner-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Day Planner icon: a calendar page with a rising sun and a check mark",
+      "caption": "Desanya’s Day Planner: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Finance Desk",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Keeps the books ready each month with invoice drafts, categorized expenses, and a money checklist.",
+      "href": "assets/avatars/finance-desk.png",
+      "image": "assets/avatars/finance-desk-512.png",
+      "webp": "assets/avatars/finance-desk-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Finance Desk icon: a stack of gold coins beside a rising bar chart",
+      "caption": "Desanya’s Finance Desk: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Gmail Overseer",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Triages the inbox, labels every thread, and drafts replies for review.",
+      "href": "assets/avatars/gmail-overseer.png",
+      "image": "assets/avatars/gmail-overseer-512.png",
+      "webp": "assets/avatars/gmail-overseer-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Gmail Overseer icon: an envelope in front of lavender folders",
+      "caption": "Desanya’s Gmail Overseer: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Side Income Scout",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Researches free-to-start side income ideas and delivers a short ranked list each week.",
+      "href": "assets/avatars/side-income-scout.png",
+      "image": "assets/avatars/side-income-scout-512.png",
+      "webp": "assets/avatars/side-income-scout-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Side Income Scout icon: a gold coin with a dollar sign in front of a lavender magnifying glass",
+      "caption": "Desanya’s Side Income Scout: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Desanya’s Studio",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "Maintains desanya.tech and ships every site change as a reviewed update.",
+      "href": "assets/avatars/desanya-studio.png",
+      "image": "assets/avatars/desanya-studio-512.png",
+      "webp": "assets/avatars/desanya-studio-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Desanya’s Studio icon: a browser window with a pink D and a gold cursor",
+      "caption": "Desanya’s Studio: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Grok Bot",
+      "group": "assistant-icons",
+      "tag": "Assistant icon",
+      "description": "The coordinator that routes requests to the right assistant and tracks every handoff.",
+      "href": "assets/avatars/grok-bot.png",
+      "image": "assets/avatars/grok-bot-512.png",
+      "webp": "assets/avatars/grok-bot-512.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "Grok Bot icon: a smiling laptop robot with an antenna",
+      "caption": "Grok Bot: one of 10 icons in the Desanya Studio assistant icon set.",
+      "lbSet": "assistant-icons"
+    },
+    {
+      "title": "Google Business Profile, the free tool most businesses ignore",
+      "group": "blog-headers",
+      "tag": "Blog header",
+      "href": "assets/blog/post-google-business-profile.jpg?v=2",
+      "image": "assets/blog/post-google-business-profile.jpg?v=2",
+      "webp": "assets/blog/post-google-business-profile.webp?v=2",
+      "width": 1600,
+      "height": 900,
+      "alt": "Desanya Studio blog header: Google Business Profile, the free tool most businesses ignore, with a map pin illustration",
+      "caption": "Blog headers — Google Business Profile, the free tool most businesses ignore, with a map pin illustration.",
+      "lbSet": "blog-headers"
+    },
+    {
+      "title": "SEO basics for East Tennessee businesses",
+      "group": "blog-headers",
+      "tag": "Blog header",
+      "href": "assets/blog/post-seo-basics-east-tennessee.jpg?v=2",
+      "image": "assets/blog/post-seo-basics-east-tennessee.jpg?v=2",
+      "webp": "assets/blog/post-seo-basics-east-tennessee.webp?v=2",
+      "width": 1600,
+      "height": 900,
+      "alt": "Desanya Studio blog header: SEO basics for East Tennessee businesses, with a magnifying glass illustration",
+      "caption": "Blog headers — SEO basics for East Tennessee businesses, with a magnifying glass illustration.",
+      "lbSet": "blog-headers"
+    },
+    {
+      "title": "Why your small business needs a real website",
+      "group": "blog-headers",
+      "tag": "Blog header",
+      "href": "assets/blog/post-why-real-website.jpg?v=2",
+      "image": "assets/blog/post-why-real-website.jpg?v=2",
+      "webp": "assets/blog/post-why-real-website.webp?v=2",
+      "webp720": "assets/blog/post-why-real-website-720.webp",
+      "webpWidth": 1600,
+      "width": 1600,
+      "height": 900,
+      "alt": "Desanya Studio blog header: Why your small business needs a real website, with a browser window illustration",
+      "caption": "Blog headers — Why your small business needs a real website, with a browser window illustration.",
+      "lbSet": "blog-headers"
+    },
+    {
+      "title": "Writing website copy that converts",
+      "group": "blog-headers",
+      "tag": "Blog header",
+      "href": "assets/blog/post-copy-that-converts.jpg?v=2",
+      "image": "assets/blog/post-copy-that-converts.jpg?v=2",
+      "webp": "assets/blog/post-copy-that-converts.webp?v=2",
+      "width": 1600,
+      "height": 900,
+      "alt": "Desanya Studio blog header: Writing website copy that converts, with a pen nib illustration",
+      "caption": "Blog headers — Writing website copy that converts, with a pen nib illustration.",
+      "lbSet": "blog-headers"
+    },
+    {
+      "title": "Desanya",
+      "group": "brand-art",
+      "tag": "Character illustration",
+      "href": "assets/forest-ranger.jpg",
+      "image": "assets/forest-ranger.jpg",
+      "webp": "assets/forest-ranger.webp",
+      "webp720": "assets/forest-ranger-720.webp",
+      "webpWidth": 812,
+      "width": 812,
+      "height": 1200,
+      "alt": "Desanya — Native American woman character art by Desanya Studio",
+      "caption": "Desanya — Native American woman character art by Desanya Studio. Original character illustration for portfolio and brand storytelling.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Desanya’s e-sports banner",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/desanya-wolf-mascot.jpg",
+      "image": "assets/brand-art/desanya-wolf-mascot-display.jpg",
+      "webp": "assets/brand-art/desanya-wolf-mascot-display.webp",
+      "webp720": "assets/brand-art/desanya-wolf-mascot-display-720.webp",
+      "webpWidth": 1600,
+      "width": 1600,
+      "height": 732,
+      "alt": "Desanya’s e-sports banner: a magenta wolf head above the word DESANYA in bright green on a purple banner",
+      "caption": "Desanya’s e-sports banner: commissioned for the Desanya brand.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Dragon head",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/dragon-head.jpg",
+      "image": "assets/brand-art/dragon-head-display.jpg",
+      "webp": "assets/brand-art/dragon-head-display.webp",
+      "webp720": "assets/brand-art/dragon-head-display-720.webp",
+      "webpWidth": 970,
+      "width": 970,
+      "height": 1000,
+      "alt": "Dragon head illustration with curling green horns and purple, pink and green scales",
+      "caption": "Dragon head: commissioned for the Desanya brand.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Dreamcatcher wolves",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/dreamcatcher-wolves.jpg",
+      "image": "assets/brand-art/dreamcatcher-wolves-display.jpg",
+      "webp": "assets/brand-art/dreamcatcher-wolves-display.webp",
+      "webp720": "assets/brand-art/dreamcatcher-wolves-display-720.webp",
+      "webpWidth": 802,
+      "width": 802,
+      "height": 1200,
+      "alt": "Dreamcatcher wolves: a woman wearing a white wolf headdress above a dreamcatcher with a red wolf mask and feathers",
+      "caption": "Dreamcatcher wolves: commissioned for the Desanya brand.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Moon wolf warrior",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/moon-wolf-warrior.jpg",
+      "image": "assets/brand-art/moon-wolf-warrior-display.jpg",
+      "webp": "assets/brand-art/moon-wolf-warrior-display.webp",
+      "width": 668,
+      "height": 1000,
+      "alt": "Moon wolf warrior: a woman in leather armor before a full moon, with a white wolf howling above her",
+      "caption": "Moon wolf warrior: commissioned for the Desanya brand.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Character study series",
+      "group": "brand-art",
+      "tag": "Coming soon",
+      "placeholder": true
+    },
+    {
+      "title": "Brand identity",
+      "group": "brand-identity",
+      "tag": "Web and social kit",
+      "href": "assets/brand-preview.jpg?v=3",
+      "image": "assets/brand-preview.jpg?v=3",
+      "webp": "assets/brand-preview.webp?v=3",
+      "webp720": "assets/brand-preview-720.webp",
+      "webpWidth": 1100,
+      "width": 1100,
+      "height": 1572,
+      "alt": "Desanya Studio brand identity preview",
+      "caption": "Brand identity — the Desanya Studio web and social kit.",
+      "lbSet": "brand"
+    },
+    {
+      "title": "YouTube channel banner",
+      "group": "brand-identity",
+      "tag": "YouTube",
+      "href": "assets/youtube-banner.jpg",
+      "image": "assets/youtube-banner.jpg",
+      "webp": "assets/youtube-banner.webp",
+      "webp720": "assets/youtube-banner-720.webp",
+      "webpWidth": 1920,
+      "width": 1920,
+      "height": 1080,
+      "alt": "Desanya Studio YouTube channel banner: the wordmark and the line Tech that ships. Content that converts. on a navy and plum background, with a YouTube play button",
+      "caption": "YouTube channel banner — Desanya Studio.",
+      "lbSet": "youtube"
+    },
+    {
+      "title": "NV Home Designs",
+      "group": "client-logos",
+      "tag": "Client logo design",
+      "href": "assets/case-study-nv-home-designs.jpg",
+      "image": "assets/case-study-nv-home-designs.jpg",
+      "webp": "assets/case-study-nv-home-designs.webp",
+      "webp720": "assets/case-study-nv-home-designs-720.webp",
+      "webpWidth": 1080,
+      "width": 1080,
+      "height": 1350,
+      "alt": "NV Home Designs brand board: the black logo on white, a black, grey and white palette strip, and the same logo reversed to white on charcoal",
+      "caption": "NV Home Designs: logo design by Desanya Studio for a kitchen & bath design and project-management studio in Northern California. The same logo on white and reversed to white on charcoal, with its black, grey and white palette.",
+      "lbSet": "nv-home-designs",
+      "frames": [
+        {
+          "href": "assets/nv-home-designs-logo.jpg",
+          "alt": "NV Home Designs logo: a thin-line roof with a chimney above “NV Home Designs” in a clean sans-serif, with a handwritten script signature below, in black on white",
+          "caption": "NV Home Designs: a thin-line roof and chimney, a clean sans-serif wordmark and the owner’s handwritten signature, in black on white."
+        },
+        {
+          "href": "assets/nv-home-designs-logo-in-use.jpg",
+          "alt": "The NV Home Designs logo in black over a faded white kitchen photo on a Facebook cover, with a round profile picture showing the logo in white on a dark navy wall",
+          "caption": "NV Home Designs: the logo in use on the client’s Facebook cover and profile picture. Logo design by Desanya Studio. The kitchen photo is the client’s own."
+        }
+      ]
+    },
+    {
+      "title": "OTEF Bullz",
+      "group": "client-logos",
+      "tag": "Client mascot logo",
+      "href": "assets/otef-bullz-logo.jpg",
+      "image": "assets/otef-bullz-logo.jpg",
+      "webp": "assets/otef-bullz-logo.webp",
+      "webp720": "assets/otef-bullz-logo-720.webp",
+      "webpWidth": 1600,
+      "width": 1600,
+      "height": 1000,
+      "alt": "OTEF Bullz logo: a cartoon English Bulldog face with orange, red and yellow flames behind it, above O.T.E.F in black block letters and a BULLZ banner, on white",
+      "caption": "OTEF Bullz: a bold, playful mascot logo by Desanya Studio for an English Bulldog breeder in Tampa, Florida. A flaming bulldog face, O.T.E.F in block letters and a BULLZ banner.",
+      "lbSet": "otef-bullz",
+      "frames": [
+        {
+          "href": "assets/case-study-otef-bullz.jpg",
+          "alt": "OTEF Bullz brand board: the full-colour logo on white, a palette strip of black, orange, red, white and yellow, and the watermark layout with a large faded flaming-bulldog head",
+          "caption": "OTEF Bullz brand board: the logo on white, its black, orange, red, white and yellow palette, and the watermark layout."
+        },
+        {
+          "href": "assets/otef-bullz-logo-watermark.jpg",
+          "alt": "OTEF Bullz watermark layout: the logo on the left and a large, faded flaming-bulldog head bleeding off the right edge, on white",
+          "caption": "OTEF Bullz: the watermark layout, a compact logo beside a large, faded flaming-bulldog head. Logo design by Desanya Studio."
+        }
+      ]
+    },
+    {
+      "title": "Sherman’s Shih Tzu Puppies",
+      "group": "client-logos",
+      "tag": "Client logo design",
+      "href": "assets/shermans-brand-logo.jpg",
+      "image": "assets/shermans-brand-logo.jpg",
+      "webp": "assets/shermans-brand-logo.webp",
+      "webp720": "assets/shermans-brand-logo-720.webp",
+      "webpWidth": 1600,
+      "width": 1600,
+      "height": 1000,
+      "alt": "Sherman's Shih Tzu Puppies logo: a charcoal Shih Tzu puppy in a bowl under the arched tagline Dogs leave a paw print on your heart furever, with SHERMAN'S and SHIH TZU PUPPIES on cream fabric",
+      "caption": "Sherman’s Shih Tzu Puppies: a warm, premium logo by Desanya Studio for a family Shih Tzu breeder in East Tennessee. A charcoal puppy in a bowl, the furever tagline, and a classic wordmark on cream fabric.",
+      "lbSet": "shermans-logo",
+      "frames": [
+        {
+          "href": "assets/case-study-shermans-logo.jpg",
+          "alt": "Sherman's Shih Tzu Puppies brand board: the full logo on cream fabric, a palette strip of charcoal, cream and light, and a Facebook-style profile and cover mockup",
+          "caption": "Sherman’s Shih Tzu Puppies brand board: the logo on cream fabric, its charcoal, cream and light palette, and the Facebook profile and cover mockup."
+        },
+        {
+          "href": "assets/shermans-logo-in-use.jpg",
+          "alt": "Sherman's Shih Tzu Puppies logo on a Facebook-style cover with a round profile picture of the same logo overlapping the lower-left corner",
+          "caption": "Sherman’s Shih Tzu Puppies: the logo in use as a Facebook profile picture, with a cover mockup made from the same mark. Logo design by Desanya Studio."
+        }
+      ]
+    },
+    {
+      "title": "Behind the build · Ep. 02",
+      "group": "social",
+      "tag": "Instagram Reel",
+      "series": "Behind the build",
+      "episode": 2,
+      "external": "https://www.instagram.com/reel/Dec2bgVlb8u/",
+      "image": "assets/behind-the-build-ep02.png",
+      "webp": "assets/behind-the-build-ep02.webp",
+      "width": 720,
+      "height": 1280,
+      "alt": "Behind the build episode 2 Reel cover: How a website project actually works, 6 steps",
+      "zoomHref": "assets/behind-the-build-ep02.png",
+      "zoomAlt": "Behind the build episode 2 Reel cover: How a website project actually works, 6 steps",
+      "zoomCaption": "Behind the build · Ep. 02 — How a website project works, in 6 steps.",
+      "stepsHref": "process.html",
+      "stepsLabel": "How a website project works, in 6 steps."
+    },
+    {
+      "title": "Local SEO, plain English — Ep. 01: Name, address, phone",
+      "group": "social",
+      "tag": "Instagram",
+      "series": "Local SEO, plain English",
+      "episode": 1,
+      "href": "assets/local-seo-ep01-nap.jpg",
+      "image": "assets/local-seo-ep01-nap.jpg",
+      "webp": "assets/local-seo-ep01-nap.webp",
+      "webp720": "assets/local-seo-ep01-nap-720.webp",
+      "webpWidth": 1080,
+      "width": 1080,
+      "height": 1350,
+      "alt": "Desanya Studio slide titled Local SEO, plain English, Episode 01, Name, address, phone. Large text reads \"Same name. Same address. Same phone. Everywhere.\" Below: \"When your business info matches on every listing, it's easier for Google to trust they're all the same business.\"",
+      "caption": "Local SEO, plain English — Ep. 01: Name, address, phone",
+      "lbSet": "local-seo"
+    },
+    {
+      "title": "Social graphics",
+      "group": "social",
+      "tag": "Instagram intro",
+      "href": "assets/ig-intro-01.jpg?v=2",
+      "image": "assets/ig-intro-01.jpg?v=2",
+      "webp": "assets/ig-intro-01.webp?v=2",
+      "webp720": "assets/ig-intro-01-720.webp",
+      "webpWidth": 1080,
+      "width": 1080,
+      "height": 1350,
+      "alt": "Instagram post from Desanya Studio: Hi, we're Desanya Studio",
+      "caption": "Social graphics — a three-post Instagram intro grid with a continuous glow across the row.",
+      "lbSet": "social",
+      "frames": [
+        {
+          "href": "assets/ig-intro-02.jpg?v=2",
+          "alt": "Instagram post from Desanya Studio: services and published prices",
+          "caption": "Social graphics — a three-post Instagram intro grid with a continuous glow across the row."
+        },
+        {
+          "href": "assets/ig-intro-03.jpg?v=2",
+          "alt": "Instagram post from Desanya Studio: book an intro",
+          "caption": "Social graphics — a three-post Instagram intro grid with a continuous glow across the row."
+        }
+      ]
+    }
+  ]
+}

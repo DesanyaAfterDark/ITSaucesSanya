@@ -342,6 +342,31 @@ var DESANYA_LINKS = {
     });
   }
 
+  function initGalleryFilters() {
+    var bar = document.querySelector('[data-gallery-filters]');
+    if (!bar) return;
+    var buttons = Array.prototype.slice.call(bar.querySelectorAll('[data-filter]'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-gallery-group]'));
+    var live = document.querySelector('[data-gallery-live]');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-filter');
+        buttons.forEach(function (other) {
+          other.setAttribute('aria-pressed', other === btn ? 'true' : 'false');
+        });
+        groups.forEach(function (group) {
+          var match = id === 'all' || group.getAttribute('data-gallery-group') === id;
+          group.hidden = !match;
+        });
+        if (live) {
+          live.textContent = id === 'all'
+            ? 'Showing every group, A to Z'
+            : 'Showing ' + btn.textContent.trim();
+        }
+      });
+    });
+  }
+
   function init() {
     initNav();
     initYear();
@@ -351,6 +376,7 @@ var DESANYA_LINKS = {
     initReviews();
     initSocial();
     initLightbox();
+    initGalleryFilters();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
