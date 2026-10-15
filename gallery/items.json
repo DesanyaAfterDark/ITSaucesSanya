@@ -279,21 +279,6 @@
       "lbSet": "brand-art"
     },
     {
-      "title": "Dreamcatcher wolves",
-      "group": "brand-art",
-      "tag": "Brand art",
-      "href": "assets/brand-art/dreamcatcher-wolves.jpg",
-      "image": "assets/brand-art/dreamcatcher-wolves-display.jpg",
-      "webp": "assets/brand-art/dreamcatcher-wolves-display.webp",
-      "webp720": "assets/brand-art/dreamcatcher-wolves-display-720.webp",
-      "webpWidth": 802,
-      "width": 802,
-      "height": 1200,
-      "alt": "Dreamcatcher wolves: a woman wearing a white wolf headdress above a dreamcatcher with a red wolf mask and feathers",
-      "caption": "Dreamcatcher wolves: commissioned for the Desanya brand.",
-      "lbSet": "brand-art"
-    },
-    {
       "title": "Moon wolf warrior",
       "group": "brand-art",
       "tag": "Brand art",
@@ -304,6 +289,21 @@
       "height": 1000,
       "alt": "Moon wolf warrior: a woman in leather armor before a full moon, with a white wolf howling above her",
       "caption": "Moon wolf warrior: commissioned for the Desanya brand.",
+      "lbSet": "brand-art"
+    },
+    {
+      "title": "Upside down & downside up",
+      "group": "brand-art",
+      "tag": "Brand art",
+      "href": "assets/brand-art/upside-down-and-downside-up.jpg",
+      "image": "assets/brand-art/upside-down-and-downside-up-display.jpg",
+      "webp": "assets/brand-art/upside-down-and-downside-up-display.webp",
+      "webp720": "assets/brand-art/upside-down-and-downside-up-display-720.webp",
+      "webpWidth": 802,
+      "width": 802,
+      "height": 1200,
+      "alt": "Upside down & downside up: a woman wearing a white wolf headdress above a dreamcatcher with a red wolf mask and feathers",
+      "caption": "Upside down & downside up: commissioned art.",
       "lbSet": "brand-art"
     },
     {
