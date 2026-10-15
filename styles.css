@@ -2921,6 +2921,52 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.evolve-copy {
+  max-width: 42rem;
+  margin-bottom: 1.75rem;
+}
+
+.evolve-copy p {
+  margin: 0 0 0.9rem;
+  color: var(--text-muted);
+}
+
+.evolve-copy p:last-child { margin-bottom: 0; }
+
+.evolve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.evolve-card {
+  margin: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.evolve-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.evolve-card figcaption {
+  padding: 0.85rem 1rem 1.05rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.evolve-name {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
 .work-grid--3 .work-card-media img {
   object-position: center center;
 }
@@ -4253,6 +4299,7 @@ a[data-google-review-link][hidden],
   .hero-proof-row { grid-template-columns: 1fr; }
   .proof-card { grid-template-columns: 1fr; }
   .case-card { grid-template-columns: 1fr; }
+  .evolve-grid { grid-template-columns: 1fr; }
   .case-card-media { border-right: 0; border-bottom: 1px solid var(--border); }
   .follow-band { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: 1fr; }
