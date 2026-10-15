@@ -1213,7 +1213,7 @@ a:hover {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 .chat-bubble {
@@ -1318,6 +1318,41 @@ a:hover {
   flex: 0 1 auto;
   max-height: 46%;
   min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Quote form open: keep the latest answer readable, and give the form
+   its own scroll region so every field and the submit button are reachable. */
+.desanya-chat.is-quoting .chat-messages {
+  flex: 0 1 auto;
+  max-height: 8.5rem;
+  min-height: 0;
+}
+
+.desanya-chat.is-quoting .chat-chips-wrap {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.desanya-chat.is-quoting .chat-chips {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  max-width: 100%;
+}
+
+.desanya-chat.is-quoting .chat-chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.desanya-chat.is-quoting .chat-lead:not([hidden]) {
+  flex: 1 1 auto;
+  max-height: none;
+  min-height: 0;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -1362,6 +1397,8 @@ a:hover {
   border-radius: 7px;
   padding: 0.5rem 0.65rem;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .chat-lead-field input:focus,
@@ -1533,13 +1570,35 @@ a:hover {
   .desanya-chat.is-open .chat-lead:not([hidden]) {
     flex: 0 1 auto;
     max-height: 42%;
+    overflow-x: hidden;
     overflow-y: auto;
     min-height: 0;
+  }
+
+  /* Chips take a full row beside a short form. Hide them while quoting
+     so the form can scroll through name, email, need, and submit. */
+  .desanya-chat.is-quoting.is-open .chat-chips-wrap {
+    display: none;
+  }
+
+  .desanya-chat.is-quoting.is-open .chat-messages {
+    flex: 0 1 auto;
+    max-height: 8.5rem;
+    min-height: 0;
+  }
+
+  .desanya-chat.is-quoting.is-open .chat-lead:not([hidden]) {
+    flex: 1 1 auto;
+    max-height: none;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   body.chat-open {
     overflow: hidden;
     overscroll-behavior: none;
+    max-width: 100%;
   }
 }
 

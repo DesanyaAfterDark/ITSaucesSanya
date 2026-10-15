@@ -116,7 +116,7 @@
       label: 'Book a chat',
       keywords: ['contact', 'book', 'chat', 'email', 'hello', 'schedule', 'call', 'talk'],
       answer:
-        'Ready to talk? Use <strong>Get a quote</strong> below, jump to the <a href="/contact.html#order">order form</a>, or email <a href="mailto:desanyaafterdark@gmail.com">desanyaafterdark@gmail.com</a>.'
+        'Book a free intro call on Zoom, Monday–Friday, 8 AM–5 PM ET. <a href="https://calendly.com/desanyaafterdark/30min" target="_blank" rel="noopener noreferrer">Pick a time on the calendar<span class="visually-hidden"> (opens in a new tab)</span></a>. For a custom quote, use the form below.'
     },
     {
       id: 'pricing',
@@ -260,34 +260,49 @@
       else inner.textContent = htmlOrText;
       bubble.appendChild(inner);
       messages.appendChild(bubble);
-      messages.scrollTop = messages.scrollHeight;
       return bubble;
     }
 
     function botSay(html) {
-      appendBubble('bot', html, true);
+      return appendBubble('bot', html, true);
     }
 
     function userSay(text) {
-      appendBubble('user', text, false);
+      return appendBubble('user', text, false);
+    }
+
+    // Align a new answer to the top of the message pane after layout.
+    // Opening the quote form shrinks that pane, so a scroll-to-bottom
+    // from before the reflow leaves the answer under an older message.
+    function revealBubble(bubble) {
+      if (!messages || !bubble) return;
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          messages.style.scrollBehavior = 'auto';
+          void messages.offsetHeight;
+          var delta = bubble.getBoundingClientRect().top - messages.getBoundingClientRect().top;
+          messages.scrollTop += delta - 6;
+        });
+      });
     }
 
     function showLeadForm(reason) {
-      if (leadShown) {
-        leadWrap.hidden = false;
-        leadWrap.querySelector('#chatLeadName').focus();
-        return;
-      }
+      var first = !leadShown;
       leadShown = true;
+      root.classList.add('is-quoting');
       leadWrap.hidden = false;
-      botSay(
-        reason ||
-          'Ready to talk? Share a few details and Desanya Studio will reply by email. Nothing is stored on this site.'
-      );
-      window.setTimeout(function () {
-        var nameField = leadWrap.querySelector('#chatLeadName');
-        if (nameField) nameField.focus();
-      }, 80);
+      if (first && reason !== null) {
+        botSay(
+          reason ||
+            'Ready to talk? Share a few details and Desanya Studio will reply by email. Nothing is stored on this site.'
+        );
+      }
+      if (first) {
+        window.requestAnimationFrame(function () {
+          var nameField = leadWrap.querySelector('#chatLeadName');
+          if (nameField) nameField.focus({ preventScroll: true });
+        });
+      }
     }
 
     function handleQuestion(raw) {
@@ -298,21 +313,25 @@
 
       if (seemsReady(text)) {
         var hit = matchFaq(text);
-        if (hit) botSay(hit.answer);
+        var readyBubble = hit ? botSay(hit.answer) : null;
         showLeadForm();
+        revealBubble(readyBubble || messages.lastElementChild);
         return;
       }
 
       var match = matchFaq(text);
       if (match) {
-        botSay(match.answer);
-        if (match.id === 'contact' || match.id === 'pricing') {
+        var answerBubble = botSay(match.answer);
+        if (match.id === 'contact') {
+          showLeadForm(null);
+        } else if (match.id === 'pricing') {
           showLeadForm('Want a custom quote? Share a few details below.');
         }
+        revealBubble(answerBubble);
       } else {
-        botSay(
+        revealBubble(botSay(
           'This is an FAQ stub (not live AI). Try a topic below, or ask about websites, content, blog writing, social, SEO, AI setup for your business, monthly care, Sherman’s portfolio, or pricing. Or tap <strong>Get a quote</strong>.'
-        );
+        ));
       }
     }
 
@@ -342,6 +361,7 @@
 
     quoteBtn.addEventListener('click', function () {
       showLeadForm('Fill in the form below and Desanya Studio will reply by email.');
+      revealBubble(messages.lastElementChild);
     });
 
     form.addEventListener('submit', function (e) {
