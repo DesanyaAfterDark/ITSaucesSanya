@@ -64,25 +64,32 @@ def is_logo(item):
 
 
 def logo_background(item):
-    """Most common edge color, so a contained logo doesn't sit on navy."""
+    """Edge color of an opaque logo. A transparent badge uses the card color."""
     try:
         from PIL import Image
     except ImportError:
-        return "#f4f1ea"
-    image = Image.open(local_path(item["image"])).convert("RGB")
+        return "var(--bg-card)"
+    image = Image.open(local_path(item["image"])).convert("RGBA")
     width, height = image.size
     points = []
     step_x = max(1, width // 30)
     step_y = max(1, height // 30)
+    samples = []
     for x in range(0, width, step_x):
-        points.append(image.getpixel((x, min(2, height - 1))))
-        points.append(image.getpixel((x, max(0, height - 3))))
+        samples.append((x, min(2, height - 1)))
+        samples.append((x, max(0, height - 3)))
     for y in range(0, height, step_y):
-        points.append(image.getpixel((min(2, width - 1), y)))
-        points.append(image.getpixel((max(0, width - 3), y)))
+        samples.append((min(2, width - 1), y))
+        samples.append((max(0, width - 3), y))
+    for x, y in samples:
+        red, green, blue, alpha = image.getpixel((x, y))
+        if alpha < 200:
+            continue
+        points.append((red // 8 * 8, green // 8 * 8, blue // 8 * 8))
+    if len(points) < 8:
+        return "var(--bg-card)"
     buckets = {}
-    for red, green, blue in points:
-        key = (red // 8 * 8, green // 8 * 8, blue // 8 * 8)
+    for key in points:
         buckets[key] = buckets.get(key, 0) + 1
     red, green, blue = max(buckets, key=buckets.get)
     return f"#{red:02x}{green:02x}{blue:02x}"
