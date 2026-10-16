@@ -328,6 +328,39 @@
       "lbSet": "brand"
     },
     {
+      "title": "Sherman’s Shih Tzu Puppies brand identity",
+      "group": "brand-identity",
+      "tag": "Brand identity",
+      "description": "An elegant brand refresh for a family Shih Tzu breeder in Niota. The round badge was commissioned from a freelance artist. Desanya Studio built the brand system around it.",
+      "href": "assets/shermans-brand-identity.jpg",
+      "image": "assets/shermans-brand-identity.jpg",
+      "webp": "assets/shermans-brand-identity.webp",
+      "webp720": "assets/shermans-brand-identity-720.webp",
+      "webpWidth": 1600,
+      "width": 1600,
+      "height": 1000,
+      "alt": "Sherman's Shih Tzu Puppies brand board: the round badge, swatches for Ivory Silk, Champagne Cream, Shannon Rose, Blush Petal, Gilded Gold, and Deep Plum, and samples of Playfair Display, Cormorant SC, Pinyon Script, and Mulish",
+      "caption": "Sherman’s Shih Tzu Puppies: an elegant brand refresh for a family Shih Tzu breeder in Niota. Ivory Silk, Champagne Cream, Shannon Rose, Blush Petal, Gilded Gold, and Deep Plum, set in Playfair Display, Cormorant SC, Pinyon Script, and Mulish. The round badge was commissioned from a freelance artist. Desanya Studio built the brand system around it.",
+      "lbSet": "shermans-brand",
+      "frames": [
+        {
+          "href": "assets/shermans-badge.jpg",
+          "alt": "Round Sherman's Shih Tzu Puppies badge on ivory: a Shih Tzu puppy between two roses, a gold ring, the line Dogs leave a paw print on your heart forever, and Niota, Tennessee along the bottom",
+          "caption": "The round badge logo was commissioned from a freelance artist. Desanya Studio built the palette, type, website, and social system around it."
+        },
+        {
+          "href": "assets/shermans-homepage-mockup.jpg",
+          "alt": "Website mockup for Sherman's Shih Tzu Puppies: an ivory page, the round badge in the header, and the headline Shih Tzus raised with a heart full of love, for visits in Niota",
+          "caption": "Website mockup for visits in Niota, with the commissioned badge in the header. Brand system by Desanya Studio."
+        },
+        {
+          "href": "assets/shermans-ig-mockup.jpg",
+          "alt": "Instagram post mockup for Sherman's Shih Tzu Puppies: the round badge, an arched puppy photo, and the line Ready for home, with pickup in Niota",
+          "caption": "Instagram post mockup with the commissioned badge and pickup in Niota. Brand system by Desanya Studio."
+        }
+      ]
+    },
+    {
       "title": "YouTube channel banner",
       "group": "brand-identity",
       "tag": "YouTube",
@@ -400,15 +433,15 @@
       "title": "Sherman’s Shih Tzu Puppies",
       "group": "client-logos",
       "tag": "Client logo design",
-      "href": "assets/shermans-brand-logo.jpg",
-      "image": "assets/shermans-brand-logo.jpg",
-      "webp": "assets/shermans-brand-logo.webp",
-      "webp720": "assets/shermans-brand-logo-720.webp",
-      "webpWidth": 1600,
-      "width": 1600,
-      "height": 1000,
-      "alt": "Sherman's Shih Tzu Puppies logo: a charcoal Shih Tzu puppy in a bowl under the arched tagline Dogs leave a paw print on your heart furever, with SHERMAN'S and SHIH TZU PUPPIES on cream fabric",
-      "caption": "Sherman’s Shih Tzu Puppies: a warm, premium logo by Desanya Studio for a family Shih Tzu breeder in East Tennessee. A charcoal puppy in a bowl, the furever tagline, and a classic wordmark on cream fabric.",
+      "href": "assets/shermans-badge-logo.png",
+      "image": "assets/shermans-badge-logo.png",
+      "webp": "assets/shermans-badge-logo.webp",
+      "webp720": "assets/shermans-badge-logo-720.webp",
+      "webpWidth": 800,
+      "width": 800,
+      "height": 800,
+      "alt": "Sherman’s Shih Tzu Puppies badge logo",
+      "caption": "Sherman’s Shih Tzu Puppies badge logo. The round badge was commissioned from a freelance artist.",
       "lbSet": "shermans-logo",
       "frames": [
         {
@@ -420,39 +453,6 @@
           "href": "assets/shermans-logo-in-use.jpg",
           "alt": "Sherman's Shih Tzu Puppies logo on a Facebook-style cover with a round profile picture of the same logo overlapping the lower-left corner",
           "caption": "Sherman’s Shih Tzu Puppies: the logo in use as a Facebook profile picture, with a cover mockup made from the same mark. Logo design by Desanya Studio."
-        }
-      ]
-    },
-    {
-      "title": "Sherman’s Shih Tzu Puppies brand identity",
-      "group": "client-logos",
-      "tag": "Brand refresh",
-      "description": "An elegant brand refresh for a family Shih Tzu breeder in Niota. The round badge was commissioned from a freelance artist. Desanya Studio built the brand system around it.",
-      "href": "assets/shermans-brand-identity.jpg",
-      "image": "assets/shermans-brand-identity.jpg",
-      "webp": "assets/shermans-brand-identity.webp",
-      "webp720": "assets/shermans-brand-identity-720.webp",
-      "webpWidth": 1600,
-      "width": 1600,
-      "height": 1000,
-      "alt": "Sherman's Shih Tzu Puppies brand board: the round badge, swatches for Ivory Silk, Champagne Cream, Shannon Rose, Blush Petal, Gilded Gold, and Deep Plum, and samples of Playfair Display, Cormorant SC, Pinyon Script, and Mulish",
-      "caption": "Sherman’s Shih Tzu Puppies: an elegant brand refresh for a family Shih Tzu breeder in Niota. Ivory Silk, Champagne Cream, Shannon Rose, Blush Petal, Gilded Gold, and Deep Plum, set in Playfair Display, Cormorant SC, Pinyon Script, and Mulish. The round badge was commissioned from a freelance artist. Desanya Studio built the brand system around it.",
-      "lbSet": "shermans-brand",
-      "frames": [
-        {
-          "href": "assets/shermans-badge.jpg",
-          "alt": "Round Sherman's Shih Tzu Puppies badge on ivory: a Shih Tzu puppy between two roses, a gold ring, the line Dogs leave a paw print on your heart forever, and Niota, Tennessee along the bottom",
-          "caption": "The round badge logo was commissioned from a freelance artist. Desanya Studio built the palette, type, website, and social system around it."
-        },
-        {
-          "href": "assets/shermans-homepage-mockup.jpg",
-          "alt": "Website mockup for Sherman's Shih Tzu Puppies: an ivory page, the round badge in the header, and the headline Shih Tzus raised with a heart full of love, for visits in Niota",
-          "caption": "Website mockup for visits in Niota, with the commissioned badge in the header. Brand system by Desanya Studio."
-        },
-        {
-          "href": "assets/shermans-ig-mockup.jpg",
-          "alt": "Instagram post mockup for Sherman's Shih Tzu Puppies: the round badge, an arched puppy photo, and the line Ready for home, with pickup in Niota",
-          "caption": "Instagram post mockup with the commissioned badge and pickup in Niota. Brand system by Desanya Studio."
         }
       ]
     },
