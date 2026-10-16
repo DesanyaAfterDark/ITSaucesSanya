@@ -156,7 +156,7 @@
   /* ------------------------------------------------------------------ */
   /* Optional checkout code                                              */
   /* Master switch. false hides the field and rejects every code.       */
-  /* Window: 2026-11-19 00:00 through 2026-12-01 23:59 America/New_York. */
+  /* Window: 2026-11-27 00:00 through 2026-11-30 23:59 America/New_York. */
   /* 10% off one-time brand refresh, review kit, SEO setup, and the     */
   /* three website tiers. List prices are never changed.                */
   /* ------------------------------------------------------------------ */
@@ -198,7 +198,7 @@
 
   function discountWindowOpen(date) {
     var stamp = nyStamp(date || new Date());
-    return stamp >= '202611190000' && stamp <= '202612012359';
+    return stamp >= '202611270000' && stamp <= '202611302359';
   }
 
   function discountLive() {
