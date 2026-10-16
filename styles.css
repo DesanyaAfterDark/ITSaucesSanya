@@ -1129,8 +1129,21 @@ a:hover {
 .chat-panel-header,
 .chat-input-form,
 .chat-chips-wrap,
-.chat-lead {
+.chat-lead,
+.chat-social {
   flex-shrink: 0;
+}
+
+.chat-social {
+  margin-top: 0;
+  padding: 0.55rem 1rem 0.65rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-social .social-links a {
+  width: 2.15rem;
+  height: 2.15rem;
 }
 
 .chat-panel-body {
@@ -1529,7 +1542,8 @@ a:hover {
 
   .desanya-chat.is-open .chat-panel-header,
   .desanya-chat.is-open .chat-input-form,
-  .desanya-chat.is-open .chat-chips-wrap {
+  .desanya-chat.is-open .chat-chips-wrap,
+  .desanya-chat.is-open .chat-social {
     flex: 0 0 auto;
   }
 
