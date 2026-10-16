@@ -2603,6 +2603,35 @@ a:hover {
   text-align: center;
 }
 
+/* ---------- Instagram feed ---------- */
+.band--instagram {
+  background:
+    radial-gradient(ellipse 55% 100% at 0% 0%, rgba(217, 107, 192, 0.12), transparent 58%),
+    var(--bg-elevated);
+}
+
+.band--instagram .section-header .btn {
+  margin-top: 1.15rem;
+}
+
+.instagram-feed {
+  min-height: 14rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+@media (min-width: 720px) {
+  .instagram-feed {
+    min-height: 24rem;
+  }
+}
+
+.instagram-feed behold-widget {
+  display: block;
+  width: 100%;
+}
+
 /* ---------- CTA band ---------- */
 .cta-band {
   padding: clamp(3rem, 7vw, 4.5rem) 0;
