@@ -54,6 +54,53 @@ def item_key(item):
     return (pending, item["title"].casefold(), 0, "")
 
 
+def is_logo(item):
+    fit = item.get("fit")
+    if fit == "logo":
+        return True
+    if fit == "cover":
+        return False
+    return item.get("group") == "client-logos"
+
+
+def logo_background(item):
+    """Most common edge color, so a contained logo doesn't sit on navy."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return "#f4f1ea"
+    image = Image.open(local_path(item["image"])).convert("RGB")
+    width, height = image.size
+    points = []
+    step_x = max(1, width // 30)
+    step_y = max(1, height // 30)
+    for x in range(0, width, step_x):
+        points.append(image.getpixel((x, min(2, height - 1))))
+        points.append(image.getpixel((x, max(0, height - 3))))
+    for y in range(0, height, step_y):
+        points.append(image.getpixel((min(2, width - 1), y)))
+        points.append(image.getpixel((max(0, width - 3), y)))
+    buckets = {}
+    for red, green, blue in points:
+        key = (red // 8 * 8, green // 8 * 8, blue // 8 * 8)
+        buckets[key] = buckets.get(key, 0) + 1
+    red, green, blue = max(buckets, key=buckets.get)
+    return f"#{red:02x}{green:02x}{blue:02x}"
+
+
+def frame_markup(item, lazy):
+    classes = "gallery-frame"
+    style = f"aspect-ratio: {int(item['width'])} / {int(item['height'])}"
+    if is_logo(item):
+        classes += " gallery-frame--logo"
+        style += f"; --frame-bg: {logo_background(item)}"
+    return (
+        f'            <span class="{classes}" style="{style}">\n'
+        f"              {picture(item, lazy)}\n"
+        "            </span>"
+    )
+
+
 def picture(item, lazy):
     webp = item.get("webp")
     source = ""
@@ -119,7 +166,7 @@ def card(item, lazy):
     if item.get("description"):
         meta += f'              <span class="gallery-desc">{esc(item["description"])}</span>\n'
     meta += "            </span>"
-    frame = f'            <span class="gallery-frame">\n              {picture(item, lazy)}\n            </span>'
+    frame = frame_markup(item, lazy)
 
     if item.get("external"):
         label = f'{item["title"]} on Instagram, opens in a new tab'

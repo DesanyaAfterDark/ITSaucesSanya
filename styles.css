@@ -3207,6 +3207,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  align-items: start;
 }
 
 .gallery-card {
@@ -3231,8 +3232,7 @@ a:hover {
 }
 
 .gallery-frame {
-  display: block;
-  aspect-ratio: 1;
+  display: grid;
   background: var(--bg-soft);
   overflow: hidden;
 }
@@ -3245,9 +3245,19 @@ a:hover {
 }
 
 .gallery-frame img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transition: transform 0.45s ease;
+}
+
+/* Logos keep the whole mark. The frame matches the file, and any
+   leftover uses the artwork's own edge color instead of the page navy. */
+.gallery-frame--logo {
+  background: var(--frame-bg, #f4f1ea);
+}
+
+.gallery-frame--logo img {
+  object-fit: contain;
 }
 
 .gallery-link:hover .gallery-frame img { transform: scale(1.03); }
