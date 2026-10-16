@@ -155,12 +155,12 @@
 
   /* ------------------------------------------------------------------ */
   /* Optional checkout code                                              */
-  /* Master switch. false hides the field and rejects every code.       */
+  /* Master switch. true shows the field only inside the window.        */
   /* Window: 2026-11-27 00:00 through 2026-11-30 23:59 America/New_York. */
   /* 10% off one-time brand refresh, review kit, SEO setup, and the     */
   /* three website tiers. List prices are never changed.                */
   /* ------------------------------------------------------------------ */
-  var DISCOUNTS_ENABLED = false;
+  var DISCOUNTS_ENABLED = true;
   var DISCOUNT_RATE = 0.1;
   var DISCOUNT_CODE_SHA256 = '047e03726eed8fdaa6cc1eb557bc8dfe20ed547a82b9a9f14fe1c9389d7867f6';
   var DISCOUNT_SLUGS = {
