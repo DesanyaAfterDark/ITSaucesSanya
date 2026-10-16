@@ -154,6 +154,197 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Optional checkout code                                              */
+  /* Master switch. false hides the field and rejects every code.       */
+  /* Window: 2026-11-19 00:00 through 2026-12-01 23:59 America/New_York. */
+  /* 10% off one-time brand refresh, review kit, SEO setup, and the     */
+  /* three website tiers. List prices are never changed.                */
+  /* ------------------------------------------------------------------ */
+  var DISCOUNTS_ENABLED = false;
+  var DISCOUNT_RATE = 0.1;
+  var DISCOUNT_CODE_SHA256 = '047e03726eed8fdaa6cc1eb557bc8dfe20ed547a82b9a9f14fe1c9389d7867f6';
+  var DISCOUNT_SLUGS = {
+    'brand-refresh': true,
+    'review-generation-kit': true,
+    'seo-setup': true,
+    'website-basic': true,
+    'website-standard': true,
+    'website-premium': true
+  };
+  var DISCOUNT_FLAG_KEY = 'desanya_adj_v1';
+  var codeApplied = false;
+
+  function discountsEnabled() {
+    return DISCOUNTS_ENABLED === true;
+  }
+
+  function nyStamp(date) {
+    var fmt = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23'
+    });
+    var parts = {};
+    fmt.formatToParts(date).forEach(function (p) {
+      if (p.type !== 'literal') parts[p.type] = p.value;
+    });
+    var hour = parts.hour === '24' ? '00' : parts.hour;
+    return parts.year + parts.month + parts.day + hour + parts.minute;
+  }
+
+  function discountWindowOpen(date) {
+    var stamp = nyStamp(date || new Date());
+    return stamp >= '202611190000' && stamp <= '202612012359';
+  }
+
+  function discountLive() {
+    return discountsEnabled() && discountWindowOpen();
+  }
+
+  function saveDiscountFlag() {
+    try {
+      if (codeApplied) sessionStorage.setItem(DISCOUNT_FLAG_KEY, '1');
+      else sessionStorage.removeItem(DISCOUNT_FLAG_KEY);
+    } catch (e) { /* ignore */ }
+  }
+
+  function loadDiscountFlag() {
+    codeApplied = false;
+    if (!discountLive()) return;
+    try {
+      if (sessionStorage.getItem(DISCOUNT_FLAG_KEY) === '1') codeApplied = true;
+    } catch (e) { /* ignore */ }
+  }
+
+  function eligibleAmount() {
+    var base = 0;
+    Object.keys(cart).forEach(function (slug) {
+      var c = CATALOG[slug];
+      if (!c || c.recurring || c.rush || !DISCOUNT_SLUGS[slug]) return;
+      base += c.price * cart[slug];
+    });
+    return base;
+  }
+
+  function discountAmount() {
+    if (!codeApplied || !discountLive()) return 0;
+    return Math.round(eligibleAmount() * DISCOUNT_RATE * 100) / 100;
+  }
+
+  function sha256Hex(text) {
+    if (!window.crypto || !crypto.subtle || !window.TextEncoder) {
+      return Promise.resolve('');
+    }
+    var data = new TextEncoder().encode(text);
+    return crypto.subtle.digest('SHA-256', data).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+        return ('0' + b.toString(16)).slice(-2);
+      }).join('');
+    });
+  }
+
+  function applyDiscount(raw) {
+    if (!discountLive()) {
+      codeApplied = false;
+      saveDiscountFlag();
+      render();
+      return Promise.resolve({ ok: false, reason: 'inactive' });
+    }
+    var code = String(raw || '').trim().toUpperCase().replace(/\s+/g, '');
+    return sha256Hex(code).then(function (hex) {
+      if (!hex || hex !== DISCOUNT_CODE_SHA256) {
+        return { ok: false, reason: 'invalid' };
+      }
+      if (eligibleAmount() <= 0) {
+        return { ok: false, reason: 'ineligible' };
+      }
+      codeApplied = true;
+      saveDiscountFlag();
+      render();
+      return { ok: true };
+    });
+  }
+
+  function clearDiscount() {
+    codeApplied = false;
+    saveDiscountFlag();
+    render();
+  }
+
+  function syncDiscountField() {
+    var grand = document.querySelector('.checkout-grand');
+    var existing = document.getElementById('co-discount-wrap');
+    if (!discountLive()) {
+      if (existing) existing.remove();
+      if (codeApplied) {
+        codeApplied = false;
+        saveDiscountFlag();
+      }
+      return;
+    }
+    if (!grand) return;
+    if (!existing) {
+      existing = document.createElement('div');
+      existing.id = 'co-discount-wrap';
+      existing.className = 'checkout-discount';
+      existing.innerHTML =
+        '<div class="checkout-field">' +
+          '<label for="co-discount">Discount code</label>' +
+          '<div class="checkout-discount-row">' +
+            '<input id="co-discount" type="text" autocomplete="off" spellcheck="false" maxlength="40">' +
+            '<button type="button" class="btn btn-secondary btn-small" data-discount-apply>Apply</button>' +
+          '</div>' +
+          '<p class="checkout-discount-msg" data-discount-msg hidden></p>' +
+          '<button type="button" class="btn btn-ghost btn-small checkout-discount-clear" data-discount-clear hidden>Remove code</button>' +
+        '</div>';
+      grand.parentNode.insertBefore(existing, grand);
+      existing.addEventListener('click', function (e) {
+        if (e.target.closest('[data-discount-apply]')) submitDiscountField();
+        else if (e.target.closest('[data-discount-clear]')) clearDiscount();
+      });
+      var input = existing.querySelector('#co-discount');
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          submitDiscountField();
+        }
+      });
+    }
+    var msg = existing.querySelector('[data-discount-msg]');
+    var clearBtn = existing.querySelector('[data-discount-clear]');
+    if (codeApplied) {
+      msg.hidden = false;
+      msg.textContent = 'Code applied.';
+      clearBtn.hidden = false;
+    } else {
+      clearBtn.hidden = true;
+    }
+  }
+
+  function submitDiscountField() {
+    var input = document.getElementById('co-discount');
+    var wrap = document.getElementById('co-discount-wrap');
+    if (!input || !wrap) return;
+    applyDiscount(input.value).then(function (res) {
+      var msg = wrap.querySelector('[data-discount-msg]');
+      if (!msg) return;
+      msg.hidden = false;
+      if (res.ok) {
+        input.value = '';
+        msg.textContent = 'Code applied.';
+      } else if (res.reason === 'ineligible') {
+        msg.textContent = "That code doesn't apply to this order.";
+      } else {
+        msg.textContent = "That code isn't valid.";
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Public API                                                          */
   /* ------------------------------------------------------------------ */
   function add(slug, qty) {
@@ -199,11 +390,13 @@
   }
 
   function getTotal() {
-    return getItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
+    var list = getItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
+    return Math.round((list - discountAmount()) * 100) / 100;
   }
 
   function getPayableTotal() {
-    return getPayableItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
+    var list = getPayableItems().reduce(function (sum, it) { return sum + it.price * it.qty; }, 0);
+    return Math.round((list - discountAmount()) * 100) / 100;
   }
 
   function getCount() {
@@ -233,6 +426,7 @@
         '</div>' +
         '<div class="ds-cart-items" data-cart-items></div>' +
         '<div class="ds-cart-foot" data-cart-foot>' +
+          '<div class="ds-cart-discount" data-cart-discount hidden></div>' +
           '<div class="ds-cart-total"><span>Subtotal</span><strong data-cart-total>$0</strong></div>' +
           '<p class="ds-cart-note" data-cart-recurring-note hidden>Monthly services are billed separately after checkout — you\u2019ll only pay one-time items today.</p>' +
           '<a class="btn btn-primary ds-cart-checkout" href="/checkout.html">Checkout</a>' +
@@ -247,6 +441,7 @@
     els.items = root.querySelector('[data-cart-items]');
     els.foot = root.querySelector('[data-cart-foot]');
     els.total = root.querySelector('[data-cart-total]');
+    els.discount = root.querySelector('[data-cart-discount]');
     els.recurringNote = root.querySelector('[data-cart-recurring-note]');
 
     root.addEventListener('click', function (e) {
@@ -314,7 +509,20 @@
       }).join('');
       els.total.textContent = money(getTotal());
       els.recurringNote.hidden = !hasRecurring();
+      var off = discountAmount();
+      if (els.discount) {
+        if (off > 0) {
+          els.discount.hidden = false;
+          els.discount.innerHTML = '<span>Discount</span><strong>−' + money(off) + '</strong>';
+        } else {
+          els.discount.hidden = true;
+          els.discount.innerHTML = '';
+        }
+      }
     }
+    syncDiscountField();
+    try { document.dispatchEvent(new CustomEvent('desanya-cart-change')); }
+    catch (e) { /* ignore */ }
   }
 
   function open() {
@@ -359,6 +567,7 @@
 
   function init() {
     load();
+    loadDiscountFlag();
     buildDrawer();
     render();
     placeCart();
@@ -386,12 +595,6 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
   window.DesanyaCart = {
     catalog: CATALOG,
     add: add,
@@ -406,6 +609,17 @@
     hasRecurring: hasRecurring,
     open: open,
     close: close,
-    money: money
+    money: money,
+    getDiscount: discountAmount,
+    discountsAvailable: discountLive,
+    applyDiscount: applyDiscount,
+    clearDiscount: clearDiscount,
+    syncDiscountField: syncDiscountField
   };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

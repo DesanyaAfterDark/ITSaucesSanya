@@ -42,7 +42,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=18">
   <link rel="stylesheet" href="theme.css?v=3">
-  <link rel="stylesheet" href="assets/cart.css?v=2">
+  <link rel="stylesheet" href="assets/cart.css?v=3">
   <!-- @partial:business-jsonld -->
 <script type="application/ld+json">
 {
@@ -828,7 +828,7 @@
       <p class="footer-privacy">Privacy: forms are delivered by email through FormSubmit and nothing is stored on this site. We use Google Analytics to see how visitors use the site. No ads, and we never sell your info.</p>
       <p class="footer-copy">&copy; <span data-year>2026</span> Desanya Studio</p>
     </div>
-    <script src="assets/cart.js?v=4" defer></script>
+    <script src="assets/cart.js?v=5" defer></script>
   </footer>
   <!-- /@partial:footer -->
 
@@ -1037,6 +1037,7 @@
 
       function renderSummary() {
         var cart = window.DesanyaCart;
+        if (!cart) return;
         var items = cart.getItems();
         var linesEl = document.getElementById('checkout-lines');
         var emptyEl = document.getElementById('checkout-empty');
@@ -1051,7 +1052,7 @@
         emptyEl.hidden = true;
         mainEl.hidden = false;
 
-        linesEl.innerHTML = items.map(function (it) {
+        var html = items.map(function (it) {
           return '<div class="checkout-line">' +
             '<div>' +
               '<span class="checkout-line-name">' + esc(it.name) +
@@ -1067,6 +1068,15 @@
             '<span class="checkout-line-total">' + money(it.price * it.qty) + '</span>' +
           '</div>';
         }).join('');
+        var off = cart.getDiscount ? cart.getDiscount() : 0;
+        if (off > 0) {
+          html += '<div class="checkout-line checkout-line--discount">' +
+            '<div><span class="checkout-line-name">Discount</span></div>' +
+            '<span class="checkout-line-total">−' + money(off) + '</span>' +
+          '</div>';
+        }
+        linesEl.innerHTML = html;
+        if (cart.syncDiscountField) cart.syncDiscountField();
 
         document.getElementById('checkout-total').textContent = money(cart.getTotal());
         document.getElementById('checkout-recurring-note').hidden = !cart.hasRecurring();
@@ -1118,16 +1128,23 @@
             // Recurring items are arranged after checkout. Rush is 35% of one-time items.
             // A monthly-only cart has nothing to capture, so it falls through to the $1 deposit.
             var items = cart.getPayableItems ? cart.getPayableItems() : cart.getItems().filter(function (it) { return !it.recurring && it.price > 0; });
-            var total = items.reduce(function (s, it) { return s + it.price * it.qty; }, 0);
+            var listTotal = Math.round(items.reduce(function (s, it) { return s + it.price * it.qty; }, 0) * 100) / 100;
+            var discount = cart.getDiscount ? Math.min(cart.getDiscount(), listTotal) : 0;
+            discount = Math.round(discount * 100) / 100;
+            var total = Math.round((listTotal - discount) * 100) / 100;
             var customer = validCustomer();
+            var breakdown = {
+              item_total: { currency_code: 'USD', value: listTotal.toFixed(2) }
+            };
+            if (discount > 0) {
+              breakdown.discount = { currency_code: 'USD', value: discount.toFixed(2) };
+            }
             var purchaseUnits = [{
               description: 'Desanya Studio — ' + (customer ? customer.name : 'order'),
               amount: {
                 currency_code: 'USD',
                 value: total.toFixed(2),
-                breakdown: {
-                  item_total: { currency_code: 'USD', value: total.toFixed(2) }
-                }
+                breakdown: breakdown
               },
               items: items.map(function (it) {
                 return {
@@ -1180,6 +1197,10 @@
           }
         }).render('#paypal-buttons');
       }
+
+      document.addEventListener('desanya-cart-change', function () {
+        if (window.DesanyaCart) renderSummary();
+      });
 
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
